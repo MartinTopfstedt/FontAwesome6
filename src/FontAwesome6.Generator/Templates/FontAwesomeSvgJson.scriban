@@ -1,0 +1,12 @@
+﻿{
+	{{~ for kvp in icons ~}}		
+		{{~ for style in (isFree ? kvp.Value.free : kvp.Value.styles) ~}}	
+	"{{ style | string.capitalize }}_{{ kvp.Key | regex.replace "[\\-&\\.']" " " | string.capitalizewords | string.replace " " "" }}": { 		
+		width: {{ kvp.Value.svg[style].width ~}},
+		height: {{ kvp.Value.svg[style].height ~}},
+		opacity: {{ kvp.Value.svg[style].opacity ~}},
+		paths: ["{{~ kvp.Value.svg[style].path | array.join "\", \"" ~}}"],
+	},
+		{{~ end ~}}			
+	{{~ end ~}}
+}

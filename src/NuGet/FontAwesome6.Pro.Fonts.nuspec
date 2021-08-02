@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>FontAwesome6.Pro.Fonts</id>
+    <version>$version$</version>
+    <description>
+      WPF (.Net and .Net Core) and UWP controls for the web's most popular icon set and toolkit.
+      This package contains supports only fonts, if you need svg use FontAwesome6.Pro.Svg.
+      For examples https://github.com/MartinTopfstedt/FontAwesome6
+      Font-Awesome Version: 6.0.0-alpha3
+    </description>
+    <authors>Codinion</authors>
+    <license type="expression">MIT</license>
+    <projectUrl>https://github.com/MartinTopfstedt/FontAwesmoe6</projectUrl>
+    <icon>icon.png</icon>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <tags>fontawesome fontawesome6 svg</tags>
+    <copyright>Copyright © 2019 Codinion</copyright>
+  </metadata>
+  <files>
+    <file src="..\icon.png" target="" />
+
+    <!-- .Net Standard 1.4 -->
+    <file src="..\FontAwesmoe6\bin\Release\netstandard1.4\FontAwesmoe6.dll" target="lib\netstandard1.4\" />
+    <file src="..\FontAwesmoe6\bin\Release\netstandard1.4\FontAwesmoe6.xml" target="lib\netstandard1.4\" />
+    <file src="..\FontAwesmoe6\bin\Release\netstandard1.4\FontAwesmoe6.pdb" target="lib\netstandard1.4\" />
+
+    <!-- .Net Standard 2.1 -->
+    <file src="..\FontAwesmoe6\bin\Release\netstandard2.1\FontAwesmoe6.dll" target="lib\netstandard2.1\" />
+    <file src="..\FontAwesmoe6\bin\Release\netstandard2.1\FontAwesmoe6.xml" target="lib\netstandard2.1\" />
+    <file src="..\FontAwesmoe6\bin\Release\netstandard2.1\FontAwesmoe6.pdb" target="lib\netstandard2.1\" />
+
+    <!-- .Net Standard 5.0 -->
+    <file src="..\FontAwesmoe6\bin\Release\net5.0\FontAwesmoe6.dll" target="lib\net5.0\" />
+    <file src="..\FontAwesmoe6\bin\Release\net5.0\FontAwesmoe6.xml" target="lib\net5.0\" />
+    <file src="..\FontAwesmoe6\bin\Release\net5.0\FontAwesmoe6.pdb" target="lib\net5.0\" />
+
+    <!-- .Net Framework 4.0 -->
+    <file src="..\FontAwesmoe6.Fonts.Net\bin\Release\net40\FontAwesmoe6.dll" target="lib\net40\" />
+    <file src="..\FontAwesmoe6.Fonts.Net\bin\Release\net40\FontAwesmoe6.xml" target="lib\net40\" />
+    <file src="..\FontAwesmoe6.Fonts.Net\bin\Release\net40\FontAwesmoe6.pdb" target="lib\net40\" />
+    <file src="..\FontAwesmoe6.Fonts.Net\bin\Release\net40\FontAwesmoe6.Fonts.Net.dll" target="lib\net40\" />
+    <file src="..\FontAwesmoe6.Fonts.Net\bin\Release\net40\FontAwesmoe6.Fonts.Net.xml" target="lib\net40\" />
+    <file src="..\FontAwesmoe6.Fonts.Net\bin\Release\net40\FontAwesmoe6.Fonts.Net.pdb" target="lib\net40\" />
+
+    <!-- .Net Framework 4.6.2 -->
+    <file src="..\FontAwesmoe6.Fonts.Net\bin\Release\net462\FontAwesmoe6.dll" target="lib\net462\" />
+    <file src="..\FontAwesmoe6.Fonts.Net\bin\Release\net462\FontAwesmoe6.xml" target="lib\net462\" />
+    <file src="..\FontAwesmoe6.Fonts.Net\bin\Release\net462\FontAwesmoe6.pdb" target="lib\net462\" />
+    <file src="..\FontAwesmoe6.Fonts.Net\bin\Release\net462\FontAwesmoe6.Fonts.Net.dll" target="lib\net462\" />
+    <file src="..\FontAwesmoe6.Fonts.Net\bin\Release\net462\FontAwesmoe6.Fonts.Net.xml" target="lib\net462\" />
+    <file src="..\FontAwesmoe6.Fonts.Net\bin\Release\net462\FontAwesmoe6.Fonts.Net.pdb" target="lib\net462\" />
+
+    <!-- .Net Framework 4.7.2 -->
+    <file src="..\FontAwesmoe6.Fonts.Net\bin\Release\net472\FontAwesmoe6.dll" target="lib\net472\" />
+    <file src="..\FontAwesmoe6.Fonts.Net\bin\Release\net472\FontAwesmoe6.xml" target="lib\net472\" />
+    <file src="..\FontAwesmoe6.Fonts.Net\bin\Release\net472\FontAwesmoe6.pdb" target="lib\net472\" />
+    <file src="..\FontAwesmoe6.Fonts.Net\bin\Release\net472\FontAwesmoe6Fonts.Net.dll" target="lib\net472\" />
+    <file src="..\FontAwesmoe6.Fonts.Net\bin\Release\net472\FontAwesmoe6Fonts.Net.xml" target="lib\net472\" />
+    <file src="..\FontAwesmoe6.Fonts.Net\bin\Release\net472\FontAwesmoe6Fonts.Net.pdb" target="lib\net472\" />
+
+    <!-- .Net Core Framework 3.1 -->
+    <file src="..\FontAwesmoe6.Fonts.Net\bin\Release\netcoreapp3.1\FontAwesmoe6.dll" target="lib\netcoreapp3.1\" />
+    <file src="..\FontAwesmoe6.Fonts.Net\bin\Release\netcoreapp3.1\FontAwesmoe6.xml" target="lib\netcoreapp3.1\" />
+    <file src="..\FontAwesmoe6.Fonts.Net\bin\Release\netcoreapp3.1\FontAwesmoe6.pdb" target="lib\netcoreapp3.1\" />
+    <file src="..\FontAwesmoe6.Fonts.Net\bin\Release\netcoreapp3.1\FontAwesmoe6.Fonts.Net.dll" target="lib\netcoreapp3.1\" />
+    <file src="..\FontAwesmoe6.Fonts.Net\bin\Release\netcoreapp3.1\FontAwesmoe6.Fonts.Net.xml" target="lib\netcoreapp3.1\" />
+    <file src="..\FontAwesmoe6.Fonts.Net\bin\Release\netcoreapp3.1\FontAwesmoe6.Fonts.Net.pdb" target="lib\netcoreapp3.1\" />
+
+    <!-- .Net 5.0 -->
+    <file src="..\FontAwesmoe6.Fonts.Net\bin\Release\net5.0-windows\FontAwesmoe6.dll" target="lib\net5.0-windows7.0\" />
+    <file src="..\FontAwesmoe6.Fonts.Net\bin\Release\net5.0-windows\FontAwesmoe6.xml" target="lib\net5.0-windows7.0\" />
+    <file src="..\FontAwesmoe6.Fonts.Net\bin\Release\net5.0-windows\FontAwesmoe6.pdb" target="lib\net5.0-windows7.0\" />
+    <file src="..\FontAwesmoe6.Fonts.Net\bin\Release\net5.0-windows\FontAwesmoe6.Fonts.Net.dll" target="lib\net5.0-windows7.0\" />
+    <file src="..\FontAwesmoe6.Fonts.Net\bin\Release\net5.0-windows\FontAwesmoe6.Fonts.Net.xml" target="lib\net5.0-windows7.0\" />
+    <file src="..\FontAwesmoe6.Fonts.Net\bin\Release\net5.0-windows\FontAwesmoe6.Fonts.Net.pdb" target="lib\net5.0-windows7.0\" />
+
+    <!-- UWP -->
+    <file src="..\FontAwesmoe6.Fonts.UWP\bin\Release\FontAwesmoe6.dll" target="lib\uap10.0" />
+    <file src="..\FontAwesmoe6.Fonts.UWP\bin\Release\FontAwesmoe6.xml" target="lib\uap10.0" />
+    <file src="..\FontAwesmoe6.Fonts.UWP\bin\Release\FontAwesmoe6.pdb" target="lib\uap10.0" />
+    <file src="..\FontAwesmoe6.Fonts.UWP\bin\Release\FontAwesmoe6.Fonts.UWP.dll" target="lib\uap10.0" />
+    <file src="..\FontAwesmoe6.Fonts.UWP\bin\Release\FontAwesmoe6.Fonts.UWP.pdb" target="lib\uap10.0" />
+    <file src="..\FontAwesmoe6.Fonts.UWP\bin\Release\FontAwesmoe6.Fonts.UWP.pri" target="lib\uap10.0" />
+    <file src="..\FontAwesmoe6.Fonts.UWP\bin\Release\FontAwesmoe6.Fonts.UWP.xml" target="lib\uap10.0" />
+  </files>
+</package>

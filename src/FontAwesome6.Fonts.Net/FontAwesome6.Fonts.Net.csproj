@@ -1,0 +1,41 @@
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <TargetFrameworks>net40;net462;net472;netcoreapp3.1;net5.0-windows</TargetFrameworks>
+    <UseWPF>true</UseWPF>
+    <DelaySign>false</DelaySign>
+    <AssemblyName>FontAwesome6.Fonts.Net</AssemblyName>
+    <RootNamespace>FontAwesome6.Fonts</RootNamespace>
+    <LangVersion>latest</LangVersion>
+    <Configurations>Debug;Release;DebugPro;ReleasePro</Configurations>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <DocumentationFile>$(OutDir)\FontAwesome6.Fonts.Net.xml</DocumentationFile>
+    <Authors>Martin Topfstedt</Authors>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Copyright>Copyright © Codinion 2021</Copyright>
+    <Company>Codinion</Company>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='DebugPro'">
+    <DefineConstants>TRACE;FontAwesomePro</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='ReleasePro'">
+    <DefineConstants>TRACE;FontAwesomePro</DefineConstants>
+  </PropertyGroup>
+
+  <ItemGroup Condition="'$(Configuration)'=='Debug' Or '$(Configuration)'=='Release'">
+    <Resource Include="..\..\Font-Awesome\otfs\Font Awesome 6 Brands-Regular-400.otf" Link="Fonts/Font Awesome 6 Brands-Regular-400.otf" />
+    <Resource Include="..\..\Font-Awesome\otfs\Font Awesome 6 Free-Regular-400.otf" Link="Fonts/Font Awesome 6 Free-Regular-400.otf" />
+    <Resource Include="..\..\Font-Awesome\otfs\Font Awesome 6 Free-Solid-900.otf" Link="Fonts/Font Awesome 6 Free-Solid-900.otf" />
+  </ItemGroup>
+
+  <ItemGroup>    
+    <ProjectReference Include="..\FontAwesome6\FontAwesome6\FontAwesome6.csproj" />
+  </ItemGroup>
+  <Import Project="..\FontAwesome6.Fonts.Shared\FontAwesome6.Fonts.Shared.projitems" Label="Shared" />
+  <Import Project="..\FontAwesome6.Shared\FontAwesome6.Shared.projitems" Label="Shared" />
+
+</Project>
