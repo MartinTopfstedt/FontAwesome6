@@ -20,25 +20,7 @@ namespace FontAwesome6.Fonts.Extensions
         return null;
       }
 
-      return FontAwesomeUnicodes.Data.TryGetValue(icon.GetIconName(), out var unicode) ? unicode : "";
-    }
-
-    /// <summary>
-    /// Get the Unicode of an icon
-    /// </summary>
-    public static bool TryGetDuotoneUnicode(this EFontAwesomeIcon icon, out string primary, out string secondary)
-    {
-      primary = null;
-      secondary = null;
-      if (FontAwesomeUnicodes.Data.TryGetValue(icon.GetIconName(), out var unicode))
-      {
-        primary = unicode + "\ufe01";
-        secondary = unicode + "\ufe02";
-
-        return true;
-      }
-
-      return false;
+      return FontAwesomeUnicodes.Data.TryGetValue(icon.GetIconName(), out var info) ? info.Item1 : "";
     }
   }
 }

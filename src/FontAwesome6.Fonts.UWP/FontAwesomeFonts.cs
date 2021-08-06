@@ -40,7 +40,7 @@ namespace FontAwesome6.Fonts
 
     /// <summary>
     /// Loads the FontFamilies and Typefaces from a specific path.
-    /// Load from resources: "ms-appx:///FontAwesome6.UWP/Fonts/"
+    /// Load from resources: "ms-appx:///FontAwesome6.Fonts.UWP/Fonts/"
     /// </summary>
     /// <param name="basePath">Path to the font files.</param>
     public static void LoadFonts(string basePath)

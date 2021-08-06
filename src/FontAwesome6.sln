@@ -28,6 +28,8 @@ EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{BA997962-D053-4797-B0FE-B507745DBE6F}"
 	ProjectSection(SolutionItems) = preProject
 		..\.gitignore = ..\.gitignore
+		..\CHANGELOG.md = ..\CHANGELOG.md
+		..\README.md = ..\README.md
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FontAwesome6.Fonts.UWP", "FontAwesome6.Fonts.UWP\FontAwesome6.Fonts.UWP.csproj", "{11B6C158-417B-418F-A0F2-ECB5B0AD13D8}"
@@ -47,6 +49,12 @@ EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "FontAwesome6.Example.WPF.Shared", "FontAwesome6.Example.WPF.Shared\FontAwesome6.Example.WPF.Shared.shproj", "{D25EA074-3AD4-49F1-844E-D0BD86596E0C}"
 EndProject
 Project("{D954291E-2A0B-460D-934E-DC6B0785DB48}") = "FontAwesome6.Shared", "FontAwesome6.Shared\FontAwesome6.Shared.shproj", "{B00644F3-59BC-4294-8E99-D1C79E0C70AC}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "build", "build", "{BC60673A-E580-43C2-8DE0-16482F3078AF}"
+	ProjectSection(SolutionItems) = preProject
+		..\build\build.yml = ..\build\build.yml
+		..\build\GitVersion.yml = ..\build\GitVersion.yml
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution

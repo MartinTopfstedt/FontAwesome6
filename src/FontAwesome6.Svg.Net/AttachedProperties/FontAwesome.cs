@@ -8,7 +8,7 @@ using System;
 
 namespace FontAwesome6.Svg.AttachedProperties
 {
-  public static class FontAwesome
+  public static partial class FontAwesome
   {
     /// <summary>
     /// Identifies the FontAwesome.Svg.Icon dependency property.
@@ -21,31 +21,6 @@ namespace FontAwesome6.Svg.AttachedProperties
     /// </summary>
     public static readonly DependencyProperty PrimaryColorProperty =
         DependencyProperty.RegisterAttached("PrimaryColor", typeof(Brush), typeof(FontAwesome), new PropertyMetadata(Brushes.Black, OnRenderingTriggered));
-
-    /// <summary>
-    /// Identifies the FontAwesome.Svg.SecondaryColor dependency property.
-    /// </summary>
-    public static readonly DependencyProperty SecondaryColorProperty =
-        DependencyProperty.RegisterAttached("SecondaryColor", typeof(Brush), typeof(FontAwesome), new PropertyMetadata(Brushes.Black, OnRenderingTriggered));
-
-    /// <summary>
-    /// Identifies the FontAwesome.Svg.PrimaryOpacity dependency property.
-    /// </summary>
-    public static readonly DependencyProperty PrimaryOpacityProperty =
-        DependencyProperty.RegisterAttached("PrimaryOpacity", typeof(double?), typeof(FontAwesome), new PropertyMetadata(null, OnRenderingTriggered));
-
-    /// <summary>
-    /// Identifies the FontAwesome.Svg.SecondaryOpacity daryColor dependency property.
-    /// </summary>
-    public static readonly DependencyProperty SecondaryOpacityProperty =
-        DependencyProperty.RegisterAttached("SecondaryOpacity", typeof(double?), typeof(FontAwesome), new PropertyMetadata(null, OnRenderingTriggered));
-
-    /// <summary>
-    /// Identifies the FontAwesome.Svg.SwapOpacity daryColor dependency property.
-    /// </summary>
-    public static readonly DependencyProperty SwapOpacityProperty =
-        DependencyProperty.RegisterAttached("SwapOpacity", typeof(bool?), typeof(FontAwesome), new PropertyMetadata(null, OnRenderingTriggered));
-
 
     /// <summary>
     /// Identifies the FontAwesome.Svg.Spin dependency property.
@@ -95,42 +70,6 @@ namespace FontAwesome6.Svg.AttachedProperties
     public static void SetPrimaryColor(DependencyObject target, Brush value)
     {
       target.SetValue(PrimaryColorProperty, value);
-    }
-
-    public static Brush GetSecondaryColor(DependencyObject target)
-    {
-      return (Brush)target.GetValue(SecondaryColorProperty);
-    }
-    public static void SetSecondaryColor(DependencyObject target, Brush value)
-    {
-      target.SetValue(SecondaryColorProperty, value);
-    }
-
-    public static bool? GetSwapOpacity(DependencyObject target)
-    {
-      return (bool?)target.GetValue(SwapOpacityProperty);
-    }
-    public static void SetSwapOpacity(DependencyObject target, bool? value)
-    {
-      target.SetValue(SwapOpacityProperty, value);
-    }
-
-    public static double? GetPrimaryOpacity(DependencyObject target)
-    {
-      return (double?)target.GetValue(PrimaryOpacityProperty);
-    }
-    public static void SetPrimaryOpacity(DependencyObject target, double? value)
-    {
-      target.SetValue(PrimaryOpacityProperty, value);
-    }
-
-    public static double? GetSecondaryOpacity(DependencyObject target)
-    {
-      return (double?)target.GetValue(SecondaryOpacityProperty);
-    }
-    public static void SetSecondaryOpacity(DependencyObject target, double? value)
-    {
-      target.SetValue(SecondaryOpacityProperty, value);
     }
 
     public static bool GetSpin(DependencyObject target)
@@ -194,11 +133,7 @@ namespace FontAwesome6.Svg.AttachedProperties
         case Image target:
           {
             var icon = GetIcon(sender);
-            var primaryColor = GetPrimaryColor(sender);
-            var secondaryColor = GetSecondaryColor(sender);
-            var swapOpacity = GetSwapOpacity(sender);
-            var primaryOpacity = GetPrimaryOpacity(sender);
-            var secondaryOpacity = GetSecondaryOpacity(sender);
+
 
             if (icon == EFontAwesomeIcon.None)
             {
@@ -206,46 +141,61 @@ namespace FontAwesome6.Svg.AttachedProperties
             }
             else
             {
+              var primaryColor = GetPrimaryColor(sender);
+#if FontAwesomPro
+              var secondaryColor = GetSecondaryColor(sender);
+              var swapOpacity = GetSwapOpacity(sender);
+              var primaryOpacity = GetPrimaryOpacity(sender);
+              var secondaryOpacity = GetSecondaryOpacity(sender);
               target.Source = icon.CreateImageSource(primaryColor, secondaryColor, swapOpacity, primaryOpacity, secondaryOpacity);
+#else
+              target.Source = icon.CreateImageSource(primaryColor);
+#endif
             }
           }
           break;
         case Viewbox target:
           {
             var icon = GetIcon(sender);
-            var primaryColor = GetPrimaryColor(sender);
-            var secondaryColor = GetSecondaryColor(sender);
-            var swapOpacity = GetSwapOpacity(sender);
-            var primaryOpacity = GetPrimaryOpacity(sender);
-            var secondaryOpacity = GetSecondaryOpacity(sender);
-
             if (icon == EFontAwesomeIcon.None)
             {
               target.Child = null;
             }
             else
             {
+              var primaryColor = GetPrimaryColor(sender);
+#if FontAwesomPro
+              var secondaryColor = GetSecondaryColor(sender);
+              var swapOpacity = GetSwapOpacity(sender);
+              var primaryOpacity = GetPrimaryOpacity(sender);
+              var secondaryOpacity = GetSecondaryOpacity(sender);
               target.Child = icon.CreateCanvas(primaryColor, secondaryColor, swapOpacity, primaryOpacity, secondaryOpacity);
+#else
+              target.Child = icon.CreateCanvas(primaryColor);
+#endif
             }
           }
           break;        
         case ContentControl target:
           {
-            var icon = GetIcon(sender);
-            var primaryColor = GetPrimaryColor(sender);
-            var secondaryColor = GetSecondaryColor(sender);
-            var swapOpacity = GetSwapOpacity(sender);
-            var primaryOpacity = GetPrimaryOpacity(sender);
-            var secondaryOpacity = GetSecondaryOpacity(sender);
-
+            var icon = GetIcon(sender);            
             if (icon == EFontAwesomeIcon.None)
             {
               target.Content = null;
             }
             else
             {
+              var primaryColor = GetPrimaryColor(sender);
               var viewBox = new Viewbox();
-              viewBox.Child = icon.CreateCanvas(primaryColor, secondaryColor, swapOpacity, primaryOpacity, secondaryOpacity); ;
+#if FontAwesomPro
+              var secondaryColor = GetSecondaryColor(sender);
+              var swapOpacity = GetSwapOpacity(sender);
+              var primaryOpacity = GetPrimaryOpacity(sender);
+              var secondaryOpacity = GetSecondaryOpacity(sender);
+              viewBox.Child = icon.CreateCanvas(primaryColor, secondaryColor, swapOpacity, primaryOpacity, secondaryOpacity);
+#else              
+              viewBox.Child = icon.CreateCanvas(primaryColor);
+#endif
               target.Content = viewBox;
             }
           }

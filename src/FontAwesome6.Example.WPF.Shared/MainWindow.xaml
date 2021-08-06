@@ -6,6 +6,7 @@
         xmlns:local="clr-namespace:FontAwesome6.Example.WPF"
         xmlns:converters="clr-namespace:FontAwesome6.Example.WPF.Converters"
         xmlns:faf="http://schemas.fontawesome.com/icons/fonts"
+        xmlns:fafap="http://schemas.fontawesome.com/icons/fonts/properties"
         xmlns:fas="http://schemas.fontawesome.com/icons/svg"        
         mc:Ignorable="d"
         Title="MainWindow" Height="675"  Width="900">
@@ -151,7 +152,7 @@
 
         <Rectangle Grid.Row="0" Grid.Column="0" Grid.RowSpan="9" Fill="#eeeeee"></Rectangle>
         <Rectangle Grid.Row="1" Grid.Column="1" Grid.RowSpan="9" Fill="#dddddd"></Rectangle>
-        <Rectangle Grid.Row="1" Grid.Column="2" Grid.RowSpan="9" Fill="#cccccc"></Rectangle>
+        <Rectangle Grid.Row="1" Grid.Column="2" Grid.RowSpan="9" Fill="#dddddd"></Rectangle>
         
         <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="0,0,0,2" BorderBrush="White" Margin="0,0,0,2"></Border>
         <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="0,0,0,2" BorderBrush="White" Margin="0,0,0,2"></Border>
@@ -176,7 +177,9 @@
 
         <TextBlock Grid.Row="2" Grid.Column="0" Text="ImageAwesome"  TextWrapping="Wrap" FontWeight="Bold" Margin="5,0,0,0"/>
         <faf:ImageAwesome Grid.Row="2" Grid.Column="1"
-                          Icon="{Binding SelectedIcon}"
+                          Icon="{Binding SelectedIcon}" SwapOpacity="{Binding SwapOpacity}"
+                          PrimaryColor="{Binding PrimaryColor}" SecondaryColor="{Binding SecondaryColor}" 
+                          PrimaryOpacity="{Binding PrimaryOpacity}" SecondaryOpacity="{Binding SecondaryOpacity}"
                           Spin="{Binding SpinIsEnabled}" SpinDuration="{Binding SpinDuration}" 
                           Pulse="{Binding PulseIsEnabled}" PulseDuration="{Binding PulseDuration}" 
                           FlipOrientation="{Binding FlipOrientation}" Rotation="{Binding Rotation}" 
@@ -244,7 +247,11 @@
                Source="{Binding SelectedIcon, Converter={StaticResource SvgImageSourceConverter}}" Visibility="{Binding Visibility}" Width="50" Height="50" Margin="10"/>
 
         <TextBlock Grid.Row="7" Grid.Column="0" Text="Attached Properties (ContentControl / Image / Viewbox)" FontWeight="Bold" TextWrapping="Wrap"  Margin="5,0,0,0"/>
-        <Button Grid.Row="7" Grid.Column="1" Width="32" Height="32" faf:Awesome.Icon="{Binding SelectedIcon}" FontSize="{Binding FontSize}" Visibility="{Binding Visibility}" Margin="10"></Button>
+        <Button Grid.Row="7" Grid.Column="1" Width="32" Height="32" 
+                fafap:FontAwesome.Icon="{Binding SelectedIcon}" fafap:FontAwesome.SwapOpacity="{Binding SwapOpacity}"
+                fafap:FontAwesome.PrimaryColor="{Binding PrimaryColor}" fafap:FontAwesome.SecondaryColor="{Binding SecondaryColor}" 
+                fafap:FontAwesome.PrimaryOpacity="{Binding PrimaryOpacity}" fafap:FontAwesome.SecondaryOpacity="{Binding SecondaryOpacity}"
+                FontSize="{Binding FontSize}" Visibility="{Binding Visibility}" Margin="10"></Button>
         <StackPanel Grid.Row="7" Grid.Column="2" Orientation="Horizontal">
           <Button fas:FontAwesome.Icon="{Binding SelectedIcon}" fas:FontAwesome.SwapOpacity="{Binding SwapOpacity}"
                 fas:FontAwesome.PrimaryColor="{Binding PrimaryColor}" fas:FontAwesome.SecondaryColor="{Binding SecondaryColor}" 

@@ -7,22 +7,23 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
+using System;
 using System.Collections.Generic;
 
 namespace FontAwesome6
 {
 	public static class FontAwesomeUnicodes
 	{
-		public static Dictionary<string, string> Data = new Dictionary<string, string>() {      
+		public static Dictionary<string, Tuple<string, double>> Data = new Dictionary<string, Tuple<string, double>>() {      
 		{{~ for kvp in freeIcons ~}}		
 			{{~ if (kvp.Value.free | array.size) > 0 ~}}
-			{ "{{ kvp.Key | regex.replace "[\\-&\\.']" " " | string.capitalizewords | string.replace " " "" }}", "{{kvp.Value.unicodeString}}" },	
+			{ "{{ kvp.Key | regex.replace "[\\-&\\.']" " " | string.capitalizewords | string.replace " " "" }}", Tuple.Create("{{kvp.Value.unicodeString}}", {{kvp.Value.duotoneOpacity}}) },	
 			{{~ end ~}}
 		{{~ end ~}}
 #if FontAwesomePro
 		{{~ for kvp in proIcons ~}}					
 			{{~ if (kvp.Value.free | array.size) == 0 ~}}
-			{ "{{ kvp.Key | regex.replace "[\\-&\\.']" " " | string.capitalizewords | string.replace " " "" }}", "{{kvp.Value.unicodeString}}" },			
+			{ "{{ kvp.Key | regex.replace "[\\-&\\.']" " " | string.capitalizewords | string.replace " " "" }}", Tuple.Create("{{kvp.Value.unicodeString}}", {{kvp.Value.duotoneOpacity}}) },			
 			{{~ end ~}}			
 		{{~ end ~}}
 #endif

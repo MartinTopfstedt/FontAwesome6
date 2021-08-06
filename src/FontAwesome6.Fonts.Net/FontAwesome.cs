@@ -82,10 +82,17 @@ namespace FontAwesome6.Fonts
 
     private static void OnIconPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
     {
-      var icon = (EFontAwesomeIcon)d.GetValue(IconProperty);      
+      var icon = (EFontAwesomeIcon)d.GetValue(IconProperty);
+
+#if FontAwesomePro
+      if (icon.IsDuotone())
+      {
+        throw new NotSupportedException("Duotone icons are not supported. Us ImageAwesome instead.");
+      }
+#endif
 
 #if NET40
-            d.SetValue(TextOptions.TextRenderingModeProperty, TextRenderingMode.ClearType);
+      d.SetValue(TextOptions.TextRenderingModeProperty, TextRenderingMode.ClearType);
 #endif
       d.SetValue(FontFamilyProperty, icon.GetFontFamily());
       d.SetValue(TextAlignmentProperty, TextAlignment.Center);

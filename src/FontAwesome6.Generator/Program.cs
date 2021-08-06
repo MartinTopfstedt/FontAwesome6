@@ -31,9 +31,7 @@ namespace FontAwesome6.Generator
       var proIcons = icons.Where(i => i.Value.free.Count < i.Value.styles.Count);
 
       GenerateFile("EFontAwesomeIcon.scriban", Path.Combine(args[1], $"EFontAwesomeIcon.cs"), new { freeIcons, proIcons });      
-      GenerateFile("FontAwesomeLabels.scriban", Path.Combine(args[1], $"FontAwesomeLabels.cs"), new { freeIcons, proIcons });
-      //GenerateFile("FontAwesomeStyles.scriban", Path.Combine(args[1], $"FontAwesomeStyles.cs"), new { freeIcons, proIcons });
-
+      
       // Fonts
       GenerateFile("FontAwesomeUnicodes.scriban", Path.Combine(args[2], $"FontAwesomeUnicodes.cs"), new { freeIcons, proIcons });
 

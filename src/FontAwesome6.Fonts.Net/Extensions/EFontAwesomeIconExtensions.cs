@@ -1,11 +1,8 @@
 ﻿using FontAwesome6.Extensions;
 
 using System.Globalization;
-using System.Linq;
 using System.Windows;
-using System.Windows.Controls;
 using System.Windows.Media;
-using System.Windows.Shapes;
 
 namespace FontAwesome6.Fonts.Extensions
 {
@@ -37,9 +34,9 @@ namespace FontAwesome6.Fonts.Extensions
     /// <param name="foregroundBrush">The System.Windows.Media.Brush to be used as the foreground.</param>
     /// <param name="emSize">The font size in em.</param>
     /// <returns>A new System.Windows.Media.ImageSource</returns>
-    public static ImageSource CreateImageSource(this EFontAwesomeIcon icon, Brush foregroundBrush, double emSize = 100)
+    public static ImageSource CreateImageSource(this EFontAwesomeIcon icon, Brush primary, Brush secondary = null, bool? swapOpacity = null, double? primaryOpacity = null, double? secondaryOpacity = null, double emSize = 100)
     {
-      return new DrawingImage(icon.CreateDrawing(foregroundBrush, emSize));
+      return new DrawingImage(icon.CreateDrawing(primary, secondary, swapOpacity, primaryOpacity, secondaryOpacity, emSize));
     }
 
     /// <summary>
@@ -47,36 +44,51 @@ namespace FontAwesome6.Fonts.Extensions
     /// This will use the Font for the Drawing creation.
     /// </summary>
     /// <param name="icon">The FontAwesome icon to be drawn.</param>
-    /// <param name="foregroundBrush">The System.Windows.Media.Brush to be used as the foreground.</param>
+    /// <param name="primary">The System.Windows.Media.Brush to be used as the primary color.</param>    
+    /// <param name="secondary">The System.Windows.Media.Brush to be used as the secondary color.</param>    
+    /// <param name="swapOpacity">The boolean to be used for swapping the opacity between primary and secondary colors.</param>    
+    /// <param name="primaryOpacity">The double? as the primary opacity.</param>    
+    /// <param name="secondaryOpacity">The double? as the secondary opacity.</param>  
     /// <param name="emSize">The font size in em.</param>
     /// <returns>A new System.Windows.Media.Drawing</returns>
-    public static Drawing CreateDrawing(this EFontAwesomeIcon icon, Brush foregroundBrush, double emSize = 100)
+    public static Drawing CreateDrawing(this EFontAwesomeIcon icon, Brush primary, Brush secondary = null, bool? swapOpacity = null, double? primaryOpacity = null, double? secondaryOpacity = null, double emSize = 100)
     {
-      var visual = new DrawingVisual();
+      if (!FontAwesomeUnicodes.Data.TryGetValue(icon.GetIconName(), out var info))
+      {
+        return null;
+      }
 
+      var visual = new DrawingVisual();
       using (var drawingContext = visual.RenderOpen())
       {        
         var typeface = icon.GetTypeFace();
 #if FontAwesomePro
-        if (icon.IsDuotone() && icon.TryGetDuotoneUnicode(out var primary, out var secondary))
+        if (icon.IsDuotone())
         {
-          var primaryBrush = foregroundBrush.Clone();
-          primaryBrush.Opacity = 1;
+          var primaryClone = primary.Clone();
+          primaryClone.Opacity = primaryOpacity ?? 1;
 
-          drawingContext.DrawText(CreateFormattedText(primary, typeface, primaryBrush, emSize), new Point(0, 0));
-         
-          var secondaryBrush = foregroundBrush.Clone();
-          secondaryBrush.Opacity = 0.4;
+          var secondaryClone = (secondary ?? primary).Clone();
+          secondaryClone.Opacity = secondaryOpacity ?? info.Item2;
 
-          drawingContext.DrawText(CreateFormattedText(secondary, typeface, secondaryBrush, emSize), new Point(0, 0));
+          if (swapOpacity.HasValue && swapOpacity.Value)
+          {
+            var temp = primaryClone.Opacity;
+            primaryClone.Opacity = secondaryClone.Opacity;
+            secondaryClone.Opacity = temp;
+          }
+          primaryClone.Freeze();
+          secondaryClone.Freeze();
+
+          drawingContext.DrawText(CreateFormattedText(info.Item1 + "\ufe01", typeface, primaryClone, emSize), new Point(0, 0));
+          drawingContext.DrawText(CreateFormattedText(info.Item1 + "\ufe02", typeface, secondaryClone, emSize), new Point(0, 0));
         }
         else
         {
-          var unicode = icon.GetUnicode();
-          drawingContext.DrawText(CreateFormattedText(unicode, typeface, foregroundBrush, emSize), new Point(0, 0));
+          drawingContext.DrawText(CreateFormattedText(info.Item1, typeface, primary, emSize), new Point(0, 0));
         }
 #else
-        drawingContext.DrawText(CreateFormattedText(unicode, typeface, foregroundBrush, emSize), new Point(0, 0));
+        drawingContext.DrawText(CreateFormattedText(info.Item1, typeface, primary, emSize), new Point(0, 0));
 #endif
       }
       return visual.Drawing;
@@ -89,14 +101,14 @@ namespace FontAwesome6.Fonts.Extensions
     /// <param name="foregroundBrush">The System.Windows.Media.Brush to be used as the foreground.</param>
     /// <param name="emSize">The font size in em.</param>
     /// <returns>A new System.Windows.Media.FormattedText</returns>
-    public static FormattedText CreateFormattedText(string unicode, Typeface typeface, Brush foregroundBrush, double emSize = 100)
+    public static FormattedText CreateFormattedText(string text, Typeface typeface, Brush foregroundBrush, double emSize = 100)
     {
-      if (string.IsNullOrEmpty(unicode) || typeface == null)
+      if (string.IsNullOrEmpty(text) || typeface == null)
       {
         return null;
       }
 
-      return new FormattedText(unicode, CultureInfo.InvariantCulture, FlowDirection.LeftToRight,
+      return new FormattedText(text, CultureInfo.InvariantCulture, FlowDirection.LeftToRight,
                   typeface, emSize, foregroundBrush)
       {
         TextAlignment = TextAlignment.Center,

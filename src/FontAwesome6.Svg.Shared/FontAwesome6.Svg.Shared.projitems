@@ -11,7 +11,4 @@
   <ItemGroup>
     <Compile Include="$(MSBuildThisFileDirectory)FontAwesomeSvgInformation.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)FontAwesomeSvg.json" />
-  </ItemGroup>
 </Project>

@@ -1,0 +1,105 @@
+# Starter pipeline
+# Start with a minimal pipeline that you can customize to build and deploy your code.
+# Add steps that build, run tests, deploy, and more:
+# https://aka.ms/yaml
+
+pool:
+  vmImage: 'windows-latest'
+
+variables:
+  solution: 'src/FontAwesome6.sln'
+  nuspecFonts: 'src/NuGet/FontAwesome6.Fonts.nuspec'
+  nuspecSvg: 'src/NuGet/FontAwesome6.Svg.nuspec'  
+  buildPlatform: 'Any CPU'
+  buildConfiguration: 'Release'
+
+steps:
+- task: GitVersion@5
+  inputs:
+    runtime: 'core'
+    configFilePath: 'build/GitVersion.yml'
+    updateAssemblyInfo: true
+
+- script: echo %Action%%BuildVersion%
+  displayName: 'Set build version'
+  env:
+    Action: '##vso[build.updatebuildnumber]'
+    BuildVersion: $(GitVersion.NuGetVersionV2)
+
+- task: UseDotNet@2
+  displayName: 'Install .NET Core'
+  inputs:
+    packageType: 'sdk'
+    version: '5.x'
+    includePreviewVersions: true
+    performMultiLevelLookup: true
+
+- task: NuGetToolInstaller@1
+  inputs:
+    versionSpec: 
+    checkLatest: true
+
+- task: NuGetCommand@2
+  displayName: 'NuGet Restore (All Solutions)'
+  inputs:
+    command: 'restore'
+    restoreSolution: 'src/*.sln'
+    feedsToUse: 'select'
+    verbosityRestore: 'Normal'
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet restore (All Solutions)'
+  inputs:
+    command: 'restore'
+    projects: 'src/*.sln'
+    feedsToUse: 'select'
+
+#- task: CmdLine@2
+#  displayName: 'Update FontAwesome SubModule'
+#  inputs:
+#    script: |
+#      cd Font-Awesome
+#      git checkout master
+#      git pull
+#      cd ..
+#      .\bin\FontAwesome5.Generator\FontAwesome5.Generator.exe .\
+#    workingDirectory: '.'
+
+- task: DotNetCoreCLI@2
+  displayName: 'Build: Net Core'
+  inputs:
+    command: 'build'
+    projects: '$(solution)'
+    arguments: '--configuration $(buildConfiguration) /p:Version=$(GitVersion.AssemblySemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);FileVersion=$(GitVersion.AssemblySemFileVer)'
+
+#- task: VSBuild@1
+#  displayName: 'Build: UWP'
+#  inputs:
+#    solution: 'src/FontAwesome5.UWP.sln'
+#    msbuildArgs: '/p:Version=$(GitVersion.AssemblySemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);FileVersion=$(GitVersion.AssemblySemFileVer)'
+#    platform: '$(buildPlatform)'
+#    configuration: '$(buildConfiguration)'
+
+- task: NuGetCommand@2
+  displayName: 'NuGet pack FontAwesome6.Fonts'
+  inputs:
+    command: 'pack'
+    packagesToPack: '$(nuspecFonts)'
+    versioningScheme: 'byEnvVar'
+    versionEnvVar: 'GitVersion.NuGetVersionV2'
+    includeSymbols: true
+
+- task: NuGetCommand@2
+  displayName: 'NuGet pack FontAwesome6.Svg'
+  inputs:
+    command: 'pack'
+    packagesToPack: '$(nuspecSvg)'
+    versioningScheme: 'byEnvVar'
+    versionEnvVar: 'GitVersion.NuGetVersionV2'
+    includeSymbols: true
+    
+- task: PublishBuildArtifacts@1
+  displayName: 'Publish Artifact: FontAwesome6'
+  inputs:
+    PathtoPublish: '$(build.artifactstagingdirectory)'
+    ArtifactName: 'FontAwesome6'

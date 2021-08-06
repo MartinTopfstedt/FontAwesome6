@@ -52,35 +52,27 @@ namespace FontAwesome6.Svg.Extensions
       {
         if (information.Paths.Length > 1)
         {
-          var pen = new Pen();
-
           var primaryClone = primary.Clone();
-          if (primaryOpacity.HasValue)
-          {
-            primaryClone.Opacity = primaryOpacity.Value;
-          }
-          else if (!swapOpacity.HasValue || !swapOpacity.Value)
-          {
-            primaryClone.Opacity = information.Opacity;
-          }
+          primaryClone.Opacity = primaryOpacity ?? 1;
 
           var secondaryClone = (secondary ?? primary).Clone();
-          if (secondaryOpacity.HasValue)
-          {
-            secondaryClone.Opacity = secondaryOpacity.Value;
-          }
-          else if (swapOpacity.HasValue && swapOpacity.Value)
-          {
-            secondaryClone.Opacity = information.Opacity;
-          }
+          secondaryClone.Opacity = secondaryOpacity ?? information.Opacity;
 
-          drawingContext.DrawGeometry(primaryClone, pen, Geometry.Parse(information.Paths[0]));
-          drawingContext.DrawGeometry(secondaryClone, pen, Geometry.Parse(information.Paths[1]));
+          if (swapOpacity.HasValue && swapOpacity.Value)
+          {
+            var temp = primaryClone.Opacity;
+            primaryClone.Opacity = secondaryClone.Opacity;
+            secondaryClone.Opacity = temp;
+          }
+          primaryClone.Freeze();
+          secondaryClone.Freeze();
+
+          drawingContext.DrawGeometry(primaryClone, null, Geometry.Parse(information.Paths[1]));
+          drawingContext.DrawGeometry(secondaryClone, null, Geometry.Parse(information.Paths[0]));
         }
         else if (information.Paths.Length == 1)
         {
-          var pen = new Pen();
-          drawingContext.DrawGeometry(primary, pen, Geometry.Parse(information.Paths[0]));
+          drawingContext.DrawGeometry(primary, null, Geometry.Parse(information.Paths[0]));
         }
       }
       return visual.Drawing;
@@ -105,36 +97,33 @@ namespace FontAwesome6.Svg.Extensions
       }
       else if (information.Paths.Length > 1)
       {
+        var primaryClone = primary.Clone();
+        primaryClone.Opacity = primaryOpacity ?? 1;
+
+        var secondaryClone = (secondary ?? primary).Clone();
+        secondaryClone.Opacity = secondaryOpacity ?? information.Opacity;
+
+        if (swapOpacity.HasValue && swapOpacity.Value)
+        {
+          var temp = primaryClone.Opacity;
+          primaryClone.Opacity = secondaryClone.Opacity;
+          secondaryClone.Opacity = temp;
+        }
+        primaryClone.Freeze();
+        secondaryClone.Freeze();
+
         var path1 = new Path();
-        path1.Data = Geometry.Parse(information.Paths[0]);
+        path1.Data = Geometry.Parse(information.Paths[1]);
         path1.Width = information.Width;
         path1.Height = information.Height;
-        path1.Fill = primary;
-        
-        if (primaryOpacity.HasValue)
-        {
-          path1.Opacity = primaryOpacity.Value;
-        }
-        else if (!swapOpacity.HasValue || !swapOpacity.Value)
-        {
-          path1.Opacity = information.Opacity;
-        }
+        path1.Fill = primaryClone;
         
 
         var path2 = new Path();
-        path2.Data = Geometry.Parse(information.Paths[1]);
+        path2.Data = Geometry.Parse(information.Paths[0]);
         path2.Width = information.Width;
         path2.Height = information.Height;
-        path2.Fill = secondary ?? primary;
-
-        if (secondaryOpacity.HasValue)
-        {
-          path2.Opacity = secondaryOpacity.Value;
-        }
-        else if (swapOpacity.HasValue && swapOpacity.Value)
-        {
-          path2.Opacity = information.Opacity;
-        }
+        path2.Fill = secondaryClone;
 
         var canvas = new Canvas();
         canvas.Width = information.Width;

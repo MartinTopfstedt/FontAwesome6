@@ -41,20 +41,5 @@ namespace FontAwesome6.Extensions
 
       return null;
     }
-
-    public static string GetLabel(this EFontAwesomeIcon icon)
-    {
-      if (icon == EFontAwesomeIcon.None)
-      {
-        return null;
-      }
-
-      if (FontAwesomeLabels.Data.TryGetValue(icon.GetIconName(), out var label))
-      {
-        return label;
-      }
-
-      return null;      
-    }
   }
 }
