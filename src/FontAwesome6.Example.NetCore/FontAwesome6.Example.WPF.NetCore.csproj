@@ -12,10 +12,6 @@
   <Import Project="..\FontAwesome6.Example.WPF.Shared\FontAwesome6.Example.WPF.Shared.projitems" Label="Shared" />
 
   <ItemGroup>
-    <EmbeddedResource Include="..\..\bin\FontAwesomeSvgPro.json" Link="Svg\FontAwesomeSvgPro.json" />
-  </ItemGroup>
-
-  <ItemGroup>
     <PackageReference Include="PropertyChanged.Fody" Version="3.4.0" />
   </ItemGroup>
 
@@ -34,8 +30,13 @@
     <DefineConstants>TRACE;FontAwesomePro</DefineConstants>
   </PropertyGroup>
 
-  <ItemGroup Condition="'$(Configuration)'=='DebugPro' Or '$(Configuration)'=='ReleasePro'">
+  <ItemGroup Condition="'$(Configuration)'=='Debug' Or '$(Configuration)'=='Release'">
+    <EmbeddedResource Include="..\..\generated\FontAwesomeSvg.json" Link="Svg\FontAwesomeSvg.json" />
+  </ItemGroup>
 
+  <ItemGroup Condition="'$(Configuration)'=='DebugPro' Or '$(Configuration)'=='ReleasePro'">
+    <EmbeddedResource Include="..\..\generated\FontAwesomeSvgPro.json" Link="Svg\FontAwesomeSvgPro.json" />
+    
     <Content Include="..\..\Font-Awesome-Pro\otfs\Font Awesome 6 Pro-Solid-900.otf" Link="Fonts/Font Awesome 6 Pro-Solid-900.otf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

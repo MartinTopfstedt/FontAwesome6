@@ -8,15 +8,10 @@ using System.Text;
 using System.Windows.Data;
 using System.Windows.Markup;
 
-namespace FontAwesome6.Fonts.Converters
+namespace FontAwesome6.Svg.Converters
 {
-  public class LabelConverter : MarkupExtension, IValueConverter
+  public class StyleConverter : MarkupExtension, IValueConverter
   {
-    public override object ProvideValue(IServiceProvider serviceProvider)
-    {
-      return this;
-    }
-
     public object Convert(object value, Type targetType, object parameter, CultureInfo culture)
     {
       if (value is not EFontAwesomeIcon)
@@ -25,18 +20,23 @@ namespace FontAwesome6.Fonts.Converters
       }
 
       var icon = (EFontAwesomeIcon)value;
-      var label = icon.GetLabel();
-      if (label == null)
+      var style = icon.GetStyle();
+      if (style == EFontAwesomeStyle.None)
       {
         return null;
       }
 
-      return parameter is string format && !string.IsNullOrEmpty(format) ? string.Format(format, label) : label;
+      return parameter is string format && !string.IsNullOrEmpty(format) ? string.Format(format, style) : style.ToString();
     }
 
     public object ConvertBack(object value, Type targetType, object parameter, CultureInfo culture)
     {
       throw new NotImplementedException();
+    }
+
+    public override object ProvideValue(IServiceProvider serviceProvider)
+    {
+      return this;
     }
   }
 }

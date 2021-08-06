@@ -1,4 +1,4 @@
-﻿#if FontAwesomPro
+﻿#if FontAwesomePro
 using FontAwesome6.Extensions;
 using FontAwesome6.Fonts.Extensions;
 using FontAwesome6.Shared.Extensions;

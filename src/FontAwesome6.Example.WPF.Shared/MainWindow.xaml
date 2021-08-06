@@ -15,7 +15,7 @@
   </Window.DataContext>
   <Window.Resources>
     <FontFamily x:Key="FontAwesome">pack://application:,,,/;component/Fonts/Solid/#Font Awesome 6 Pro Solid</FontFamily>
-    <faf:LabelConverter x:Key="LabelConverter"/>
+    <faf:IconNameConverter x:Key="IconNameConverter"/>
     <faf:StyleConverter x:Key="StyleConverter"/>
     <faf:ImageSourceConverter x:Key="ImageSourceConverter"/>
     <faf:DrawingConverter x:Key="DrawingConverter"/>
@@ -111,7 +111,7 @@
               </DataTemplate>
             </GridViewColumn.CellTemplate>
           </GridViewColumn>
-          <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Converter={StaticResource LabelConverter}}"/>
+          <GridViewColumn Header="Name" DisplayMemberBinding="{Binding Converter={StaticResource IconNameConverter}}"/>
           <GridViewColumn Header="Style" DisplayMemberBinding="{Binding Converter={StaticResource StyleConverter}}"/>
         </GridView>
       </ListView.View>

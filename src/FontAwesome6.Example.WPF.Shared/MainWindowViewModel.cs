@@ -16,7 +16,7 @@ namespace FontAwesome6.Example.WPF
     public MainWindowViewModel()
     {      
       AllIcons = Enum.GetValues(typeof(EFontAwesomeIcon)).Cast<EFontAwesomeIcon>()
-                  .OrderBy(i => i.GetStyle()).ThenBy(i => i.GetLabel()).ToList();
+                  .OrderBy(i => i.GetStyle()).ThenBy(i => i.GetIconName()).ToList();
       AllIcons.Remove(EFontAwesomeIcon.None);
 
       SelectedIcon = AllIcons.First();

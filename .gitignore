@@ -287,10 +287,10 @@ __pycache__/
 *.odx.cs
 *.xsd.cs
 
-Font-Awesome/**
-Font-Awesome-Pro/**
+/Font-Awesome/**
+/Font-Awesome-Pro/**
+/generated/**
 
-FontAwesomeSvg.json
 FontAwesomeSvgPro.json
 
 # Excludes

@@ -20,11 +20,13 @@ namespace FontAwesome6.Example.WPF
 #if FontAwesomePro
       var directory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
       Fonts.FontAwesomeFonts.LoadFontsFromDirectory(Path.Combine(directory, "Fonts") + "/");
-
+      
       // load from resources
       //Fonts.FontAwesomeFonts.LoadFonts(new Uri("pack://application:,,,/Fonts/"));
 
       Svg.FontAwesomeSvg.LoadFromResource("FontAwesome6.Example.WPF.Svg.FontAwesomeSvgPro.json", Assembly.GetExecutingAssembly());
+#else
+      Svg.FontAwesomeSvg.LoadFromResource("FontAwesome6.Example.WPF.Svg.FontAwesomeSvg.json", Assembly.GetExecutingAssembly());
 #endif
     }
   }

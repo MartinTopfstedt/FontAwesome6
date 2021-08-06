@@ -17,15 +17,6 @@
     <None Update="Templates\EFontAwesomeStyle.scriban">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
-    <None Update="Templates\FontAwesomeStyles.scriban">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Templates\FontAwesomeLabels.scriban">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Templates\FontAwesomeSvg.scriban">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
     <None Update="Templates\FontAwesomeSvgJson.scriban">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

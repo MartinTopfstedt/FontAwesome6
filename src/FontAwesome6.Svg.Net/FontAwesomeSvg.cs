@@ -23,9 +23,6 @@ namespace FontAwesome6.Svg
 
     static FontAwesomeSvg()
     {
-#if !FontAwesomePro
-      LoadFromResource("FontAwesome6.Svg.FontAwesomeSvg.json", Assembly.GetExecutingAssembly());
-#endif
     }
 
     public static void LoadFromResource(string resourceName, Assembly assembly)

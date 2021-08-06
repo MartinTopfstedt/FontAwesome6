@@ -3,16 +3,11 @@
 using Newtonsoft.Json;
 
 using Scriban;
-using Scriban.Parsing;
 using Scriban.Runtime;
 
-using System;
 using System.Collections.Generic;
-using System.Globalization;
 using System.IO;
-using System.IO.Compression;
 using System.Linq;
-using System.Text;
 
 namespace FontAwesome6.Generator
 {
@@ -22,22 +17,32 @@ namespace FontAwesome6.Generator
     {
       var icons = ReadMetadata(args[0]);
 
+      var root = args.Length > 1 ? args[1] : Path.Combine(Directory.GetCurrentDirectory(), "..", "..");
+
+      var dirGenerated = Path.Combine(root, "generated");
+
+      var src = Path.Combine(root, "src");
+
+      var dirFontAwesome6 = Path.Combine(src, "FontAwesome6", "FontAwesome6");
+      var dirFontAwesome6Fonts = Path.Combine(src, "FontAwesome6.Fonts.Shared");
+      var dirFontAwesome6Svg = Path.Combine(src, "FontAwesome6.Svg.Shared");
+
       var freeStyles = icons.Values.SelectMany(i => i.free).Distinct();
       var allStyles = icons.Values.SelectMany(i => i.styles).Distinct();
 
-      GenerateFile("EFontAwesomeStyle.scriban", Path.Combine(args[1], "EFontAwesomeStyle.cs"), new { FreeStyles = freeStyles, ProStyles = allStyles.Except(freeStyles) });
+      GenerateFile("EFontAwesomeStyle.scriban", Path.Combine(dirFontAwesome6, "EFontAwesomeStyle.cs"), new { FreeStyles = freeStyles, ProStyles = allStyles.Except(freeStyles) });
 
       var freeIcons = icons.Where(i => i.Value.free.Count > 0);
       var proIcons = icons.Where(i => i.Value.free.Count < i.Value.styles.Count);
 
-      GenerateFile("EFontAwesomeIcon.scriban", Path.Combine(args[1], $"EFontAwesomeIcon.cs"), new { freeIcons, proIcons });      
+      GenerateFile("EFontAwesomeIcon.scriban", Path.Combine(dirFontAwesome6, $"EFontAwesomeIcon.cs"), new { freeIcons, proIcons });      
       
       // Fonts
-      GenerateFile("FontAwesomeUnicodes.scriban", Path.Combine(args[2], $"FontAwesomeUnicodes.cs"), new { freeIcons, proIcons });
+      GenerateFile("FontAwesomeUnicodes.scriban", Path.Combine(dirFontAwesome6Fonts, $"FontAwesomeUnicodes.cs"), new { freeIcons, proIcons });
 
       // SVG
-      GenerateJson("FontAwesomeSvgJson.scriban", Path.Combine(args[3], $"FontAwesomeSvg.json"), new { icons = freeIcons, isFree = true });
-      GenerateJson("FontAwesomeSvgJson.scriban", Path.Combine(args[4], $"FontAwesomeSvgPro.json"), new { icons = proIcons, isFree = false });      
+      GenerateJson("FontAwesomeSvgJson.scriban", Path.Combine(dirGenerated, $"FontAwesomeSvg.json"), new { icons = freeIcons, isFree = true });
+      GenerateJson("FontAwesomeSvgJson.scriban", Path.Combine(dirGenerated, $"FontAwesomeSvgPro.json"), new { icons = proIcons, isFree = false });      
     }
 
     static Dictionary<string, FontAwesomeIcon> ReadMetadata(string metaDataFile)

@@ -32,7 +32,7 @@ namespace FontAwesome6.Fonts
 #else
       _fonts.Add(EFontAwesomeStyle.Solid, Tuple.Create("Font Awesome 6 Free-Solid-900.otf", "Font Awesome 6 Free Solid"));
       _fonts.Add(EFontAwesomeStyle.Regular, Tuple.Create("Font Awesome 6 Free-Regular-400.otf", "Font Awesome 6 Free Regular"));
-
+      
       var path = Path.GetTempPath();
       SaveFontFilesToDirectory(path);
       LoadFontsFromDirectory(path);
