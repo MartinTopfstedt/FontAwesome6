@@ -1,88 +1,69 @@
-﻿using FontAwesome6.Generator.MetaData;
-
-using Newtonsoft.Json;
+﻿using FontAwesome6.GraphQl;
 
 using Scriban;
 using Scriban.Runtime;
 
-using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Threading.Tasks;
 
 namespace FontAwesome6.Generator
 {
-  class Program
-  {
-    static void Main(string[] args)
+    class Program
     {
-      var icons = ReadMetadata(args[0]);
+        static async Task Main(string[] args)
+        {
+            // parse parameter
 
-      var root = args.Length > 1 ? args[1] : Path.Combine(Directory.GetCurrentDirectory(), "..", "..");
+            var root = args.Length > 0 ? args[0] : Path.Combine(Directory.GetCurrentDirectory(), "..", "..");
 
-      var dirGenerated = Path.Combine(root, "generated");
+            //// generate
 
-      var src = Path.Combine(root, "src");
+            var api = new FontAwesomeApi();
+            var icons = await api.GetIconsAsync(Path.Combine(root, "Font-Awesome-Pro"), "6.0.0-beta1");
 
-      var dirFontAwesome6 = Path.Combine(src, "FontAwesome6", "FontAwesome6");
-      var dirFontAwesome6Fonts = Path.Combine(src, "FontAwesome6.Fonts.Shared");
-      var dirFontAwesome6Svg = Path.Combine(src, "FontAwesome6.Svg.Shared");
+            var dirGenerated = Path.Combine(root, "generated");
 
-      var freeStyles = icons.Values.SelectMany(i => i.free).Distinct();
-      var allStyles = icons.Values.SelectMany(i => i.styles).Distinct();
+            var src = Path.Combine(root, "src");
 
-      GenerateFile("EFontAwesomeStyle.scriban", Path.Combine(dirFontAwesome6, "EFontAwesomeStyle.cs"), new { FreeStyles = freeStyles, ProStyles = allStyles.Except(freeStyles) });
+            var dirFontAwesome6 = Path.Combine(src, "FontAwesome6.Core");
+            var dirFontAwesome6Fonts = Path.Combine(src, "FontAwesome6.Fonts.Shared");
+            var dirFontAwesome6Svg = Path.Combine(src, "FontAwesome6.Svg.Shared");
 
-      var freeIcons = icons.Where(i => i.Value.free.Count > 0);
-      var proIcons = icons.Where(i => i.Value.free.Count < i.Value.styles.Count);
+            var freeStyles = icons.Values.SelectMany(i => i.free).Distinct();
+            var allStyles = icons.Values.SelectMany(i => i.styles).Distinct();
 
-      GenerateFile("EFontAwesomeIcon.scriban", Path.Combine(dirFontAwesome6, $"EFontAwesomeIcon.cs"), new { freeIcons, proIcons });      
-      
-      // Fonts
-      GenerateFile("FontAwesomeUnicodes.scriban", Path.Combine(dirFontAwesome6Fonts, $"FontAwesomeUnicodes.cs"), new { freeIcons, proIcons });
+            GenerateFile("EFontAwesomeStyle.scriban", Path.Combine(dirFontAwesome6, "EFontAwesomeStyle.cs"), new { FreeStyles = freeStyles, ProStyles = allStyles.Except(freeStyles) });
 
-      // SVG
-      GenerateJson("FontAwesomeSvgJson.scriban", Path.Combine(dirGenerated, $"FontAwesomeSvg.json"), new { icons = freeIcons, isFree = true });
-      GenerateJson("FontAwesomeSvgJson.scriban", Path.Combine(dirGenerated, $"FontAwesomeSvgPro.json"), new { icons = proIcons, isFree = false });      
+            var freeIcons = icons.Where(i => i.Value.free.Count > 0);
+            var proIcons = icons.Where(i => i.Value.free.Count < i.Value.styles.Count);
+
+            GenerateFile("EFontAwesomeIcon.scriban", Path.Combine(dirFontAwesome6, $"EFontAwesomeIcon.cs"), new { freeIcons, proIcons });
+
+            GenerateFile("FontAwesomeUnicodes.scriban", Path.Combine(dirFontAwesome6Fonts, $"FontAwesomeUnicodes.cs"), new { freeIcons, proIcons });
+        }
+
+        private static void GenerateFile(string templateName, string targetFile, object model)
+        {
+            File.WriteAllText(targetFile, GenerateFromTemplate(templateName, model));
+        }
+
+        private static string GenerateFromTemplate(string templateName, object model)
+        {
+            var templateFile = Path.Combine(Directory.GetCurrentDirectory(), "Templates", templateName);
+            var templateContent = File.ReadAllText(templateFile);
+
+            var context = new TemplateContext
+            {
+                MemberRenamer = m => m.Name,
+                LoopLimit = 0
+            };
+            var scriptObject = new ScriptObject();
+            scriptObject.Import(model, renamer: m => m.Name);
+            context.PushGlobal(scriptObject);
+
+            var template = Template.Parse(templateContent, templateFile);
+            return template.Render(context);
+        }
     }
-
-    static Dictionary<string, FontAwesomeIcon> ReadMetadata(string metaDataFile)
-    {
-      return JsonConvert.DeserializeObject<Dictionary<string, FontAwesomeIcon>>(File.ReadAllText(metaDataFile), new JsonSerializerSettings()
-      {
-        Converters = { new SvgJsonConverter(), new AliasesJsonConverter() }
-      });
-    }
-
-    private static void GenerateFile(string templateName, string targetFile, object model)
-    {
-      File.WriteAllText(targetFile, GenerateFromTemplate(templateName, model));
-    }
-
-    private static void GenerateJson(string templateName, string targetFile, object model)
-    {
-      var json = GenerateFromTemplate(templateName, model);
-
-      var loaded = JsonConvert.DeserializeObject(json);
-
-      File.WriteAllText(targetFile, JsonConvert.SerializeObject(loaded, Formatting.None));
-    }
-
-    private static string GenerateFromTemplate(string templateName, object model)
-    {
-      var templateFile = Path.Combine(Directory.GetCurrentDirectory(), "Templates", templateName);
-      var templateContent = File.ReadAllText(templateFile);
-
-      var context = new TemplateContext
-      {
-        MemberRenamer = m => m.Name,
-        LoopLimit = 0
-      };
-      var scriptObject = new ScriptObject();
-      scriptObject.Import(model, renamer: m => m.Name);
-      context.PushGlobal(scriptObject);
-
-      var template = Template.Parse(templateContent, templateFile);
-      return template.Render(context);
-    }
-  }
 }

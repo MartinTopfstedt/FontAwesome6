@@ -249,38 +249,28 @@
       <Version>6.2.12</Version>
     </PackageReference>
   </ItemGroup>
+  <ItemGroup Condition="'$(Configuration)'=='Debug' Or '$(Configuration)'=='Release'">
+    <Content Include="..\..\Font-Awesome\otfs\Font Awesome 6 Brands-Regular-400.otf" Link="Fonts/Font Awesome 6 Brands-Regular-400.otf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\Font-Awesome\otfs\Font Awesome 6 Free-Regular-400.otf" Link="Fonts/Font Awesome 6 Free-Regular-400.otf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\Font-Awesome\otfs\Font Awesome 6 Free-Solid-900.otf" Link="Fonts/Font Awesome 6 Free-Solid-900.otf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\FontAwesome6\FontAwesome6\FontAwesome6.csproj">
-      <Project>{05bb91cb-9ad9-4922-ad6f-8eb2b2d367b1}</Project>
-      <Name>FontAwesome6</Name>
+    <ProjectReference Include="..\FontAwesome6.Core\FontAwesome6.Core.csproj">
+      <Project>{b65d1717-f056-4086-9ec8-bc4594c8feaa}</Project>
+      <Name>FontAwesome6.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\FontAwesome6.Shared.UWP\FontAwesome6.Shared.UWP.csproj">
+      <Project>{e51f9e83-4305-42c3-8d72-73ae7bc141c2}</Project>
+      <Name>FontAwesome6.Shared.UWP</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Reference Include="PresentationCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\PresentationCore.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup Condition="'$(Configuration)' == 'Debug' Or '$(Configuration)' == 'Release'">
-    <Content Include="..\..\Font-Awesome\otfs\Font Awesome 6 Brands-Regular-400.otf">
-      <Link>Fonts\Font Awesome 6 Brands-Regular-400.otf</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup Condition="'$(Configuration)' == 'Debug' Or '$(Configuration)' == 'Release'">
-    <Content Include="..\..\Font-Awesome\otfs\Font Awesome 6 Free-Regular-400.otf">
-      <Link>Fonts\Font Awesome 6 Free-Regular-400.otf</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
-  <ItemGroup Condition="'$(Configuration)' == 'Debug' Or '$(Configuration)' == 'Release'">
-    <Content Include="..\..\Font-Awesome\otfs\Font Awesome 6 Free-Solid-900.otf">
-      <Link>Fonts\Font Awesome 6 Free-Solid-900.otf</Link>
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-  </ItemGroup>
   <Import Project="..\FontAwesome6.Fonts.Shared\FontAwesome6.Fonts.Shared.projitems" Label="Shared" />
-  <Import Project="..\FontAwesome6.Shared\FontAwesome6.Shared.projitems" Label="Shared" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
     <VisualStudioVersion>14.0</VisualStudioVersion>
   </PropertyGroup>

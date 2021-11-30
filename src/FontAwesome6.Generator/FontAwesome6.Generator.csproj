@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
@@ -11,13 +11,15 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\FontAwesome6.Generator.GraphQL\FontAwesome6.Generator.GraphQL.csproj" />
+    <ProjectReference Include="..\FontAwesome6.Generator.Shared\FontAwesome6.Generator.Shared.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Update="Templates\EFontAwesomeIcon.scriban">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Templates\EFontAwesomeStyle.scriban">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </None>
-    <None Update="Templates\FontAwesomeSvgJson.scriban">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
     <None Update="Templates\FontAwesomeUnicodes.scriban">

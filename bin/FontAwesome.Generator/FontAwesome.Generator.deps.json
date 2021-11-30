@@ -1,0 +1,187 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v6.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v6.0": {
+      "FontAwesome.Generator/1.0.0": {
+        "dependencies": {
+          "FontAwesome.Generator.Shared": "1.0.0",
+          "GraphQL.Client": "4.0.1",
+          "GraphQL.Client.Serializer.Newtonsoft": "4.0.1",
+          "Scriban": "4.0.1",
+          "System.Reactive.Reference": "4.3.0.0"
+        },
+        "runtime": {
+          "FontAwesome.Generator.dll": {}
+        }
+      },
+      "GraphQL.Client/4.0.1": {
+        "dependencies": {
+          "GraphQL.Client.Abstractions": "4.0.1",
+          "GraphQL.Client.Abstractions.Websocket": "4.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/GraphQL.Client.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.0.1.0"
+          }
+        }
+      },
+      "GraphQL.Client.Abstractions/4.0.1": {
+        "dependencies": {
+          "GraphQL.Primitives": "4.0.1",
+          "System.Reactive": "4.3.2"
+        },
+        "runtime": {
+          "lib/netstandard2.0/GraphQL.Client.Abstractions.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.0.1.0"
+          }
+        }
+      },
+      "GraphQL.Client.Abstractions.Websocket/4.0.1": {
+        "dependencies": {
+          "GraphQL.Client.Abstractions": "4.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/GraphQL.Client.Abstractions.Websocket.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.0.1.0"
+          }
+        }
+      },
+      "GraphQL.Client.Serializer.Newtonsoft/4.0.1": {
+        "dependencies": {
+          "GraphQL.Client.Abstractions.Websocket": "4.0.1",
+          "Newtonsoft.Json": "13.0.1"
+        },
+        "runtime": {
+          "lib/netstandard2.0/GraphQL.Client.Serializer.Newtonsoft.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.0.1.0"
+          }
+        }
+      },
+      "GraphQL.Primitives/4.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/GraphQL.Primitives.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.0.1.0"
+          }
+        }
+      },
+      "Newtonsoft.Json/13.0.1": {
+        "runtime": {
+          "lib/netstandard2.0/Newtonsoft.Json.dll": {
+            "assemblyVersion": "13.0.0.0",
+            "fileVersion": "13.0.1.25517"
+          }
+        }
+      },
+      "Scriban/4.0.1": {
+        "runtime": {
+          "lib/net5.0/Scriban.dll": {
+            "assemblyVersion": "4.0.1.0",
+            "fileVersion": "4.0.1.0"
+          }
+        }
+      },
+      "System.Reactive/4.3.2": {},
+      "FontAwesome.Generator.Shared/1.0.0": {
+        "dependencies": {
+          "GraphQL.Client": "4.0.1",
+          "GraphQL.Client.Serializer.Newtonsoft": "4.0.1",
+          "Newtonsoft.Json": "13.0.1",
+          "Scriban": "4.0.1"
+        },
+        "runtime": {
+          "FontAwesome.Generator.Shared.dll": {}
+        }
+      },
+      "System.Reactive.Reference/4.3.0.0": {
+        "runtime": {
+          "System.Reactive.dll": {
+            "assemblyVersion": "4.3.0.0",
+            "fileVersion": "4.3.2.55399"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "FontAwesome.Generator/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "GraphQL.Client/4.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-2heiFzRU6J+zaHyAqIPO3/1xDSqTg10/bY9HcO1Ku6SNpPKA7HBQ0+hs0SCkIGYWD4t6BEqJnmqvny1vsckO0w==",
+      "path": "graphql.client/4.0.1",
+      "hashPath": "graphql.client.4.0.1.nupkg.sha512"
+    },
+    "GraphQL.Client.Abstractions/4.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-GBE3fJts/JY2ENsicPUqCX0bPlUrFV8FnyvQCsyXu/4mnH9KbOaZE2DYcfmxoKza+AGxqpSZIchEqqmWD9r4hA==",
+      "path": "graphql.client.abstractions/4.0.1",
+      "hashPath": "graphql.client.abstractions.4.0.1.nupkg.sha512"
+    },
+    "GraphQL.Client.Abstractions.Websocket/4.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-53PCTpyGPMPzBtdgQcJD8+u6a7JzH2vq7HP6flgDAMLdQ16x/IPUvg222hDV9AhFSVIrSPc7rGth7i0e3eXyGw==",
+      "path": "graphql.client.abstractions.websocket/4.0.1",
+      "hashPath": "graphql.client.abstractions.websocket.4.0.1.nupkg.sha512"
+    },
+    "GraphQL.Client.Serializer.Newtonsoft/4.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-EpTC6Y8sdTmyqkRdocnHX3X2/qdrA+H00CTjD1G2DRR4iQ7G44Hv3g571YRAh+q5b9+3jxQRliLinvJGzOAhAA==",
+      "path": "graphql.client.serializer.newtonsoft/4.0.1",
+      "hashPath": "graphql.client.serializer.newtonsoft.4.0.1.nupkg.sha512"
+    },
+    "GraphQL.Primitives/4.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xPwX3aKMJyDEtk2T05JbraH/22xX1pk5cYm/wlJwCbwvWHi+Po74qPq9VQM9FV7p0LZSXK7iZdESHiGrQ9j5Sg==",
+      "path": "graphql.primitives/4.0.1",
+      "hashPath": "graphql.primitives.4.0.1.nupkg.sha512"
+    },
+    "Newtonsoft.Json/13.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-ppPFpBcvxdsfUonNcvITKqLl3bqxWbDCZIzDWHzjpdAHRFfZe0Dw9HmA0+za13IdyrgJwpkDTDA9fHaxOrt20A==",
+      "path": "newtonsoft.json/13.0.1",
+      "hashPath": "newtonsoft.json.13.0.1.nupkg.sha512"
+    },
+    "Scriban/4.0.1": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-oL4nytC2BkyN4CA1x8TthPTyR8PFSR3qrI6GVPPuf54Q1zrHsCJvGTsaZny/IGZkXW1Rr9T7PK6MLydEhQ8HpA==",
+      "path": "scriban/4.0.1",
+      "hashPath": "scriban.4.0.1.nupkg.sha512"
+    },
+    "System.Reactive/4.3.2": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-WhGkScPWxw2pp7UwRW8M1OvYZ3WUDPC2wJ0aiuaB4KRD3bt4wLkgHgYnOUu87WRhsurvv5LN0E63iWOEza2o8g==",
+      "path": "system.reactive/4.3.2",
+      "hashPath": "system.reactive.4.3.2.nupkg.sha512"
+    },
+    "FontAwesome.Generator.Shared/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "System.Reactive.Reference/4.3.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

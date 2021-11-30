@@ -1,13 +1,10 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Windows;
 using System.Windows.Data;
 using System.Windows.Markup;
 
 namespace FontAwesome6.Fonts.Converters
-{    
+{
     [ValueConversion(typeof(EFontAwesomeIcon), typeof(Visibility))]
     public class VisibilityConverter : MarkupExtension, IValueConverter
     {

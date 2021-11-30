@@ -1,113 +1,133 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
-using System.Reflection;
+using System.Linq;
 using System.Resources;
-using System.Windows;
 
 using System.Windows.Media;
 
 
 namespace FontAwesome6.Fonts
 {
-  /// <summary>
-  /// Provides FontFamilies and TypeFaces of FontAwesome6.
-  /// </summary>
-  public static class FontAwesomeFonts
-  {
-    private static readonly Dictionary<EFontAwesomeStyle, FontFamily> _fontFamilies = new Dictionary<EFontAwesomeStyle, FontFamily>();
-    private static readonly Dictionary<EFontAwesomeStyle, Tuple<string, string>> _fonts = new Dictionary<EFontAwesomeStyle, Tuple<string, string>>();
-
-    private static readonly Dictionary<EFontAwesomeStyle, Typeface> _typeFaces = new Dictionary<EFontAwesomeStyle, Typeface>();
-
-    static FontAwesomeFonts()
-    {
-      _fonts.Add(EFontAwesomeStyle.Brands, Tuple.Create("Font Awesome 6 Brands-Regular-400.otf", "Font Awesome 6 Brands Regular"));
-#if FontAwesomePro
-      _fonts.Add(EFontAwesomeStyle.Solid, Tuple.Create("Font Awesome 6 Pro-Solid-900.otf", "Font Awesome 6 Pro Solid"));
-      _fonts.Add(EFontAwesomeStyle.Regular, Tuple.Create("Font Awesome 6 Pro-Regular-400.otf", "Font Awesome 6 Pro Regular"));
-      _fonts.Add(EFontAwesomeStyle.Light, Tuple.Create("Font Awesome 6 Pro-Light-300.otf", "Font Awesome 6 Pro Light"));
-      _fonts.Add(EFontAwesomeStyle.Duotone, Tuple.Create("Font Awesome 6 Duotone-Solid-900.otf", "Font Awesome 6 Duotone Solid"));
-      _fonts.Add(EFontAwesomeStyle.Thin, Tuple.Create("Font Awesome 6 Pro-Thin-100.otf", "Font Awesome 6 Pro Thin"));
-#else
-      _fonts.Add(EFontAwesomeStyle.Solid, Tuple.Create("Font Awesome 6 Free-Solid-900.otf", "Font Awesome 6 Free Solid"));
-      _fonts.Add(EFontAwesomeStyle.Regular, Tuple.Create("Font Awesome 6 Free-Regular-400.otf", "Font Awesome 6 Free Regular"));
-      
-      var path = Path.GetTempPath();
-      SaveFontFilesToDirectory(path);
-      LoadFontsFromDirectory(path);
-#endif
-    }
-
-
-    public static FontFamily GetFontFamily(EFontAwesomeStyle style)
-    {
-      if (_fontFamilies.TryGetValue(style, out var fontFamily))
-      {
-        return fontFamily;
-      }
-
-      return null;
-    }
-
-    public static Typeface GetTypeFace(EFontAwesomeStyle style)
-    {
-      if (_typeFaces.TryGetValue(style, out var typeFace))
-      {
-        return typeFace;
-      }
-
-      return null;
-    }
-
     /// <summary>
-    /// Loads the FontFamilies and Typefaces from a specific uri.
-    /// Load from resources: new Uri("pack://application:,,,/FontAwesome6.Net;component/Fonts/")
-    /// Load from a directory: new Uri("file:///C:/Temp/", UriKind.Absolute)
+    /// Provides FontFamilies and TypeFaces of FontAwesome6.
     /// </summary>
-    /// <param name="uri">Uri to the font files.</param>
-    public static void LoadFonts(Uri uri)
+    public static class FontAwesomeFonts
     {
-      _fontFamilies.Clear();
-      _typeFaces.Clear();
-      foreach (var kvp in _fonts)
-      {
-        var fontFamily = new FontFamily(uri, $"./#{kvp.Value.Item2}");
-        _fontFamilies.Add(kvp.Key, fontFamily);
-        _typeFaces.Add(kvp.Key, new Typeface(fontFamily, FontStyles.Normal, FontWeights.Normal, FontStretches.Normal));
-      }
-    }
+        private static readonly Dictionary<EFontAwesomeStyle, FontFamily> _fontFamilies = new Dictionary<EFontAwesomeStyle, FontFamily>();
+        private static readonly Dictionary<EFontAwesomeStyle, string> _fontFamilyNames = new Dictionary<EFontAwesomeStyle, string>();
 
-    public static void LoadFontsFromDirectory(string absolutePath)
-    {
-      LoadFonts(new Uri($"file:///{absolutePath}", UriKind.Absolute));
-    }
+        static FontAwesomeFonts()
+        {
+            _fontFamilyNames.Add(EFontAwesomeStyle.Brands, "Font Awesome 6 Brands Regular");
+#if FontAwesomePro
+      _fontFamilyNames.Add(EFontAwesomeStyle.Solid, "Font Awesome 6 Pro Solid");
+      _fontFamilyNames.Add(EFontAwesomeStyle.Regular, "Font Awesome 6 Pro Regular");
+      _fontFamilyNames.Add(EFontAwesomeStyle.Light, "Font Awesome 6 Pro Light");
+      _fontFamilyNames.Add(EFontAwesomeStyle.Duotone, "Font Awesome 6 Duotone Solid");
+      _fontFamilyNames.Add(EFontAwesomeStyle.Thin, "Font Awesome 6 Pro Thin");
+#else
+            _fontFamilyNames.Add(EFontAwesomeStyle.Solid, "Font Awesome 6 Free Solid");
+            _fontFamilyNames.Add(EFontAwesomeStyle.Regular, "Font Awesome 6 Free Regular");
+
+            var path = Path.GetTempPath();
+            SaveFontFilesToDirectory(path);
+            LoadAllStyles(path);
+#endif
+        }
+
+        public static FontFamily GetFontFamily(EFontAwesomeStyle style)
+        {
+            if (_fontFamilies.TryGetValue(style, out var fontFamily))
+            {
+                return fontFamily;
+            }
+
+            throw new Exception($"Couldn't find FontFamily for {style}. Please load the font file for {style}.");
+        }
+
+        public static Typeface GetTypeface(EFontAwesomeStyle style)
+        {
+            if (_fontFamilies.TryGetValue(style, out var fontFamily))
+            {
+                return fontFamily.GetTypefaces().FirstOrDefault();
+            }
+
+            throw new Exception($"Couldn't find Typeface for {style}. Please load the font file for {style}.");
+        }
+
+        /// <summary>
+        /// Loads the FontFamily and Typeface for the specific EFontAwesomeStyles.
+        /// </summary>
+        /// <param name="uri">Uri to the location of the font file.
+        /// Load from resources: new Uri("pack://application:,,,/FontAwesome6.Net;component/Fonts/")
+        /// Load from a directory: new Uri("file:///C:/Temp/", UriKind.Absolute)
+        /// </param>
+        /// <param name="styles">The EFontAwesomeStyles which should be loaded.</param>
+        public static void LoadStyles(Uri uri, params EFontAwesomeStyle[] styles)
+        {
+            foreach (var style in styles)
+            {
+                _fontFamilies[style] = new FontFamily(uri, $"./#{_fontFamilyNames[style]}");
+            }
+        }
+
+        /// <summary>
+        /// Loads the FontFamily and Typeface for the specific EFontAwesomeStyles.
+        /// </summary>
+        /// <param name="absolutePath">Path to the location of the font file.</param>
+        /// <param name="styles">The EFontAwesomeStyle which should be loaded.</param>
+        public static void LoadStyles(string absolutePath, params EFontAwesomeStyle[] styles)
+        {
+            LoadStyles(new Uri($"file:///{absolutePath}", UriKind.Absolute), styles);
+        }
+
+        /// <summary>
+        /// Loads all FontFamilies and Typefaces for all EFontAwesomeStyles.    
+        /// </summary>
+        /// <param name="uri">Uri to the location of all font files.
+        /// Load from resources: new Uri("pack://application:,,,/FontAwesome6.Net;component/Fonts/")
+        /// Load from a directory: new Uri("file:///C:/Temp/", UriKind.Absolute)
+        /// </param>
+        public static void LoadAllStyles(Uri uri)
+        {
+            LoadStyles(uri, _fontFamilyNames.Keys.ToArray());
+        }
+
+        /// <summary>
+        /// Loads all FontFamilies and Typefaces.    
+        /// </summary>
+        /// <param name="absolutePath">Path to the location of all font files.</param>
+        public static void LoadAllStyles(string absolutePath)
+        {
+            LoadAllStyles(new Uri($"file:///{absolutePath}", UriKind.Absolute));
+        }
 
 #if !FontAwesomePro
-    private static void SaveFontFilesToDirectory(string path)
-    {      
-      var resManager = new ResourceManager("FontAwesome6.Fonts.Net.g", typeof(FontAwesomeFonts).Assembly);
-      WriteResourceToFile(resManager, $"Fonts/Font Awesome 6 Free-Solid-900.otf", Path.Combine(path, "Font Awesome 6 Free-Solid-900.otf"));
-      WriteResourceToFile(resManager, $"Fonts/Font Awesome 6 Free-Regular-400.otf", Path.Combine(path, "Font Awesome 6 Free-Regular-400.otf"));
-      WriteResourceToFile(resManager, $"Fonts/Font Awesome 6 Brands-Regular-400.otf", Path.Combine(path, "Font Awesome 6 Brands-Regular-400.otf"));
-    }
-
-    private static void WriteResourceToFile(ResourceManager resManager, string resourceName, string fileName)
-    {
-      if (File.Exists(fileName))
-      {
-        return;
-      }
-
-      using (var res = resManager.GetStream(Uri.EscapeUriString(resourceName).ToLowerInvariant()))
-      {
-        using (var file = new FileStream(fileName, FileMode.Create, FileAccess.Write))
+        private static void SaveFontFilesToDirectory(string path)
         {
-          res.CopyTo(file);
+            var resManager = new ResourceManager("FontAwesome6.Fonts.Net.g", typeof(FontAwesomeFonts).Assembly);
+            WriteResourceToFile(resManager, $"Fonts/Font Awesome 6 Free-Solid-900.otf", Path.Combine(path, "Font Awesome 6 Free-Solid-900.otf"));
+            WriteResourceToFile(resManager, $"Fonts/Font Awesome 6 Free-Regular-400.otf", Path.Combine(path, "Font Awesome 6 Free-Regular-400.otf"));
+            WriteResourceToFile(resManager, $"Fonts/Font Awesome 6 Brands-Regular-400.otf", Path.Combine(path, "Font Awesome 6 Brands-Regular-400.otf"));
         }
-      }
-    }
+
+        private static void WriteResourceToFile(ResourceManager resManager, string resourceName, string fileName)
+        {
+            if (File.Exists(fileName))
+            {
+                return;
+            }
+
+            using (var res = resManager.GetStream(Uri.EscapeUriString(resourceName).ToLowerInvariant()))
+            {
+                using (var file = new FileStream(fileName, FileMode.Create, FileAccess.Write))
+                {
+                    res.CopyTo(file);
+                }
+            }
+        }
 #endif
 
-  }
+    }
 }

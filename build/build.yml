@@ -2,16 +2,18 @@
 # Start with a minimal pipeline that you can customize to build and deploy your code.
 # Add steps that build, run tests, deploy, and more:
 # https://aka.ms/yaml
-
 pool:
   vmImage: 'windows-latest'
 
+parameters:
+- name: settings
+  type: object
+  default:
+    FontAwesome6: Release
+    FontAwesome6.Pro: ReleasePro
+
 variables:
-  solution: 'src/FontAwesome6.sln'
-  nuspecFonts: 'src/NuGet/FontAwesome6.Fonts.nuspec'
-  nuspecSvg: 'src/NuGet/FontAwesome6.Svg.nuspec'  
   buildPlatform: 'Any CPU'
-  buildConfiguration: 'Release'
 
 steps:
 - task: GitVersion@5
@@ -30,7 +32,7 @@ steps:
   displayName: 'Install .NET Core'
   inputs:
     packageType: 'sdk'
-    version: '5.x'
+    version: '6.x'
     includePreviewVersions: true
     performMultiLevelLookup: true
 
@@ -54,52 +56,50 @@ steps:
     projects: 'src/*.sln'
     feedsToUse: 'select'
 
-#- task: CmdLine@2
-#  displayName: 'Update FontAwesome SubModule'
-#  inputs:
-#    script: |
-#      cd Font-Awesome
-#      git checkout master
-#      git pull
-#      cd ..
-#      .\bin\FontAwesome5.Generator\FontAwesome5.Generator.exe .\
-#    workingDirectory: '.'
+- ${{each setting in parameters.settings}}:
+  - task: DotNetCoreCLI@2
+    displayName: '${{setting.key}}: Build: Net Core'
+    inputs:
+      command: 'build'
+      projects: 'src/FontAwesome6.Net.sln'
+      arguments: '--configuration ${{setting.value}} /p:Version=$(GitVersion.AssemblySemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);FileVersion=$(GitVersion.AssemblySemFileVer)'
 
-- task: DotNetCoreCLI@2
-  displayName: 'Build: Net Core'
-  inputs:
-    command: 'build'
-    projects: '$(solution)'
-    arguments: '--configuration $(buildConfiguration) /p:Version=$(GitVersion.AssemblySemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);FileVersion=$(GitVersion.AssemblySemFileVer)'
+  - task: VSBuild@1
+    displayName: '${{setting.key}}: Build: UWP'
+    inputs:
+      solution: 'src/FontAwesome6.UWP.sln'
+      msbuildArgs: '/p:Version=$(GitVersion.AssemblySemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);FileVersion=$(GitVersion.AssemblySemFileVer)'
+      platform: '$(buildPlatform)'
+      configuration: '${{setting.value}}'    
+        
+  - task: VSBuild@1
+    displayName: '${{setting.key}}: Build: WinUI'
+    inputs:
+      solution: 'src/FontAwesome6.WinUI.sln'
+      msbuildArgs: '/p:Version=$(GitVersion.AssemblySemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);FileVersion=$(GitVersion.AssemblySemFileVer)'
+      platform: '$(buildPlatform)'
+      configuration: '${{setting.value}}'
 
-#- task: VSBuild@1
-#  displayName: 'Build: UWP'
-#  inputs:
-#    solution: 'src/FontAwesome5.UWP.sln'
-#    msbuildArgs: '/p:Version=$(GitVersion.AssemblySemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);FileVersion=$(GitVersion.AssemblySemFileVer)'
-#    platform: '$(buildPlatform)'
-#    configuration: '$(buildConfiguration)'
+  - task: NuGetCommand@2
+    displayName: '${{setting.key}}: Pack Fonts'
+    inputs:
+      command: 'pack'
+      packagesToPack: 'src/NuGet/${{setting.key}}.Fonts.nuspec'
+      versioningScheme: 'byEnvVar'
+      versionEnvVar: 'GitVersion.NuGetVersionV2'
+      includeSymbols: true
+      
+  - task: NuGetCommand@2
+    displayName: '${{setting.key}}: Pack Svg'
+    inputs:
+      command: 'pack'
+      packagesToPack: 'src/NuGet/${{setting.key}}.Svg.nuspec'
+      versioningScheme: 'byEnvVar'
+      versionEnvVar: 'GitVersion.NuGetVersionV2'
+      includeSymbols: true
 
-- task: NuGetCommand@2
-  displayName: 'NuGet pack FontAwesome6.Fonts'
-  inputs:
-    command: 'pack'
-    packagesToPack: '$(nuspecFonts)'
-    versioningScheme: 'byEnvVar'
-    versionEnvVar: 'GitVersion.NuGetVersionV2'
-    includeSymbols: true
-
-- task: NuGetCommand@2
-  displayName: 'NuGet pack FontAwesome6.Svg'
-  inputs:
-    command: 'pack'
-    packagesToPack: '$(nuspecSvg)'
-    versioningScheme: 'byEnvVar'
-    versionEnvVar: 'GitVersion.NuGetVersionV2'
-    includeSymbols: true
-    
 - task: PublishBuildArtifacts@1
-  displayName: 'Publish Artifact: FontAwesome6'
+  displayName: 'Publish Artifact'
   inputs:
     PathtoPublish: '$(build.artifactstagingdirectory)'
     ArtifactName: 'FontAwesome6'

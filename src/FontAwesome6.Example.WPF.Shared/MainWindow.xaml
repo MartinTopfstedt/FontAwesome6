@@ -9,12 +9,11 @@
         xmlns:fafap="http://schemas.fontawesome.com/icons/fonts/properties"
         xmlns:fas="http://schemas.fontawesome.com/icons/svg"        
         mc:Ignorable="d"
-        Title="MainWindow" Height="675"  Width="900">
+        Title="FontAwesom6.Example.WPF" Height="675"  Width="900">
   <Window.DataContext>
     <local:MainWindowViewModel/>
   </Window.DataContext>
   <Window.Resources>
-    <FontFamily x:Key="FontAwesome">pack://application:,,,/;component/Fonts/Solid/#Font Awesome 6 Pro Solid</FontFamily>
     <faf:IconNameConverter x:Key="IconNameConverter"/>
     <faf:StyleConverter x:Key="StyleConverter"/>
     <faf:ImageSourceConverter x:Key="ImageSourceConverter"/>
@@ -35,10 +34,10 @@
       <RowDefinition Height="Auto"/>
       <RowDefinition Height="*"/>
     </Grid.RowDefinitions>
-    <WrapPanel  Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="5" >
+    
+    <WrapPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="5" >
       <StackPanel Margin="0,0,5,0" Orientation="Horizontal">
         <TextBlock Text="Icon count:"></TextBlock>
-        <TextBlock Text="" FontFamily="{StaticResource FontAwesome}"></TextBlock>
         <TextBlock Text="{Binding AllIcons.Count}" Margin="5,0,0,0"></TextBlock>
         <Separator Width="1" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="5,0,5,0"/>
       </StackPanel>
@@ -101,7 +100,7 @@
       </StackPanel>
     </WrapPanel>
 
-    <ListView Grid.Row="2" Grid.Column="0" ItemsSource="{Binding AllIcons}" SelectedItem="{Binding SelectedIcon}">
+    <ListView Grid.Row="1" Grid.Column="0" ItemsSource="{Binding AllIcons}" SelectedItem="{Binding SelectedIcon}">
       <ListView.View>
         <GridView>
           <GridViewColumn Header="Icon">
@@ -153,7 +152,7 @@
         <Rectangle Grid.Row="0" Grid.Column="0" Grid.RowSpan="9" Fill="#eeeeee"></Rectangle>
         <Rectangle Grid.Row="1" Grid.Column="1" Grid.RowSpan="9" Fill="#dddddd"></Rectangle>
         <Rectangle Grid.Row="1" Grid.Column="2" Grid.RowSpan="9" Fill="#dddddd"></Rectangle>
-        
+
         <Border Grid.Row="1" Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="0,0,0,2" BorderBrush="White" Margin="0,0,0,2"></Border>
         <Border Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="0,0,0,2" BorderBrush="White" Margin="0,0,0,2"></Border>
         <Border Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="0,0,0,2" BorderBrush="White" Margin="0,0,0,2"></Border>
@@ -161,7 +160,7 @@
         <Border Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="0,0,0,2" BorderBrush="White" Margin="0,0,0,2"></Border>
         <Border Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="0,0,0,2" BorderBrush="White" Margin="0,0,0,2"></Border>
         <Border Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="3" BorderThickness="0,0,0,2" BorderBrush="White" Margin="0,0,0,2"></Border>
-        
+
         <TextBlock Grid.Row="0" Grid.Column="0" Text="Description" HorizontalAlignment="Center" FontWeight="Bold" Margin="5"/>
         <TextBlock Grid.Row="0" Grid.Column="1" Text="FontAwesome6.Fonts" HorizontalAlignment="Center" FontWeight="Bold" Margin="5"/>
         <TextBlock Grid.Row="0" Grid.Column="2" Text="FontAwesome6.Svg" HorizontalAlignment="Center" FontWeight="Bold" Margin="5"/>
@@ -260,7 +259,7 @@
                 fas:FontAwesome.Pulse="{Binding PulseIsEnabled}" fas:FontAwesome.PulseDuration="{Binding PulseDuration}" 
                 fas:FontAwesome.FlipOrientation="{Binding FlipOrientation}" fas:FontAwesome.Rotation="{Binding Rotation}"                
                 Width="32" Height="32" Visibility="{Binding Visibility}" Margin="10" HorizontalAlignment="Center"></Button>
-          
+
           <Image fas:FontAwesome.Icon="{Binding SelectedIcon}" fas:FontAwesome.SwapOpacity="{Binding SwapOpacity}"
                         fas:FontAwesome.PrimaryColor="{Binding PrimaryColor}" fas:FontAwesome.SecondaryColor="{Binding SecondaryColor}" 
                         fas:FontAwesome.PrimaryOpacity="{Binding PrimaryOpacity}" fas:FontAwesome.SecondaryOpacity="{Binding SecondaryOpacity}"

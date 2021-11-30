@@ -1,0 +1,17 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard1.4;netstandard2.1;net40;net5.0;net6.0</TargetFrameworks>
+    <Configurations>Debug;Release;DebugPro;ReleasePro</Configurations>
+    <RootNamespace>FontAwesome6</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='DebugPro'">
+    <DefineConstants>TRACE;FontAwesomePro</DefineConstants>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)'=='ReleasePro'">
+    <DefineConstants>TRACE;FontAwesomePro</DefineConstants>
+  </PropertyGroup>
+
+</Project>
