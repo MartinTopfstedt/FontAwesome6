@@ -14,7 +14,7 @@
 		<projectUrl>https://github.com/MartinTopfstedt/FontAwesome6</projectUrl>
 		<icon>icon.png</icon>
 		<requireLicenseAcceptance>false</requireLicenseAcceptance>
-		<tags>fontawesome fontawesome6 svg</tags>
+		<tags>fontawesome fontawesome6 fonts</tags>
 		<copyright>Copyright © 2021 Codinion</copyright>
 		<dependencies>
 			<group targetFramework=".NETStandard1.4" />
