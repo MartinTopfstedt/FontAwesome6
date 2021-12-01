@@ -10,19 +10,21 @@ Font-Awesome Version: 6.0.0-beta3
 
 #### Installation
 
-1. Install the FontAwesome6.Svg package: `Install-Package FontAwesome6.Svg`
+Install the FontAwesome6.Svg package: `Install-Package FontAwesome6.Svg`
 
-2. Proceed with the setup
+#### Usage
+
+
 
 ### FontAwesome6.Fonts
 
 #### Installation
 
-1. Install the FontAwesome6.Fonts package: `Install-Package FontAwesome6.Fonts`
+Install the FontAwesome6.Fonts package: `Install-Package FontAwesome6.Fonts`
 
-2. Proceed with the setup
+#### Usage
 
-### Setup
+
 
 ## FontAwesome6.Pro
 
@@ -36,7 +38,17 @@ Font-Awesome Version: 6.0.0-beta3
 
 2. Download the Desktop Version of FontAwesome6 from the website: https://fontawesome.com/download
 
-3. Extract the FontAwesome6 and execute the FontAwesome6.SvgGenerator.exe with the path to `metadata/icons.json` from the FontAwesome6 download
+3. Extract the FontAwesome6 into "Font-Awesome-Pro" and execute the FontAwesome6.Generator.exe.
+
+3.1. FontAwesome Version: specify the version for the generation. e.x. 6.0.0-beta3
+
+3.2. Activate the Pro Version check box
+
+3.3. Source Dictionary: 
+
+3.4. FontAwesome Svg Directory: the directory of all FontAwesome Svg files. e.x. Font-Awesome-Pro/svgs
+
+3.4. Output Directory: the directory where the svg files get saved to.
 
 4. The generated `FontAwesome6Svg.json` should be integrated into your project as content or embedded resource.
 
