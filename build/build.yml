@@ -83,20 +83,14 @@ steps:
   - task: NuGetCommand@2
     displayName: '${{setting.key}}: Pack Fonts'
     inputs:
-      command: 'pack'
-      packagesToPack: 'src/NuGet/${{setting.key}}.Fonts.nuspec'
-      versioningScheme: 'byEnvVar'
-      versionEnvVar: 'GitVersion.NuGetVersionV2'
-      includeSymbols: true
-      
+      command: 'custom'
+      arguments: 'pack src/NuGet/${{setting.key}}.Fonts.nuspec -Symbols -SymbolPackageFormat snupkg -Version $(GitVersion.NuGetVersionV2)'
+
   - task: NuGetCommand@2
     displayName: '${{setting.key}}: Pack Svg'
     inputs:
-      command: 'pack'
-      packagesToPack: 'src/NuGet/${{setting.key}}.Svg.nuspec'
-      versioningScheme: 'byEnvVar'
-      versionEnvVar: 'GitVersion.NuGetVersionV2'
-      includeSymbols: true
+      command: 'custom'
+      arguments: 'pack src/NuGet/${{setting.key}}.Svg.nuspec -Symbols -SymbolPackageFormat snupkg -Version $(GitVersion.NuGetVersionV2)'
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact'
