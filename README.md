@@ -1,8 +1,12 @@
-# FontAwesome6
+# FontAwesome 6
 
 WPF (.Net and .Net Core), UWP and WinUI controls for the web's most popular icon set and toolkit.
 
 Font-Awesome Version: 6.0.0-beta3
+
+## Breaking Changes
+
+The Package is now separated into two separate packages for SVG and Fonts. Therefore the namespace needed to be separate as well. Which means the old namespace `http://schemas.fontawesome.com/icons` has been split into `http://schemas.fontawesome.com/icons/svg` and `http://schemas.fontawesome.com/icons/fonts`.
 
 ## FontAwesome6 (Free)
 
@@ -14,7 +18,62 @@ Install the FontAwesome6.Svg package: `Install-Package FontAwesome6.Svg`
 
 #### Usage
 
+##### Controls
 
+Control | .Net Framework & .Net | WinUI | UWP
+------- | ---- | ----- | ----
+SvgAwesome | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+ImageAwesome | :white_check_mark: | :x: | :x: |
+
+```xaml
+<Window x:Class="FontAwesome6.Example.WPF.MainWindow" 
+        xmlns:fa="http://schemas.fontawesome.com/icons/svg">        
+    <fa:ImageAwesome Icon="Solid_Flag" />
+    <fa:SvgAwesome Icon="Solid_Flag" />
+</Window>        
+```
+
+See example projects for advanced usage.
+
+##### Attached Properties (.Net Framework & .Net)
+
+Available for following controls:
+
+- Image
+- Viewbox
+- all controls which inherit ContentControl, e.x. Button.
+
+```xaml
+<Window x:Class="FontAwesome6.Example.WPF.MainWindow" 
+        xmlns:fa="http://schemas.fontawesome.com/icons/svg/properties">        
+    <Button fa:FontAwesome.Icon="Soild_Flags"/>
+    <Image fa:FontAwesome.Icon="Soild_Flags"/>
+</Window>        
+```
+
+See example projects for advanced usage.
+
+##### Converters  (.Net Framework & .Net)
+
+Available converters:
+
+- DrawingConverter
+- IconNameConverter
+- ImageSourceConverter
+- StyleConverter
+- VisibilityConverter
+
+```xaml
+<Window x:Class="FontAwesome6.Example.WPF.MainWindow" 
+        xmlns:fa="http://schemas.fontawesome.com/icons/svg">   
+    <Window.Resources>
+      <fa:ImageSourceConverter x:Key="ImageSourceConverter"/>      
+    </Window.Resources>         
+    <Image Source="{Binding SelectedIcon, Converter={StaticResource ImageSourceConverter}}"/>
+</Window>        
+```
+
+See example projects for advanced usage.
 
 ### FontAwesome6.Fonts
 
@@ -24,7 +83,61 @@ Install the FontAwesome6.Fonts package: `Install-Package FontAwesome6.Fonts`
 
 #### Usage
 
+##### Controls
 
+Control | .Net Framework & .Net | WinUI | UWP
+------- | ---- | ----- | ----
+FontAwesome | :white_check_mark: | :white_check_mark: | :white_check_mark: |
+ImageAwesome | :white_check_mark: | :x: | :x: |
+
+```xaml
+<Window x:Class="FontAwesome6.Example.WPF.MainWindow" 
+        xmlns:fa="http://schemas.fontawesome.com/icons/fonts">        
+    <fa:ImageAwesome Icon="Solid_Flag" />
+    <fa:FontAwesome Icon="Solid_Flag" />
+</Window>        
+```
+
+See example projects for advanced usage.
+
+##### Attached Properties (.Net Framework & .Net)
+
+Available for following controls:
+
+- Image
+- all controls which inherit ContentControl, e.x. Button.
+
+```xaml
+<Window x:Class="FontAwesome6.Example.WPF.MainWindow" 
+        xmlns:fa="http://schemas.fontawesome.com/icons/fonts/properties">        
+    <Button fa:FontAwesome.Icon="Soild_Flags"/>
+    <Image fa:FontAwesome.Icon="Soild_Flags"/>
+</Window>        
+```
+
+See example projects for advanced usage.
+
+##### Converters (.Net Framework & .Net)
+
+Available converters:
+
+- DrawingConverter
+- IconNameConverter
+- ImageSourceConverter
+- StyleConverter
+- VisibilityConverter
+
+```xaml
+<Window x:Class="FontAwesome6.Example.WPF.MainWindow" 
+        xmlns:fa="http://schemas.fontawesome.com/icons/fonts">   
+    <Window.Resources>
+      <fa:ImageSourceConverter x:Key="ImageSourceConverter"/>      
+    </Window.Resources>         
+    <Image Source="{Binding SelectedIcon, Converter={StaticResource ImageSourceConverter}}"/>
+</Window>        
+```
+
+See example projects for advanced usage.
 
 ## FontAwesome6.Pro
 
@@ -38,17 +151,17 @@ Install the FontAwesome6.Fonts package: `Install-Package FontAwesome6.Fonts`
 
 2. Download the Desktop Version of FontAwesome6 from the website: https://fontawesome.com/download
 
-3. Extract the FontAwesome6 into "Font-Awesome-Pro" and execute the FontAwesome6.Generator.exe.
+3. Extract the FontAwesome6 into "Font-Awesome-Pro" and execute the `FontAwesome6.Generator.exe`.
 
-3.1. FontAwesome Version: specify the version for the generation. e.x. 6.0.0-beta3
+   1. FontAwesome Version: specify the version for the generation. e.x. 6.0.0-beta3
 
-3.2. Activate the Pro Version check box
+   2. Activate the Pro Version check box
 
-3.3. Source Dictionary: 
+   3. Source Dictionary: 
 
-3.4. FontAwesome Svg Directory: the directory of all FontAwesome Svg files. e.x. Font-Awesome-Pro/svgs
+   4. FontAwesome Svg Directory: the directory of all FontAwesome Svg files. e.x. Font-Awesome-Pro/svgs
 
-3.4. Output Directory: the directory where the svg files get saved to.
+   5. Output Directory: the directory where the svg files get saved to.
 
 4. The generated `FontAwesome6Svg.json` should be integrated into your project as content or embedded resource.
 
@@ -70,7 +183,7 @@ Install the FontAwesome6.Fonts package: `Install-Package FontAwesome6.Fonts`
 
 4. Proceed with the setup
 
-#### Setup (.Net Core or .Net Framework)
+#### Setup
 
 ##### Load the font files from the file system
 
@@ -89,9 +202,11 @@ public partial class App : Application
 
 ##### Load the font files from resource
 
->:warning: Using the fonts from resources will create a memory leak. To prevent it load the font from the file system instead.
+>:warning: *(.Net Framework & .Net only)* Using the fonts from resources will create a memory leak. To prevent it load the font from the file system instead.
 
 The example below shows how to load all font files(with their default names) as resource. The files are located inside the solution in the "Fonts" directory and have "Resource" as Content.
+
+###### .Net Framework & .Net
 
 ```csharp
 public partial class App : Application
@@ -103,5 +218,44 @@ public partial class App : Application
 }
 ```
 
-#### Setup (UWP)
+###### WInUI & UWP
 
+```csharp
+public sealed partial class MainPage : Page
+{
+  public MainPage()
+  {
+    Fonts.FontAwesomeFonts.LoadFonts(new Uri("ms-appx:///Fonts/"));      
+  }
+}
+```
+
+### Duotone
+
+#### SVG
+
+```xaml
+<Window x:Class="FontAwesome6.Example.WPF.MainWindow" 
+        xmlns:fa="http://schemas.fontawesome.com/icons/svg">        
+    <fa:ImageAwesome Icon="Duotone_Flag" 
+                     PrimaryColor="Black" 
+                     SecondaryColor="Green" 
+                     PrimaryOpacity="1" 
+                     SecondaryOpacity="0.4"
+                     SwapOpacity="false"/>
+</Window>        
+```
+
+#### Fonts
+
+```xaml
+<Window x:Class="FontAwesome6.Example.WPF.MainWindow" 
+        xmlns:fa="http://schemas.fontawesome.com/icons/fonts">        
+    <fa:ImageAwesome Icon="Duotone_Flag" 
+                     PrimaryColor="Black" 
+                     SecondaryColor="Green" 
+                     PrimaryOpacity="1" 
+                     SecondaryOpacity="0.4"
+                     SwapOpacity="false"/>
+</Window>        
+```
