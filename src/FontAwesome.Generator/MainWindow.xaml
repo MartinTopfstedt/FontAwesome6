@@ -1,0 +1,54 @@
+﻿<Window x:Class="FontAwesome.Generator.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:FontAwesome.Generator"
+        mc:Ignorable="d"
+        SizeToContent="Height"        
+        Title="FontAwesome Generator" Width="800" IsEnabled="{Binding IsWindowsEnabled}">
+    <Window.DataContext>
+        <local:MainWindowViewModel/>
+    </Window.DataContext>
+    <Grid Margin="5">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="auto"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="auto"/>
+
+            <RowDefinition Height="auto"/>
+        </Grid.RowDefinitions>
+
+        <Label Grid.Row="0" Grid.Column="0" Content="FontAwesome Version:"/>
+        <DockPanel Grid.Row="0" Grid.Column="1"  LastChildFill="True">
+            <CheckBox DockPanel.Dock="Right" VerticalAlignment="Center" Margin="2" IsChecked="{Binding IsPro}">Pro Version</CheckBox>
+            <TextBox Margin="2" Text="{Binding Version}"></TextBox>
+        </DockPanel>
+        
+
+        <Label Grid.Row="1" Grid.Column="0" Content="Source Directory:"/>
+        <DockPanel Grid.Row="1" Grid.Column="1"  LastChildFill="True">
+            <Button Margin="2" DockPanel.Dock="Right" Command="{Binding BrowseSourceDirectoryCommand}">Browse</Button>
+            <TextBox  Margin="2" Text="{Binding SourceDirectory}"/>
+        </DockPanel>
+
+        <Label Grid.Row="2" Grid.Column="0" Content="FontAwesome Svg Directory:"/>
+        <DockPanel Grid.Row="2" Grid.Column="1"  LastChildFill="True">
+            <Button Margin="2" DockPanel.Dock="Right" Command="{Binding BrowseFontAwesomeSvgDirectoryCommand}">Browse</Button>
+            <TextBox Margin="2" Text="{Binding FontAwesomeSvgDirectory}"/>
+        </DockPanel>
+
+        <Label Grid.Row="3" Grid.Column="0" Content="Output Directory:"/>
+        <DockPanel Grid.Row="3" Grid.Column="1"  LastChildFill="True">
+            <Button Margin="2" DockPanel.Dock="Right" Command="{Binding BrowseOutputDirectoryCommand}">Browse</Button>
+            <TextBox Margin="2" Text="{Binding SvgOutputDirectory}"/>
+        </DockPanel>
+
+        <Button Margin="2" Grid.Row="4" Grid.Column="1" Command="{Binding GenerateCommand}">Generate</Button>
+    </Grid>
+</Window>

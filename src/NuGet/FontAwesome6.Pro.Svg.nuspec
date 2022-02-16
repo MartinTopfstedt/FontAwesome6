@@ -1,0 +1,98 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+	<metadata>
+		<id>FontAwesome6.Pro.Svg</id>
+		<version>$version$</version>
+		<description>
+			WPF (.Net and .Net Core), UWP and WinUI controls for the web's most popular icon set and toolkit.
+			For examples https://github.com/MartinTopfstedt/FontAwesome6
+
+			Font-Awesome Version: 6.0.0
+		</description>
+		<authors>Codinion</authors>
+		<license type="expression">MIT</license>
+		<projectUrl>https://github.com/MartinTopfstedt/FontAwesome6</projectUrl>
+		<icon>icon.png</icon>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<tags>fontawesome fontawesome6 svg</tags>
+		<copyright>Copyright © 2021 Codinion</copyright>
+		<dependencies>
+			<group targetFramework=".NETStandard1.4">
+				<dependency id="Newtonsoft.Json" version="13.0.1" />
+			</group>
+			<group targetFramework=".NETStandard2.1" >
+				<dependency id="Newtonsoft.Json" version="13.0.1" />
+			</group>
+			<group targetFramework=".NETFramework4.0" >
+				<dependency id="Newtonsoft.Json" version="13.0.1" />
+			</group>
+			<group targetFramework=".NETFramework4.6.2" >
+				<dependency id="Newtonsoft.Json" version="13.0.1" />
+			</group>
+			<group targetFramework=".NETFramework4.7.2" >
+				<dependency id="Newtonsoft.Json" version="13.0.1" />
+			</group>
+			<group targetFramework=".NETCoreApp3.1" >
+				<dependency id="Newtonsoft.Json" version="13.0.1" />
+			</group>
+			<group targetFramework="net5.0" >
+				<dependency id="Newtonsoft.Json" version="13.0.1" />
+			</group>
+			<group targetFramework="net5.0-windows7.0" >
+				<dependency id="Newtonsoft.Json" version="13.0.1" />
+			</group>
+			<group targetFramework="net6.0" >
+				<dependency id="Newtonsoft.Json" version="13.0.1" />
+			</group>
+			<group targetFramework="net6.0-windows7.0" >
+				<dependency id="Newtonsoft.Json" version="13.0.1" />
+			</group>
+			<group targetFramework="UAP10.0" >
+				<dependency id="Newtonsoft.Json" version="13.0.1" />
+			</group>
+			<group targetFramework="net6.0-windows10.0.19041.0" >
+				<dependency id="Newtonsoft.Json" version="13.0.1" />
+			</group>
+		</dependencies>
+	</metadata>
+	<files>
+		<file src="..\icon.png" target="" />
+
+		<!-- .Net Standard 1.4 -->
+		<file src="..\FontAwesome6.Core\bin\ReleasePro\netstandard1.4\FontAwesome6.*" target="lib\netstandard1.4\" />
+
+		<!-- .Net Standard 2.1 -->
+		<file src="..\FontAwesome6.Core\bin\ReleasePro\netstandard2.1\FontAwesome6.*" target="lib\netstandard2.1\" />
+
+		<!-- .Net 5.0 -->
+		<file src="..\FontAwesome6.Core\bin\ReleasePro\net5.0\FontAwesome6.*" target="lib\net5.0\" />
+
+		<!-- .Net 6.0 -->
+		<file src="..\FontAwesome6.Core\bin\ReleasePro\net6.0\FontAwesome6.*" target="lib\net6.0\" />
+
+		<!-- .Net Framework 4.0 -->
+		<file src="..\FontAwesome6.Svg.Net\bin\ReleasePro\net40\FontAwesome6.*" target="lib\net40\" />
+
+		<!-- .Net Framework 4.6.2 -->
+		<file src="..\FontAwesome6.Svg.Net\bin\ReleasePro\net462\FontAwesome6.*" target="lib\net462\" />
+
+		<!-- .Net Framework 4.7.2 -->
+		<file src="..\FontAwesome6.Svg.Net\bin\ReleasePro\net472\FontAwesome6.*" target="lib\net472\" />
+
+		<!-- .Net Core Framework 3.1 -->
+		<file src="..\FontAwesome6.Svg.Net\bin\ReleasePro\netcoreapp3.1\FontAwesome6.*" target="lib\netcoreapp3.1\" />
+
+		<!-- .Net 5.0 -->
+		<file src="..\FontAwesome6.Svg.Net\bin\ReleasePro\net5.0-windows\FontAwesome6.*" target="lib\net5.0-windows7.0\" />
+
+		<!-- .Net 6.0 -->
+		<file src="..\FontAwesome6.Svg.Net\bin\ReleasePro\net6.0-windows\FontAwesome6.*" target="lib\net6.0-windows7.0\" />
+
+		<!-- UWP -->
+		<file src="..\FontAwesome6.Svg.UWP\bin\ReleasePro\FontAwesome6.*" target="lib\uap10.0" />
+		<!-- WinUI -->
+		<file src="..\FontAwesome6.Fonts.WinUI\bin\ReleasePro\net6.0-windows10.0.19041.0\FontAwesome6.*" target="lib\net6.0-windows10.0.19041.0" />
+
+
+	</files>
+</package>

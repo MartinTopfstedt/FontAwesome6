@@ -1,0 +1,34 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Templates\EFontAwesomeIcon.scriban" />
+    <None Remove="Templates\EFontAwesomeStyle.scriban" />
+    <None Remove="Templates\FontAwesomeUnicodes.scriban" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="Templates\EFontAwesomeIcon.scriban">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\EFontAwesomeStyle.scriban">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Templates\FontAwesomeUnicodes.scriban">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GraphQL.Client" Version="4.0.1" />
+    <PackageReference Include="GraphQL.Client.Serializer.Newtonsoft" Version="4.0.1" />
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
+    <PackageReference Include="Scriban" Version="4.0.1" />
+  </ItemGroup>
+
+</Project>

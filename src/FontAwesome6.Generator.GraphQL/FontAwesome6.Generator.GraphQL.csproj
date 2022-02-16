@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="GraphQL" Version="4.6.1" />
+    <PackageReference Include="GraphQL.Client" Version="4.0.1" />
+    <PackageReference Include="GraphQL.Client.Serializer.Newtonsoft" Version="4.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FontAwesome6.Generator.Shared\FontAwesome6.Generator.Shared.csproj" />
+  </ItemGroup>
+
+</Project>
