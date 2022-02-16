@@ -41,6 +41,15 @@ steps:
     versionSpec: 
     checkLatest: true
 
+- task: CmdLine@2
+  displayName: 'Update FontAwesome SubModule'
+  inputs:
+    script: |
+      cd Font-Awesome
+      git checkout master
+      git pull
+    workingDirectory: '.'
+
 - task: NuGetCommand@2
   displayName: 'NuGet Restore (All Solutions)'
   inputs:
