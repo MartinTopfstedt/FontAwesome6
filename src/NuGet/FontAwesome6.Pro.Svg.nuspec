@@ -7,7 +7,7 @@
 			WPF (.Net and .Net Core), UWP and WinUI controls for the web's most popular icon set and toolkit.
 			For examples https://github.com/MartinTopfstedt/FontAwesome6
 
-			Font-Awesome Version: 6.0.0-beta3
+			Font-Awesome Version: 6.0.0
 		</description>
 		<authors>Codinion</authors>
 		<license type="expression">MIT</license>

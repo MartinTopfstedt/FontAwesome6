@@ -73,12 +73,12 @@ namespace FontAwesome6
 		/// <summary>D</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/d?s=solid" /></remarks>		
 		Solid_D,		
-		/// <summary>Bank</summary> 
-		/// <remarks><see href="https://fontawesome.com/v6.0/icons/bank?s=solid" /></remarks>		
-		Solid_Bank,		
 		/// <summary>Umbrella</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/umbrella?s=solid" /></remarks>		
 		Solid_Umbrella,		
+		/// <summary>Building with Columns</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/building-columns?s=solid" /></remarks>		
+		Solid_BuildingColumns,		
 		/// <summary>Users gear</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/users-gear?s=solid" /></remarks>		
 		Solid_UsersGear,		
@@ -121,6 +121,9 @@ namespace FontAwesome6
 		/// <summary>Bone</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/bone?s=solid" /></remarks>		
 		Solid_Bone,		
+		/// <summary>Bug Slash</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/bug-slash?s=solid" /></remarks>		
+		Solid_BugSlash,		
 		/// <summary>Note sticky</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/note-sticky?s=solid" /></remarks>		
 		Solid_NoteSticky,		
@@ -418,6 +421,9 @@ namespace FontAwesome6
 		/// <summary>Raised Fist</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/hand-fist?s=solid" /></remarks>		
 		Solid_HandFist,		
+		/// <summary>Diagram Successor</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/diagram-successor?s=solid" /></remarks>		
+		Solid_DiagramSuccessor,		
 		/// <summary>angle-left</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/angle-left?s=solid" /></remarks>		
 		Solid_AngleLeft,		
@@ -466,6 +472,9 @@ namespace FontAwesome6
 		/// <summary>Shower</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/shower?s=solid" /></remarks>		
 		Solid_Shower,		
+		/// <summary>Gauge simple</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/gauge-simple-high?s=solid" /></remarks>		
+		Solid_GaugeSimpleHigh,		
 		/// <summary>Scale balanced</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/scale-balanced?s=solid" /></remarks>		
 		Solid_ScaleBalanced,		
@@ -661,6 +670,9 @@ namespace FontAwesome6
 		/// <summary>Rockrms</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/rockrms?s=brands" /></remarks>		
 		Brands_Rockrms,		
+		/// <summary>House with Window + Chimney</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/house-chimney-window?s=solid" /></remarks>		
+		Solid_HouseChimneyWindow,		
 		/// <summary>Circle chevron left</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/circle-chevron-left?s=solid" /></remarks>		
 		Solid_CircleChevronLeft,		
@@ -901,6 +913,9 @@ namespace FontAwesome6
 		/// <summary>JavaScript (JS)</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/js?s=brands" /></remarks>		
 		Brands_Js,		
+		/// <summary>Tablet</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/tablet?s=solid" /></remarks>		
+		Solid_Tablet,		
 		/// <summary>Bell Slash</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/bell-slash?s=solid" /></remarks>		
 		Solid_BellSlash,		
@@ -1300,6 +1315,9 @@ namespace FontAwesome6
 		/// <summary>Envelope Open-text</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/envelope-open-text?s=solid" /></remarks>		
 		Solid_EnvelopeOpenText,		
+		/// <summary>Gauge</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/gauge-high?s=solid" /></remarks>		
+		Solid_GaugeHigh,		
 		/// <summary>Octopus Deploy</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/octopus-deploy?s=brands" /></remarks>		
 		Brands_OctopusDeploy,		
@@ -1696,6 +1714,9 @@ namespace FontAwesome6
 		/// <summary>Facebook</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/facebook?s=brands" /></remarks>		
 		Brands_Facebook,		
+		/// <summary>Mobile</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/mobile?s=solid" /></remarks>		
+		Solid_Mobile,		
 		/// <summary>forward</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/forward?s=solid" /></remarks>		
 		Solid_Forward,		
@@ -1771,6 +1792,9 @@ namespace FontAwesome6
 		/// <summary>Closed Captioning</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/closed-captioning?s=regular" /></remarks>		
 		Regular_ClosedCaptioning,		
+		/// <summary>Diagram Next</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/diagram-next?s=solid" /></remarks>		
+		Solid_DiagramNext,		
 		/// <summary>Mendeley</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/mendeley?s=brands" /></remarks>		
 		Brands_Mendeley,		
@@ -1795,6 +1819,9 @@ namespace FontAwesome6
 		/// <summary>Ellipsis vertical</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/ellipsis-vertical?s=solid" /></remarks>		
 		Solid_EllipsisVertical,		
+		/// <summary>Wand sparkles</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/wand-sparkles?s=solid" /></remarks>		
+		Solid_WandSparkles,		
 		/// <summary>Flask</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/flask?s=solid" /></remarks>		
 		Solid_Flask,		
@@ -1876,6 +1903,9 @@ namespace FontAwesome6
 		/// <summary>S</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/s?s=solid" /></remarks>		
 		Solid_S,		
+		/// <summary>Baseball bat ball</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/baseball-bat-ball?s=solid" /></remarks>		
+		Solid_BaseballBatBall,		
 		/// <summary>Dribbble Square</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/dribbble-square?s=brands" /></remarks>		
 		Brands_DribbbleSquare,		
@@ -2377,7 +2407,7 @@ namespace FontAwesome6
 		/// <summary>Fulcrum</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/fulcrum?s=brands" /></remarks>		
 		Brands_Fulcrum,		
-		/// <summary>Gauge simple</summary> 
+		/// <summary>Gauge simple med</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/gauge-simple?s=solid" /></remarks>		
 		Solid_GaugeSimple,		
 		/// <summary>Trash</summary> 
@@ -2992,12 +3022,18 @@ namespace FontAwesome6
 		/// <summary>Excel File</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/file-excel?s=regular" /></remarks>		
 		Regular_FileExcel,		
+		/// <summary>Hashnode</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/hashnode?s=brands" /></remarks>		
+		Brands_Hashnode,		
 		/// <summary>page4 Corporation</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/page4?s=brands" /></remarks>		
 		Brands_Page4,		
 		/// <summary>ThemeIsle</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/themeisle?s=brands" /></remarks>		
 		Brands_Themeisle,		
+		/// <summary>Lightning Bolt</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/bolt-lightning?s=solid" /></remarks>		
+		Solid_BoltLightning,		
 		/// <summary>Pie Chart</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/chart-pie?s=solid" /></remarks>		
 		Solid_ChartPie,		
@@ -3019,6 +3055,9 @@ namespace FontAwesome6
 		/// <summary>Austral Sign</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/austral-sign?s=solid" /></remarks>		
 		Solid_AustralSign,		
+		/// <summary>Virus Covid</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/virus-covid?s=solid" /></remarks>		
+		Solid_VirusCovid,		
 		/// <summary>Won Sign</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/won-sign?s=solid" /></remarks>		
 		Solid_WonSign,		
@@ -3253,6 +3292,9 @@ namespace FontAwesome6
 		/// <summary>fire-extinguisher</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/fire-extinguisher?s=solid" /></remarks>		
 		Solid_FireExtinguisher,		
+		/// <summary>Padlet</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/padlet?s=brands" /></remarks>		
+		Brands_Padlet,		
 		/// <summary>Arrows rotate</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/arrows-rotate?s=solid" /></remarks>		
 		Solid_ArrowsRotate,		
@@ -3700,9 +3742,6 @@ namespace FontAwesome6
 		/// <summary>Square caret up</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/square-caret-up?s=regular" /></remarks>		
 		Regular_SquareCaretUp,		
-		/// <summary>Penny Arcade</summary> 
-		/// <remarks><see href="https://fontawesome.com/v6.0/icons/penny-arcade?s=brands" /></remarks>		
-		Brands_PennyArcade,		
 		/// <summary>Rock (Hand)</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/hand-back-fist?s=solid" /></remarks>		
 		Solid_HandBackFist,		
@@ -3985,6 +4024,9 @@ namespace FontAwesome6
 		/// <summary>Hourglass Start</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/hourglass-start?s=solid" /></remarks>		
 		Solid_HourglassStart,		
+		/// <summary>Virus Covid-slash</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/virus-covid-slash?s=solid" /></remarks>		
+		Solid_VirusCovidSlash,		
 		/// <summary>R Project</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/r-project?s=brands" /></remarks>		
 		Brands_RProject,		
@@ -4168,7 +4210,7 @@ namespace FontAwesome6
 		/// <summary>Cloudsmith</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/cloudsmith?s=brands" /></remarks>		
 		Brands_Cloudsmith,		
-		/// <summary>Gauge</summary> 
+		/// <summary>Gauge med</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/gauge?s=solid" /></remarks>		
 		Solid_Gauge,		
 		/// <summary>Vial</summary> 
@@ -4531,15 +4573,15 @@ namespace FontAwesome6
 		/// <summary>Hot tub person</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/hot-tub-person?s=solid" /></remarks>		
 		Solid_HotTubPerson,		
-		/// <summary>Paint Brush</summary> 
-		/// <remarks><see href="https://fontawesome.com/v6.0/icons/paint-brush?s=solid" /></remarks>		
-		Solid_PaintBrush,		
 		/// <summary>Gas Pump</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/gas-pump?s=solid" /></remarks>		
 		Solid_GasPump,		
 		/// <summary>lock</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/lock?s=solid" /></remarks>		
 		Solid_Lock,		
+		/// <summary>Paint Brush</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/paintbrush?s=solid" /></remarks>		
+		Solid_Paintbrush,		
 		/// <summary>Futbol ball</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/futbol?s=solid" /></remarks>		
 		Solid_Futbol,		
@@ -4732,9 +4774,6 @@ namespace FontAwesome6
 		/// <summary>Swatchbook</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/swatchbook?s=solid" /></remarks>		
 		Solid_Swatchbook,		
-		/// <summary>Acquisitions Incorporated</summary> 
-		/// <remarks><see href="https://fontawesome.com/v6.0/icons/acquisitions-incorporated?s=brands" /></remarks>		
-		Brands_AcquisitionsIncorporated,		
 		/// <summary>Laptop Code</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/laptop-code?s=solid" /></remarks>		
 		Solid_LaptopCode,		
@@ -5050,6 +5089,9 @@ namespace FontAwesome6
 		/// <summary>Arrow up long</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/arrow-up-long?s=solid" /></remarks>		
 		Solid_ArrowUpLong,		
+		/// <summary>Diagram Predecessor</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/diagram-predecessor?s=solid" /></remarks>		
+		Solid_DiagramPredecessor,		
 		/// <summary>Beer mug empty</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/beer-mug-empty?s=solid" /></remarks>		
 		Solid_BeerMugEmpty,		
@@ -5364,18 +5406,6 @@ namespace FontAwesome6
 		/// <summary>D</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/d?s=duotone" /></remarks>		
 		Duotone_D,		
-		/// <summary>Bank</summary> 
-		/// <remarks><see href="https://fontawesome.com/v6.0/icons/bank?s=regular" /></remarks>		
-		Regular_Bank,		
-		/// <summary>Bank</summary> 
-		/// <remarks><see href="https://fontawesome.com/v6.0/icons/bank?s=light" /></remarks>		
-		Light_Bank,		
-		/// <summary>Bank</summary> 
-		/// <remarks><see href="https://fontawesome.com/v6.0/icons/bank?s=thin" /></remarks>		
-		Thin_Bank,		
-		/// <summary>Bank</summary> 
-		/// <remarks><see href="https://fontawesome.com/v6.0/icons/bank?s=duotone" /></remarks>		
-		Duotone_Bank,		
 		/// <summary>Umbrella</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/umbrella?s=regular" /></remarks>		
 		Regular_Umbrella,		
@@ -5388,6 +5418,18 @@ namespace FontAwesome6
 		/// <summary>Umbrella</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/umbrella?s=duotone" /></remarks>		
 		Duotone_Umbrella,		
+		/// <summary>Building with Columns</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/building-columns?s=regular" /></remarks>		
+		Regular_BuildingColumns,		
+		/// <summary>Building with Columns</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/building-columns?s=light" /></remarks>		
+		Light_BuildingColumns,		
+		/// <summary>Building with Columns</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/building-columns?s=thin" /></remarks>		
+		Thin_BuildingColumns,		
+		/// <summary>Building with Columns</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/building-columns?s=duotone" /></remarks>		
+		Duotone_BuildingColumns,		
 		/// <summary>Users gear</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/users-gear?s=regular" /></remarks>		
 		Regular_UsersGear,		
@@ -5517,6 +5559,18 @@ namespace FontAwesome6
 		/// <summary>Bone</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/bone?s=duotone" /></remarks>		
 		Duotone_Bone,		
+		/// <summary>Bug Slash</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/bug-slash?s=regular" /></remarks>		
+		Regular_BugSlash,		
+		/// <summary>Bug Slash</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/bug-slash?s=light" /></remarks>		
+		Light_BugSlash,		
+		/// <summary>Bug Slash</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/bug-slash?s=thin" /></remarks>		
+		Thin_BugSlash,		
+		/// <summary>Bug Slash</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/bug-slash?s=duotone" /></remarks>		
+		Duotone_BugSlash,		
 		/// <summary>Note sticky</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/note-sticky?s=light" /></remarks>		
 		Light_NoteSticky,		
@@ -6207,6 +6261,18 @@ namespace FontAwesome6
 		/// <summary>Raised Fist</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/hand-fist?s=duotone" /></remarks>		
 		Duotone_HandFist,		
+		/// <summary>Diagram Successor</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/diagram-successor?s=regular" /></remarks>		
+		Regular_DiagramSuccessor,		
+		/// <summary>Diagram Successor</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/diagram-successor?s=light" /></remarks>		
+		Light_DiagramSuccessor,		
+		/// <summary>Diagram Successor</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/diagram-successor?s=thin" /></remarks>		
+		Thin_DiagramSuccessor,		
+		/// <summary>Diagram Successor</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/diagram-successor?s=duotone" /></remarks>		
+		Duotone_DiagramSuccessor,		
 		/// <summary>angle-left</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/angle-left?s=regular" /></remarks>		
 		Regular_AngleLeft,		
@@ -6339,6 +6405,18 @@ namespace FontAwesome6
 		/// <summary>Shower</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/shower?s=duotone" /></remarks>		
 		Duotone_Shower,		
+		/// <summary>Gauge simple</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/gauge-simple-high?s=regular" /></remarks>		
+		Regular_GaugeSimpleHigh,		
+		/// <summary>Gauge simple</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/gauge-simple-high?s=light" /></remarks>		
+		Light_GaugeSimpleHigh,		
+		/// <summary>Gauge simple</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/gauge-simple-high?s=thin" /></remarks>		
+		Thin_GaugeSimpleHigh,		
+		/// <summary>Gauge simple</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/gauge-simple-high?s=duotone" /></remarks>		
+		Duotone_GaugeSimpleHigh,		
 		/// <summary>Scale balanced</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/scale-balanced?s=regular" /></remarks>		
 		Regular_ScaleBalanced,		
@@ -6912,6 +6990,18 @@ namespace FontAwesome6
 		/// <summary>Pen Nib</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/pen-nib?s=duotone" /></remarks>		
 		Duotone_PenNib,		
+		/// <summary>House with Window + Chimney</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/house-chimney-window?s=regular" /></remarks>		
+		Regular_HouseChimneyWindow,		
+		/// <summary>House with Window + Chimney</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/house-chimney-window?s=light" /></remarks>		
+		Light_HouseChimneyWindow,		
+		/// <summary>House with Window + Chimney</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/house-chimney-window?s=thin" /></remarks>		
+		Thin_HouseChimneyWindow,		
+		/// <summary>House with Window + Chimney</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/house-chimney-window?s=duotone" /></remarks>		
+		Duotone_HouseChimneyWindow,		
 		/// <summary>Circle chevron left</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/circle-chevron-left?s=regular" /></remarks>		
 		Regular_CircleChevronLeft,		
@@ -7554,6 +7644,18 @@ namespace FontAwesome6
 		/// <summary>Fill</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/fill?s=duotone" /></remarks>		
 		Duotone_Fill,		
+		/// <summary>Tablet</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/tablet?s=regular" /></remarks>		
+		Regular_Tablet,		
+		/// <summary>Tablet</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/tablet?s=light" /></remarks>		
+		Light_Tablet,		
+		/// <summary>Tablet</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/tablet?s=thin" /></remarks>		
+		Thin_Tablet,		
+		/// <summary>Tablet</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/tablet?s=duotone" /></remarks>		
+		Duotone_Tablet,		
 		/// <summary>Bell Slash</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/bell-slash?s=light" /></remarks>		
 		Light_BellSlash,		
@@ -8568,6 +8670,18 @@ namespace FontAwesome6
 		/// <summary>Envelope Open-text</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/envelope-open-text?s=duotone" /></remarks>		
 		Duotone_EnvelopeOpenText,		
+		/// <summary>Gauge</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/gauge-high?s=regular" /></remarks>		
+		Regular_GaugeHigh,		
+		/// <summary>Gauge</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/gauge-high?s=light" /></remarks>		
+		Light_GaugeHigh,		
+		/// <summary>Gauge</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/gauge-high?s=thin" /></remarks>		
+		Thin_GaugeHigh,		
+		/// <summary>Gauge</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/gauge-high?s=duotone" /></remarks>		
+		Duotone_GaugeHigh,		
 		/// <summary>Section</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/section?s=regular" /></remarks>		
 		Regular_Section,		
@@ -9525,6 +9639,18 @@ namespace FontAwesome6
 		/// <summary>Face meh</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/face-meh?s=duotone" /></remarks>		
 		Duotone_FaceMeh,		
+		/// <summary>Mobile</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/mobile?s=regular" /></remarks>		
+		Regular_Mobile,		
+		/// <summary>Mobile</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/mobile?s=light" /></remarks>		
+		Light_Mobile,		
+		/// <summary>Mobile</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/mobile?s=thin" /></remarks>		
+		Thin_Mobile,		
+		/// <summary>Mobile</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/mobile?s=duotone" /></remarks>		
+		Duotone_Mobile,		
 		/// <summary>forward</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/forward?s=regular" /></remarks>		
 		Regular_Forward,		
@@ -9684,6 +9810,18 @@ namespace FontAwesome6
 		/// <summary>Closed Captioning</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/closed-captioning?s=duotone" /></remarks>		
 		Duotone_ClosedCaptioning,		
+		/// <summary>Diagram Next</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/diagram-next?s=regular" /></remarks>		
+		Regular_DiagramNext,		
+		/// <summary>Diagram Next</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/diagram-next?s=light" /></remarks>		
+		Light_DiagramNext,		
+		/// <summary>Diagram Next</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/diagram-next?s=thin" /></remarks>		
+		Thin_DiagramNext,		
+		/// <summary>Diagram Next</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/diagram-next?s=duotone" /></remarks>		
+		Duotone_DiagramNext,		
 		/// <summary>TTY</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/tty?s=regular" /></remarks>		
 		Regular_Tty,		
@@ -9756,6 +9894,18 @@ namespace FontAwesome6
 		/// <summary>Ellipsis vertical</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/ellipsis-vertical?s=duotone" /></remarks>		
 		Duotone_EllipsisVertical,		
+		/// <summary>Wand sparkles</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/wand-sparkles?s=regular" /></remarks>		
+		Regular_WandSparkles,		
+		/// <summary>Wand sparkles</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/wand-sparkles?s=light" /></remarks>		
+		Light_WandSparkles,		
+		/// <summary>Wand sparkles</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/wand-sparkles?s=thin" /></remarks>		
+		Thin_WandSparkles,		
+		/// <summary>Wand sparkles</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/wand-sparkles?s=duotone" /></remarks>		
+		Duotone_WandSparkles,		
 		/// <summary>Flask</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/flask?s=regular" /></remarks>		
 		Regular_Flask,		
@@ -9957,6 +10107,18 @@ namespace FontAwesome6
 		/// <summary>S</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/s?s=duotone" /></remarks>		
 		Duotone_S,		
+		/// <summary>Baseball bat ball</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/baseball-bat-ball?s=regular" /></remarks>		
+		Regular_BaseballBatBall,		
+		/// <summary>Baseball bat ball</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/baseball-bat-ball?s=light" /></remarks>		
+		Light_BaseballBatBall,		
+		/// <summary>Baseball bat ball</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/baseball-bat-ball?s=thin" /></remarks>		
+		Thin_BaseballBatBall,		
+		/// <summary>Baseball bat ball</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/baseball-bat-ball?s=duotone" /></remarks>		
+		Duotone_BaseballBatBall,		
 		/// <summary>Faucet</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/faucet?s=regular" /></remarks>		
 		Regular_Faucet,		
@@ -11226,16 +11388,16 @@ namespace FontAwesome6
 		/// <summary>Medical Book</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/book-medical?s=duotone" /></remarks>		
 		Duotone_BookMedical,		
-		/// <summary>Gauge simple</summary> 
+		/// <summary>Gauge simple med</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/gauge-simple?s=regular" /></remarks>		
 		Regular_GaugeSimple,		
-		/// <summary>Gauge simple</summary> 
+		/// <summary>Gauge simple med</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/gauge-simple?s=light" /></remarks>		
 		Light_GaugeSimple,		
-		/// <summary>Gauge simple</summary> 
+		/// <summary>Gauge simple med</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/gauge-simple?s=thin" /></remarks>		
 		Thin_GaugeSimple,		
-		/// <summary>Gauge simple</summary> 
+		/// <summary>Gauge simple med</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/gauge-simple?s=duotone" /></remarks>		
 		Duotone_GaugeSimple,		
 		/// <summary>Trash</summary> 
@@ -12657,6 +12819,18 @@ namespace FontAwesome6
 		/// <summary>Excel File</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/file-excel?s=duotone" /></remarks>		
 		Duotone_FileExcel,		
+		/// <summary>Lightning Bolt</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/bolt-lightning?s=regular" /></remarks>		
+		Regular_BoltLightning,		
+		/// <summary>Lightning Bolt</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/bolt-lightning?s=light" /></remarks>		
+		Light_BoltLightning,		
+		/// <summary>Lightning Bolt</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/bolt-lightning?s=thin" /></remarks>		
+		Thin_BoltLightning,		
+		/// <summary>Lightning Bolt</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/bolt-lightning?s=duotone" /></remarks>		
+		Duotone_BoltLightning,		
 		/// <summary>Pie Chart</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/chart-pie?s=regular" /></remarks>		
 		Regular_ChartPie,		
@@ -12729,6 +12903,18 @@ namespace FontAwesome6
 		/// <summary>Austral Sign</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/austral-sign?s=duotone" /></remarks>		
 		Duotone_AustralSign,		
+		/// <summary>Virus Covid</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/virus-covid?s=regular" /></remarks>		
+		Regular_VirusCovid,		
+		/// <summary>Virus Covid</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/virus-covid?s=light" /></remarks>		
+		Light_VirusCovid,		
+		/// <summary>Virus Covid</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/virus-covid?s=thin" /></remarks>		
+		Thin_VirusCovid,		
+		/// <summary>Virus Covid</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/virus-covid?s=duotone" /></remarks>		
+		Duotone_VirusCovid,		
 		/// <summary>Won Sign</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/won-sign?s=regular" /></remarks>		
 		Regular_WonSign,		
@@ -15111,6 +15297,18 @@ namespace FontAwesome6
 		/// <summary>Hourglass Start</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/hourglass-start?s=duotone" /></remarks>		
 		Duotone_HourglassStart,		
+		/// <summary>Virus Covid-slash</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/virus-covid-slash?s=regular" /></remarks>		
+		Regular_VirusCovidSlash,		
+		/// <summary>Virus Covid-slash</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/virus-covid-slash?s=light" /></remarks>		
+		Light_VirusCovidSlash,		
+		/// <summary>Virus Covid-slash</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/virus-covid-slash?s=thin" /></remarks>		
+		Thin_VirusCovidSlash,		
+		/// <summary>Virus Covid-slash</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/virus-covid-slash?s=duotone" /></remarks>		
+		Duotone_VirusCovidSlash,		
 		/// <summary>Server</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/server?s=regular" /></remarks>		
 		Regular_Server,		
@@ -15606,16 +15804,16 @@ namespace FontAwesome6
 		/// <summary>Wand magic sparkles</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/wand-magic-sparkles?s=duotone" /></remarks>		
 		Duotone_WandMagicSparkles,		
-		/// <summary>Gauge</summary> 
+		/// <summary>Gauge med</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/gauge?s=regular" /></remarks>		
 		Regular_Gauge,		
-		/// <summary>Gauge</summary> 
+		/// <summary>Gauge med</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/gauge?s=light" /></remarks>		
 		Light_Gauge,		
-		/// <summary>Gauge</summary> 
+		/// <summary>Gauge med</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/gauge?s=thin" /></remarks>		
 		Thin_Gauge,		
-		/// <summary>Gauge</summary> 
+		/// <summary>Gauge med</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/gauge?s=duotone" /></remarks>		
 		Duotone_Gauge,		
 		/// <summary>Vial</summary> 
@@ -16404,18 +16602,6 @@ namespace FontAwesome6
 		/// <summary>Hot tub person</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/hot-tub-person?s=duotone" /></remarks>		
 		Duotone_HotTubPerson,		
-		/// <summary>Paint Brush</summary> 
-		/// <remarks><see href="https://fontawesome.com/v6.0/icons/paint-brush?s=regular" /></remarks>		
-		Regular_PaintBrush,		
-		/// <summary>Paint Brush</summary> 
-		/// <remarks><see href="https://fontawesome.com/v6.0/icons/paint-brush?s=light" /></remarks>		
-		Light_PaintBrush,		
-		/// <summary>Paint Brush</summary> 
-		/// <remarks><see href="https://fontawesome.com/v6.0/icons/paint-brush?s=thin" /></remarks>		
-		Thin_PaintBrush,		
-		/// <summary>Paint Brush</summary> 
-		/// <remarks><see href="https://fontawesome.com/v6.0/icons/paint-brush?s=duotone" /></remarks>		
-		Duotone_PaintBrush,		
 		/// <summary>Gas Pump</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/gas-pump?s=regular" /></remarks>		
 		Regular_GasPump,		
@@ -16440,6 +16626,18 @@ namespace FontAwesome6
 		/// <summary>lock</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/lock?s=duotone" /></remarks>		
 		Duotone_Lock,		
+		/// <summary>Paint Brush</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/paintbrush?s=regular" /></remarks>		
+		Regular_Paintbrush,		
+		/// <summary>Paint Brush</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/paintbrush?s=light" /></remarks>		
+		Light_Paintbrush,		
+		/// <summary>Paint Brush</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/paintbrush?s=thin" /></remarks>		
+		Thin_Paintbrush,		
+		/// <summary>Paint Brush</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/paintbrush?s=duotone" /></remarks>		
+		Duotone_Paintbrush,		
 		/// <summary>Futbol ball</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/futbol?s=light" /></remarks>		
 		Light_Futbol,		
@@ -17721,6 +17919,18 @@ namespace FontAwesome6
 		/// <summary>Arrow up long</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/arrow-up-long?s=duotone" /></remarks>		
 		Duotone_ArrowUpLong,		
+		/// <summary>Diagram Predecessor</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/diagram-predecessor?s=regular" /></remarks>		
+		Regular_DiagramPredecessor,		
+		/// <summary>Diagram Predecessor</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/diagram-predecessor?s=light" /></remarks>		
+		Light_DiagramPredecessor,		
+		/// <summary>Diagram Predecessor</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/diagram-predecessor?s=thin" /></remarks>		
+		Thin_DiagramPredecessor,		
+		/// <summary>Diagram Predecessor</summary> 
+		/// <remarks><see href="https://fontawesome.com/v6.0/icons/diagram-predecessor?s=duotone" /></remarks>		
+		Duotone_DiagramPredecessor,		
 		/// <summary>Beer mug empty</summary> 
 		/// <remarks><see href="https://fontawesome.com/v6.0/icons/beer-mug-empty?s=regular" /></remarks>		
 		Regular_BeerMugEmpty,		

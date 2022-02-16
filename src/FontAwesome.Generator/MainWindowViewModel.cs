@@ -44,7 +44,7 @@ namespace FontAwesome.Generator
 
             SourceDirectory = Path.Combine(root, "src");
             FontAwesomeSvgDirectory = Path.Combine(root, "Font-Awesome", "svgs");
-            SvgOutputDirectory = Path.Combine(root, "Font-Awesome", "generated");
+            SvgOutputDirectory = Path.Combine(root, "generated", "Font-Awesome");
             SvgOutputFileNamePrefix = "FontAwesomeSvg";
 
             GenerateCommand = new RelayCommand(obj => GenerateExecuted(), obj => CanExecutGenerate());

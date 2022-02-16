@@ -27,7 +27,7 @@
   </PropertyGroup>
 
   <ItemGroup Condition="'$(Configuration)'=='DebugPro' Or '$(Configuration)'=='ReleasePro'">    
-    <EmbeddedResource Include="..\..\Font-Awesome-Pro\generated\FontAwesomeSvg.all.json" Link="Svg\FontAwesomeSvg.all.json" />	
+    <EmbeddedResource Include="..\..\generated\Font-Awesome-Pro\FontAwesomeSvg.all.json" Link="Svg\FontAwesomeSvg.all.json" />	
     <Content Include="..\..\Font-Awesome-Pro\otfs\Font Awesome 6 Pro-Solid-900.otf" Link="Fonts/Font Awesome 6 Pro-Solid-900.otf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
