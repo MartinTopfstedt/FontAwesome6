@@ -16,15 +16,6 @@ variables:
   buildPlatform: 'Any CPU'
 
 steps:
-- task: CmdLine@2
-  displayName: 'Update FontAwesome SubModule'
-  inputs:
-    script: |
-      cd Font-Awesome
-      git checkout master
-      git pull
-    workingDirectory: '.'
-
 - task: GitVersion@5
   inputs:
     runtime: 'core'
