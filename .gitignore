@@ -287,11 +287,9 @@ __pycache__/
 *.odx.cs
 *.xsd.cs
 
-# Font Aweseom Free
-/Font-Awesome/svgs/**
-
 # FontAwesom Pro
 /Font-Awesome-Pro/**
+/generated/Font-Awesome-Pro/**
 
 # Excludes
 !.gitkeep

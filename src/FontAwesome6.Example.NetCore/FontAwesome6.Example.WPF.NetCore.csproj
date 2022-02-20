@@ -12,8 +12,6 @@
   <Import Project="..\FontAwesome6.Example.WPF.Shared\FontAwesome6.Example.WPF.Shared.projitems" Label="Shared" />
 
   <ItemGroup>
-    <PackageReference Include="FontAwesome6.Fonts" Version="0.1.0-unstable0056" />
-    <PackageReference Include="FontAwesome6.Svg" Version="0.1.0-unstable0056" />
     <PackageReference Include="PropertyChanged.Fody" Version="3.4.0" />
   </ItemGroup>
 
@@ -46,6 +44,11 @@
     <Content Include="..\..\Font-Awesome-Pro\otfs\Font Awesome 6 Pro-Thin-100.otf" Link="Fonts/Font Awesome 6 Pro-Thin-100.otf">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\FontAwesome6.Fonts.Net\FontAwesome6.Fonts.Net.csproj" />
+    <ProjectReference Include="..\FontAwesome6.Svg.Net\FontAwesome6.Svg.Net.csproj" />
   </ItemGroup>
 
 </Project>

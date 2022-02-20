@@ -8,6 +8,7 @@
         xmlns:faf="http://schemas.fontawesome.com/icons/fonts"
         xmlns:fafap="http://schemas.fontawesome.com/icons/fonts/properties"
         xmlns:fas="http://schemas.fontawesome.com/icons/svg"        
+        xmlns:fasap="http://schemas.fontawesome.com/icons/svg/properties"        
         mc:Ignorable="d"
         Title="FontAwesom6.Example.WPF" Height="675"  Width="900">
   <Window.DataContext>
@@ -206,12 +207,12 @@
 
         <TextBlock Grid.Row="4" Grid.Column="0" Text="Viewbox"  TextWrapping="Wrap" FontWeight="Bold" Margin="5,0,0,0"/>
         <Viewbox Grid.Row="4" Grid.Column="2"
-                        fas:FontAwesome.Icon="{Binding SelectedIcon}" fas:FontAwesome.SwapOpacity="{Binding SwapOpacity}"
-                        fas:FontAwesome.PrimaryColor="{Binding PrimaryColor}" fas:FontAwesome.SecondaryColor="{Binding SecondaryColor}" 
-                        fas:FontAwesome.PrimaryOpacity="{Binding PrimaryOpacity}" fas:FontAwesome.SecondaryOpacity="{Binding SecondaryOpacity}"
-                        fas:FontAwesome.Spin="{Binding SpinIsEnabled}" fas:FontAwesome.SpinDuration="{Binding SpinDuration}"
-                        fas:FontAwesome.Pulse="{Binding PulseIsEnabled}" fas:FontAwesome.PulseDuration="{Binding PulseDuration}" 
-                        fas:FontAwesome.FlipOrientation="{Binding FlipOrientation}" fas:FontAwesome.Rotation="{Binding Rotation}"
+                        fasap:FontAwesome.Icon="{Binding SelectedIcon}" fasap:FontAwesome.SwapOpacity="{Binding SwapOpacity}"
+                        fasap:FontAwesome.PrimaryColor="{Binding PrimaryColor}" fasap:FontAwesome.SecondaryColor="{Binding SecondaryColor}" 
+                        fasap:FontAwesome.PrimaryOpacity="{Binding PrimaryOpacity}" fasap:FontAwesome.SecondaryOpacity="{Binding SecondaryOpacity}"
+                        fasap:FontAwesome.Spin="{Binding SpinIsEnabled}" fasap:FontAwesome.SpinDuration="{Binding SpinDuration}"
+                        fasap:FontAwesome.Pulse="{Binding PulseIsEnabled}" fasap:FontAwesome.PulseDuration="{Binding PulseDuration}" 
+                        fasap:FontAwesome.FlipOrientation="{Binding FlipOrientation}" fasap:FontAwesome.Rotation="{Binding Rotation}"
                         Height="50" Width="50" Visibility="{Binding Visibility}" Margin="10"/>
 
         <TextBlock Grid.Row="5" Grid.Column="0" Text="Button with Icon and Text" TextWrapping="Wrap" FontWeight="Bold"  Margin="5,0,0,0"/>
@@ -252,20 +253,20 @@
                 fafap:FontAwesome.PrimaryOpacity="{Binding PrimaryOpacity}" fafap:FontAwesome.SecondaryOpacity="{Binding SecondaryOpacity}"
                 FontSize="{Binding FontSize}" Visibility="{Binding Visibility}" Margin="10"></Button>
         <StackPanel Grid.Row="7" Grid.Column="2" Orientation="Horizontal">
-          <Button fas:FontAwesome.Icon="{Binding SelectedIcon}" fas:FontAwesome.SwapOpacity="{Binding SwapOpacity}"
-                fas:FontAwesome.PrimaryColor="{Binding PrimaryColor}" fas:FontAwesome.SecondaryColor="{Binding SecondaryColor}" 
-                fas:FontAwesome.PrimaryOpacity="{Binding PrimaryOpacity}" fas:FontAwesome.SecondaryOpacity="{Binding SecondaryOpacity}"
-                fas:FontAwesome.Spin="{Binding SpinIsEnabled}" fas:FontAwesome.SpinDuration="{Binding SpinDuration}"
-                fas:FontAwesome.Pulse="{Binding PulseIsEnabled}" fas:FontAwesome.PulseDuration="{Binding PulseDuration}" 
-                fas:FontAwesome.FlipOrientation="{Binding FlipOrientation}" fas:FontAwesome.Rotation="{Binding Rotation}"                
+            <Button fasap:FontAwesome.Icon="{Binding SelectedIcon}" fasap:FontAwesome.SwapOpacity="{Binding SwapOpacity}"
+                fasap:FontAwesome.PrimaryColor="{Binding PrimaryColor}" fasap:FontAwesome.SecondaryColor="{Binding SecondaryColor}" 
+                fasap:FontAwesome.PrimaryOpacity="{Binding PrimaryOpacity}" fasap:FontAwesome.SecondaryOpacity="{Binding SecondaryOpacity}"
+                fasap:FontAwesome.Spin="{Binding SpinIsEnabled}" fasap:FontAwesome.SpinDuration="{Binding SpinDuration}"
+                fasap:FontAwesome.Pulse="{Binding PulseIsEnabled}" fasap:FontAwesome.PulseDuration="{Binding PulseDuration}" 
+                fasap:FontAwesome.FlipOrientation="{Binding FlipOrientation}" fasap:FontAwesome.Rotation="{Binding Rotation}"                
                 Width="32" Height="32" Visibility="{Binding Visibility}" Margin="10" HorizontalAlignment="Center"></Button>
 
-          <Image fas:FontAwesome.Icon="{Binding SelectedIcon}" fas:FontAwesome.SwapOpacity="{Binding SwapOpacity}"
-                        fas:FontAwesome.PrimaryColor="{Binding PrimaryColor}" fas:FontAwesome.SecondaryColor="{Binding SecondaryColor}" 
-                        fas:FontAwesome.PrimaryOpacity="{Binding PrimaryOpacity}" fas:FontAwesome.SecondaryOpacity="{Binding SecondaryOpacity}"
-                        fas:FontAwesome.Spin="{Binding SpinIsEnabled}" fas:FontAwesome.SpinDuration="{Binding SpinDuration}"
-                        fas:FontAwesome.Pulse="{Binding PulseIsEnabled}" fas:FontAwesome.PulseDuration="{Binding PulseDuration}" 
-                        fas:FontAwesome.FlipOrientation="{Binding FlipOrientation}" fas:FontAwesome.Rotation="{Binding Rotation}"
+                    <Image fasap:FontAwesome.Icon="{Binding SelectedIcon}" fasap:FontAwesome.SwapOpacity="{Binding SwapOpacity}"
+                        fasap:FontAwesome.PrimaryColor="{Binding PrimaryColor}" fasap:FontAwesome.SecondaryColor="{Binding SecondaryColor}" 
+                        fasap:FontAwesome.PrimaryOpacity="{Binding PrimaryOpacity}" fasap:FontAwesome.SecondaryOpacity="{Binding SecondaryOpacity}"
+                        fasap:FontAwesome.Spin="{Binding SpinIsEnabled}" fasap:FontAwesome.SpinDuration="{Binding SpinDuration}"
+                        fasap:FontAwesome.Pulse="{Binding PulseIsEnabled}" fasap:FontAwesome.PulseDuration="{Binding PulseDuration}" 
+                        fasap:FontAwesome.FlipOrientation="{Binding FlipOrientation}" fasap:FontAwesome.Rotation="{Binding Rotation}"
                         Height="50" Width="50" Visibility="{Binding Visibility}" Margin="10"/>
 
         </StackPanel>

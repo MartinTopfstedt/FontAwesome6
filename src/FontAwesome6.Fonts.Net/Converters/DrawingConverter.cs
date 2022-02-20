@@ -1,39 +1,4 @@
 ﻿
-/* Unmerged change from project 'FontAwesome6.Fonts.Net (net472)'
-Before:
-using System;
-After:
-using FontAwesome6.Fonts.Extensions;
-
-using System;
-*/
-
-/* Unmerged change from project 'FontAwesome6.Fonts.Net (net5.0-windows)'
-Before:
-using System;
-After:
-using FontAwesome6.Fonts.Extensions;
-
-using System;
-*/
-
-/* Unmerged change from project 'FontAwesome6.Fonts.Net (net462)'
-Before:
-using System;
-After:
-using FontAwesome6.Fonts.Extensions;
-
-using System;
-*/
-
-/* Unmerged change from project 'FontAwesome6.Fonts.Net (netcoreapp3.1)'
-Before:
-using System;
-After:
-using FontAwesome6.Fonts.Extensions;
-
-using System;
-*/
 using FontAwesome6.Fonts.Extensions;
 
 using System;

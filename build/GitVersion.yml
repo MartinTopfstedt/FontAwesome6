@@ -29,7 +29,7 @@ branches:
     is-release-branch: false
   release:
     regex: release(s)?[/-]
-    mode: ContinuousDelivery
+    mode: ContinuousDeployment
     tag: beta
     increment: Patch
     prevent-increment-of-merged-branch-version: true
@@ -38,7 +38,7 @@ branches:
     is-release-branch: true
   feature:
     regex: feature(s)?[/-]
-    mode: ContinuousDelivery
+    mode: ContinuousDeployment
     tag: useBranchName
     increment: Inherit
     prevent-increment-of-merged-branch-version: false
@@ -47,7 +47,7 @@ branches:
     is-release-branch: false
   pull-request:
     regex: (pull|pull\-requests|pr)[/-]
-    mode: ContinuousDelivery
+    mode: ContinuousDeployment
     tag: PullRequest
     increment: Inherit
     prevent-increment-of-merged-branch-version: false
@@ -57,7 +57,7 @@ branches:
     is-release-branch: false
   hotfix:
     regex: hotfix(es)?[/-]
-    mode: ContinuousDelivery
+    mode: ContinuousDeployment
     tag: beta
     increment: Patch
     prevent-increment-of-merged-branch-version: false
