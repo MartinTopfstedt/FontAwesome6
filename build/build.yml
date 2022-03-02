@@ -18,7 +18,7 @@ variables:
 steps:
 - task: GitVersion@5
   inputs:
-    runtime: 'core'
+    runtime: 'full'
     configFilePath: 'build/GitVersion.yml'
     updateAssemblyInfo: true
 
