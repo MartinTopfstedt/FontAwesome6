@@ -16,6 +16,11 @@ namespace FontAwesome6.Fonts.Extensions
         /// </summary>
         public static FontFamily GetFontFamily(this EFontAwesomeIcon icon)
         {
+            if (icon == EFontAwesomeIcon.None)
+            {
+                return null;
+            }
+
             return FontAwesomeFonts.GetFontFamily(icon.GetStyle());
         }
 
@@ -24,6 +29,11 @@ namespace FontAwesome6.Fonts.Extensions
         /// </summary>
         public static Typeface GetTypeFace(this EFontAwesomeIcon icon)
         {
+            if (icon == EFontAwesomeIcon.None)
+            {
+                return null;
+            }
+
             return FontAwesomeFonts.GetTypeface(icon.GetStyle());
         }
 
@@ -67,34 +77,34 @@ namespace FontAwesome6.Fonts.Extensions
             {
                 var typeface = icon.GetTypeFace();
 #if FontAwesomePro
-        if (icon.IsDuotone())
-        {
-          var primaryClone = primary.Clone();
-          primaryClone.Opacity = primaryOpacity ?? 1;
+                if (icon.IsDuotone())
+                {
+                  var primaryClone = primary.Clone();
+                  primaryClone.Opacity = primaryOpacity ?? 1;
 
-          var secondaryClone = (secondary ?? primary).Clone();
-          secondaryClone.Opacity = secondaryOpacity ?? info.Item2;
+                  var secondaryClone = (secondary ?? primary).Clone();
+                  secondaryClone.Opacity = secondaryOpacity ?? info.Item2;
 
-          if (swapOpacity.HasValue && swapOpacity.Value)
-          {
-            var temp = primaryClone.Opacity;
-            primaryClone.Opacity = secondaryClone.Opacity;
-            secondaryClone.Opacity = temp;
-          }
-          primaryClone.Freeze();
-          secondaryClone.Freeze();
+                  if (swapOpacity.HasValue && swapOpacity.Value)
+                  {
+                    var temp = primaryClone.Opacity;
+                    primaryClone.Opacity = secondaryClone.Opacity;
+                    secondaryClone.Opacity = temp;
+                  }
+                  primaryClone.Freeze();
+                  secondaryClone.Freeze();
 
-          var primaryGlyph = CreateFormattedText(info.Item1 + "\ufe01", typeface, primaryClone, emSize);
-          var secondaryGlyph = CreateFormattedText(info.Item1 + "\ufe02", typeface, secondaryClone, emSize);
+                  var primaryGlyph = CreateFormattedText(info.Item1 + "\ufe01", typeface, primaryClone, emSize);
+                  var secondaryGlyph = CreateFormattedText(info.Item1 + "\ufe02", typeface, secondaryClone, emSize);
 
-          drawingContext.DrawGeometry(primaryClone, null, primaryGlyph.BuildGeometry(new Point(0, 0)));
-          drawingContext.DrawGeometry(secondaryClone, null, secondaryGlyph.BuildGeometry(new Point(0, 0)));
-        }
-        else
-        {
-          var primaryGlyph = CreateFormattedText(info.Item1, typeface, primary, emSize);
-          drawingContext.DrawGeometry(primary, null, primaryGlyph.BuildGeometry(new Point(0, 0)));
-        }
+                  drawingContext.DrawGeometry(primaryClone, null, primaryGlyph.BuildGeometry(new Point(0, 0)));
+                  drawingContext.DrawGeometry(secondaryClone, null, secondaryGlyph.BuildGeometry(new Point(0, 0)));
+                }
+                else
+                {
+                  var primaryGlyph = CreateFormattedText(info.Item1, typeface, primary, emSize);
+                  drawingContext.DrawGeometry(primary, null, primaryGlyph.BuildGeometry(new Point(0, 0)));
+                }
 #else
                 var primaryGlyph = CreateFormattedText(info.Item1, typeface, primary, emSize);
                 drawingContext.DrawGeometry(primary, null, primaryGlyph.BuildGeometry(new Point(0, 0)));

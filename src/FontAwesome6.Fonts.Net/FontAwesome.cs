@@ -93,10 +93,10 @@ namespace FontAwesome6.Fonts
 
 #if NET40
             d.SetValue(TextOptions.TextRenderingModeProperty, TextRenderingMode.ClearType);
-#endif
+#endif            
             d.SetValue(FontFamilyProperty, icon.GetFontFamily());
-            d.SetValue(TextAlignmentProperty, TextAlignment.Center);
             d.SetValue(TextProperty, icon.GetUnicode());
+            d.SetValue(TextAlignmentProperty, TextAlignment.Center);
         }
 
         /// <summary>
