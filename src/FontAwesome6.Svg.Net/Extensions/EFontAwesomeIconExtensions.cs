@@ -45,10 +45,15 @@ namespace FontAwesome6.Svg.Extensions
         /// <returns>A new System.Windows.Media.Drawing</returns>
         public static Drawing CreateDrawing(this EFontAwesomeIcon icon, Brush primary, Brush secondary = null, bool? swapOpacity = null, double? primaryOpacity = null, double? secondaryOpacity = null)
         {
-            var information = icon.GetSvgInformation();
+            if (icon == EFontAwesomeIcon.None)
+            {
+                return new DrawingVisual().Drawing;
+            }
+
             var visual = new DrawingVisual();
             using (var drawingContext = visual.RenderOpen())
             {
+                var information = icon.GetSvgInformation();
                 if (information.Paths.Length > 1)
                 {
                     var primaryClone = primary.Clone();
@@ -90,6 +95,11 @@ namespace FontAwesome6.Svg.Extensions
         /// <returns>A new System.Windows.UIElement</returns>
         public static UIElement CreateCanvas(this EFontAwesomeIcon icon, Brush primary, Brush secondary = null, bool? swapOpacity = null, double? primaryOpacity = null, double? secondaryOpacity = null)
         {
+            if (icon == EFontAwesomeIcon.None)
+            {
+                return new Canvas();
+            }
+
             var information = icon.GetSvgInformation();
             if (information.Paths.Length > 1)
             {

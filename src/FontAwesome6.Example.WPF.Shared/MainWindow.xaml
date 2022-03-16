@@ -9,7 +9,7 @@
         xmlns:fafap="http://schemas.fontawesome.com/icons/fonts/properties"
         xmlns:fas="http://schemas.fontawesome.com/icons/svg"        
         xmlns:fasap="http://schemas.fontawesome.com/icons/svg/properties"   
-        xmlns:viewModels="clr-namespace:FontAwesome6.Example.WPF"
+        xmlns:viewModels="clr-namespace:FontAwesome6.Example.WPF"        
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance viewModels:MainWindowViewModel}"
         Title="FontAwesom6.Example.WPF" Height="675"  Width="900">
@@ -108,7 +108,7 @@
                 <RowDefinition Height="Auto"/>
                 <RowDefinition/>
             </Grid.RowDefinitions>
-            <TextBox Grid.Row="0" ToolTip ="String or Regex.."  Margin="0, 0, 0, 5"
+            <TextBox Grid.Row="0" ToolTip="String or Regex.."  Margin="5"
                Text="{Binding FilterText, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"></TextBox>
             <ListView Grid.Row="1" ItemsSource="{Binding VisibleIcons}" SelectedItem="{Binding SelectedIcon}">
                 <ListView.View>

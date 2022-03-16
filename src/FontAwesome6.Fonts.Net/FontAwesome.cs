@@ -57,6 +57,8 @@ namespace FontAwesome6.Fonts
         public static readonly DependencyProperty FlipOrientationProperty =
             DependencyProperty.Register("FlipOrientation", typeof(EFlipOrientation), typeof(FontAwesome), new PropertyMetadata(EFlipOrientation.Normal, FlipOrientationChanged));
 
+        private FontFamily _initialFontFamily;
+
         static FontAwesome()
         {
             OpacityProperty.OverrideMetadata(typeof(FontAwesome), new UIPropertyMetadata(1.0, OpacityChanged));
@@ -64,6 +66,7 @@ namespace FontAwesome6.Fonts
 
         public FontAwesome()
         {
+            _initialFontFamily = FontFamily;
             IsVisibleChanged += (s, a) => CoerceValue(SpinProperty);
         }
 
@@ -83,7 +86,13 @@ namespace FontAwesome6.Fonts
 
         private static void OnIconPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
-            var icon = (EFontAwesomeIcon)d.GetValue(IconProperty);
+            if (d is not FontAwesome fontAwesome)
+            {
+                return;
+            }
+
+            var icon = (EFontAwesomeIcon)d.GetValue(IconProperty);            
+
 #if FontAwesomePro
             if (icon.IsDuotone())
             {
@@ -94,7 +103,7 @@ namespace FontAwesome6.Fonts
 #if NET40
             d.SetValue(TextOptions.TextRenderingModeProperty, TextRenderingMode.ClearType);
 #endif            
-            d.SetValue(FontFamilyProperty, icon.GetFontFamily());
+            d.SetValue(FontFamilyProperty, icon.GetFontFamily() ?? fontAwesome._initialFontFamily);
             d.SetValue(TextProperty, icon.GetUnicode());
             d.SetValue(TextAlignmentProperty, TextAlignment.Center);
         }

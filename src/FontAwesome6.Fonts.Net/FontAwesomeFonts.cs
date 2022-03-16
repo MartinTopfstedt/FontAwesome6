@@ -116,7 +116,7 @@ namespace FontAwesome6.Fonts
         {
             if (File.Exists(fileName))
             {
-                return;
+                File.Delete(fileName);
             }
 
             using (var res = resManager.GetStream(Uri.EscapeUriString(resourceName).ToLowerInvariant()))
