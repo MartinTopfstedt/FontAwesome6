@@ -67,6 +67,11 @@ namespace FontAwesome6.Fonts.Extensions
         /// <returns>A new System.Windows.Media.Drawing</returns>
         public static Drawing CreateDrawing(this EFontAwesomeIcon icon, Brush primary, Brush secondary = null, bool? swapOpacity = null, double? primaryOpacity = null, double? secondaryOpacity = null, double emSize = 100)
         {
+            if (icon == EFontAwesomeIcon.None)
+            {
+                return null;
+            }
+
             if (!FontAwesomeUnicodes.Data.TryGetValue(icon.GetIconName(), out var info))
             {
                 return null;
