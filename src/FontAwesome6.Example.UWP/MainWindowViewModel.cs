@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Text.RegularExpressions;
 
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Media;
@@ -13,13 +14,45 @@ namespace FontAwesome6.Example.UWP
 {
     public class MainWindowViewModel : INotifyPropertyChanged
     {
+        public Visibility Visibility { get; set; }
+        public EFontAwesomeIcon SelectedIcon { get; set; }
+
+        public bool SpinIsEnabled { get; set; }
+        public double SpinDuration { get; set; }
+        public bool PulseIsEnabled { get; set; }
+        public double PulseDuration { get; set; }
+        public EFlipOrientation FlipOrientation { get; set; }
+        public double FontSize { get; set; }
+        public double Rotation { get; set; }
+
+        public Brush PrimaryColor { get; set; }
+
+        public Brush SecondaryColor { get; set; }
+        public double PrimaryOpacity { get; set; }
+
+        public double SecondaryOpacity { get; set; }
+
+        public bool SwapOpacity { get; set; }
+
+        public string FilterText { get; set; }
+
+        public List<Visibility> Visibilities { get; set; } = new List<Visibility>();
+
+        public List<EFlipOrientation> FlipOrientations { get; set; } = new List<EFlipOrientation>();
+        public List<EFontAwesomeIcon> AllIcons { get; set; } = new List<EFontAwesomeIcon>();
+
+        public IEnumerable<EFontAwesomeIcon> VisibleIcons { get; private set; }
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
         public MainWindowViewModel()
         {
             AllIcons = Enum.GetValues(typeof(EFontAwesomeIcon)).Cast<EFontAwesomeIcon>()
                         .OrderBy(i => i.GetStyle()).ThenBy(i => i.GetIconName()).ToList();
             AllIcons.Remove(EFontAwesomeIcon.None);
 
-            SelectedIcon = AllIcons.First();
+            VisibleIcons = AllIcons.ToList();
+            SelectedIcon = VisibleIcons.First();
 
             FlipOrientations = Enum.GetValues(typeof(EFlipOrientation)).Cast<EFlipOrientation>().ToList();
             SpinDuration = 5;
@@ -44,32 +77,22 @@ namespace FontAwesome6.Example.UWP
             SwapOpacity = false;
         }
 
-        public Visibility Visibility { get; set; }
-        public EFontAwesomeIcon SelectedIcon { get; set; }
+        private void OnFilterTextChanged()
+        {
+            UpdateVisibleIcons();
+        }
 
-        public bool SpinIsEnabled { get; set; }
-        public double SpinDuration { get; set; }
-        public bool PulseIsEnabled { get; set; }
-        public double PulseDuration { get; set; }
-        public EFlipOrientation FlipOrientation { get; set; }
-        public double FontSize { get; set; }
-        public double Rotation { get; set; }
-
-        public Brush PrimaryColor { get; set; }
-
-        public Brush SecondaryColor { get; set; }
-        public double PrimaryOpacity { get; set; }
-
-        public double SecondaryOpacity { get; set; }
-
-        public bool SwapOpacity { get; set; }
-
-
-        public List<Visibility> Visibilities { get; set; } = new List<Visibility>();
-
-        public List<EFlipOrientation> FlipOrientations { get; set; } = new List<EFlipOrientation>();
-        public List<EFontAwesomeIcon> AllIcons { get; set; } = new List<EFontAwesomeIcon>();
-
-        public event PropertyChangedEventHandler PropertyChanged;
+        private void UpdateVisibleIcons()
+        {
+            try
+            {
+                VisibleIcons = AllIcons.Where(icon => Regex.IsMatch(icon.GetIconName(), FilterText, RegexOptions.IgnoreCase));
+            }
+            catch
+            {
+                VisibleIcons = AllIcons;
+            }
+            SelectedIcon = VisibleIcons.FirstOrDefault();
+        }
     }
 }

@@ -8,42 +8,12 @@ using System.Linq;
 
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Media;
+using System.Text.RegularExpressions;
 
 namespace FontAwesome6.Example.WinUI
 {
     public class MainWindowViewModel : INotifyPropertyChanged
     {
-        public MainWindowViewModel()
-        {
-            AllIcons = Enum.GetValues(typeof(EFontAwesomeIcon)).Cast<EFontAwesomeIcon>()
-                        .OrderBy(i => i.GetStyle()).ThenBy(i => i.GetIconName()).ToList();
-            AllIcons.Remove(EFontAwesomeIcon.None);
-
-            SelectedIcon = AllIcons.First();
-
-            FlipOrientations = Enum.GetValues(typeof(EFlipOrientation)).Cast<EFlipOrientation>().ToList();
-            SpinDuration = 5;
-            PulseDuration = 5;
-
-            FontSize = 30;
-            Rotation = 0;
-
-            Visibilities = Enum.GetValues(typeof(Visibility)).Cast<Visibility>().ToList();
-            Visibility = Visibility.Visible;
-
-            // if you have a default icon color you can overwrite the defaults instead of setting the color for each icon
-            //FontAwesomeDefaults.PrimaryColor = new SolidColorBrush(Windows.UI.Colors.Red);
-            //FontAwesomeDefaults.SecondaryColor = new SolidColorBrush(Windows.UI.Colors.Green);
-
-            PrimaryColor = Application.Current.Resources.ThemeDictionaries["ApplicationForegroundThemeBrush"] as SolidColorBrush;
-            SecondaryColor = Application.Current.Resources.ThemeDictionaries["ApplicationForegroundThemeBrush"] as SolidColorBrush;
-
-            PrimaryOpacity = -0.1; // negative means use default
-            SecondaryOpacity = -0.1; // negative means use default
-
-            SwapOpacity = false;
-        }
-
         public Visibility Visibility { get; set; }
 
         private EFontAwesomeIcon _selectedIcon;
@@ -64,7 +34,7 @@ namespace FontAwesome6.Example.WinUI
             set
             {
                 _spinIsEnabled = value;
-                RaisePropertyChanged(nameof(SpinIsEnabled));                
+                RaisePropertyChanged(nameof(SpinIsEnabled));
             }
         }
         private double _spinDuration;
@@ -74,7 +44,7 @@ namespace FontAwesome6.Example.WinUI
             set
             {
                 _spinDuration = value;
-                RaisePropertyChanged(nameof(SpinDuration));                
+                RaisePropertyChanged(nameof(SpinDuration));
             }
         }
 
@@ -85,7 +55,7 @@ namespace FontAwesome6.Example.WinUI
             set
             {
                 _pulseIsEnabled = value;
-                RaisePropertyChanged(nameof(PulseIsEnabled));                
+                RaisePropertyChanged(nameof(PulseIsEnabled));
             }
         }
 
@@ -96,7 +66,7 @@ namespace FontAwesome6.Example.WinUI
             set
             {
                 _pulseDuration = value;
-                RaisePropertyChanged(nameof(PulseDuration));                
+                RaisePropertyChanged(nameof(PulseDuration));
             }
         }
 
@@ -107,7 +77,7 @@ namespace FontAwesome6.Example.WinUI
             set
             {
                 _flipOrientation = value;
-                RaisePropertyChanged(nameof(FlipOrientation));                
+                RaisePropertyChanged(nameof(FlipOrientation));
             }
         }
 
@@ -118,7 +88,7 @@ namespace FontAwesome6.Example.WinUI
             set
             {
                 _fontSize = value;
-                RaisePropertyChanged(nameof(FontSize));                
+                RaisePropertyChanged(nameof(FontSize));
             }
         }
 
@@ -129,7 +99,7 @@ namespace FontAwesome6.Example.WinUI
             set
             {
                 _rotation = value;
-                RaisePropertyChanged(nameof(Rotation));                
+                RaisePropertyChanged(nameof(Rotation));
             }
         }
 
@@ -188,16 +158,85 @@ namespace FontAwesome6.Example.WinUI
             }
         }
 
-        public List<Visibility> Visibilities { get; set; } = new List<Visibility>();
+        private string _filterText;
+        public string FilterText
+        {
+            get => _filterText;
+            set
+            {
+                _filterText = value;
+                RaisePropertyChanged(nameof(FilterText));
+                UpdateVisibleIcons();
+            }
+        }
 
+        private IEnumerable<EFontAwesomeIcon> _visibleIcons;
+        public IEnumerable<EFontAwesomeIcon> VisibleIcons
+        {
+            get => _visibleIcons;
+            set
+            {
+                _visibleIcons = value;
+                RaisePropertyChanged(nameof(VisibleIcons));
+            }
+        }
+
+        public List<Visibility> Visibilities { get; set; } = new List<Visibility>();
         public List<EFlipOrientation> FlipOrientations { get; set; } = new List<EFlipOrientation>();
         public List<EFontAwesomeIcon> AllIcons { get; set; } = new List<EFontAwesomeIcon>();
+
+        public event PropertyChangedEventHandler PropertyChanged;
+
+        public MainWindowViewModel()
+        {
+            AllIcons = Enum.GetValues(typeof(EFontAwesomeIcon)).Cast<EFontAwesomeIcon>()
+                        .OrderBy(i => i.GetStyle()).ThenBy(i => i.GetIconName()).ToList();
+            AllIcons.Remove(EFontAwesomeIcon.None);
+
+            VisibleIcons = AllIcons.ToList();
+            SelectedIcon = VisibleIcons.First();
+
+            FlipOrientations = Enum.GetValues(typeof(EFlipOrientation)).Cast<EFlipOrientation>().ToList();
+            SpinDuration = 5;
+            PulseDuration = 5;
+
+            FontSize = 30;
+            Rotation = 0;
+
+            Visibilities = Enum.GetValues(typeof(Visibility)).Cast<Visibility>().ToList();
+            Visibility = Visibility.Visible;
+
+            // if you have a default icon color you can overwrite the defaults instead of setting the color for each icon
+            //FontAwesomeDefaults.PrimaryColor = new SolidColorBrush(Windows.UI.Colors.Red);
+            //FontAwesomeDefaults.SecondaryColor = new SolidColorBrush(Windows.UI.Colors.Green);
+
+            PrimaryColor = Application.Current.Resources.ThemeDictionaries["ApplicationForegroundThemeBrush"] as SolidColorBrush;
+            SecondaryColor = Application.Current.Resources.ThemeDictionaries["ApplicationForegroundThemeBrush"] as SolidColorBrush;
+
+            PrimaryOpacity = -0.1; // negative means use default
+            SecondaryOpacity = -0.1; // negative means use default
+
+            SwapOpacity = false;
+        }
 
         public void RaisePropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        private void UpdateVisibleIcons()
+        {
+            try
+            {
+                VisibleIcons = AllIcons.Where(icon => Regex.IsMatch(icon.GetIconName(), FilterText, RegexOptions.IgnoreCase));
+            }
+            catch
+            {
+                VisibleIcons = AllIcons;
+            }
+            SelectedIcon = VisibleIcons.FirstOrDefault();
+        }
+
+
     }
 }
