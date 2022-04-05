@@ -12,18 +12,24 @@ using System.Collections.Generic;
 
 namespace FontAwesome6
 {
+	/// <summary>
+	/// FontAwesome by Dave Gandy (@davegandy)
+	///	The iconic SVG, font, and CSS toolkit
+	///	License https://fontawesome.com/license (C#: MIT License)
+	/// Version: {{ version }} 
+	/// </summary>
 	public static class FontAwesomeUnicodes
 	{
-		public static Dictionary<string, Tuple<string, double>> Data = new Dictionary<string, Tuple<string, double>>() {      
+		public static Dictionary<string, Tuple<string, string>> Data = new Dictionary<string, Tuple<string, string>>() {      
 		{{~ for kvp in freeIcons ~}}		
 			{{~ if (kvp.Value.free | array.size) > 0 ~}}
-			{ "{{ kvp.Key | regex.replace "[\\-&\\.']" " " | string.capitalizewords | string.replace " " "" }}", Tuple.Create("{{kvp.Value.unicodeString}}", {{kvp.Value.duotoneOpacity}}) },	
+			{ "{{ kvp.Key | regex.replace "[\\-&\\.']" " " | string.capitalizewords | string.replace " " "" }}", Tuple.Create("{{kvp.Value.unicodeString}}", "{{kvp.Value.id}}") },	
 			{{~ end ~}}
 		{{~ end ~}}
 #if FontAwesomePro
 		{{~ for kvp in proIcons ~}}					
 			{{~ if (kvp.Value.free | array.size) == 0 ~}}
-			{ "{{ kvp.Key | regex.replace "[\\-&\\.']" " " | string.capitalizewords | string.replace " " "" }}", Tuple.Create("{{kvp.Value.unicodeString}}", {{kvp.Value.duotoneOpacity}}) },			
+			{ "{{ kvp.Key | regex.replace "[\\-&\\.']" " " | string.capitalizewords | string.replace " " "" }}", Tuple.Create("{{kvp.Value.unicodeString}}", "{{kvp.Value.id}}") },			
 			{{~ end ~}}			
 		{{~ end ~}}
 #endif

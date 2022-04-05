@@ -26,7 +26,9 @@ namespace FontAwesome.Generator
 
         public string SvgOutputFileNamePrefix { get; set; }
 
-        public ICommand GenerateCommand { get; set; }
+        public ICommand GenerateSourceFilesCommand { get; set; }
+
+        public ICommand GenerateSvgFilesCommand { get; set; }
 
         public ICommand BrowseFontAwesomeSvgDirectoryCommand { get; set; }
 
@@ -38,7 +40,7 @@ namespace FontAwesome.Generator
 
         public MainWindowViewModel()
         {
-            Version = "6.0.0-beta1";
+            Version = "6.1.1";
 
             var root = Path.GetFullPath(Path.Combine(Directory.GetCurrentDirectory(), "..", ".."));
 
@@ -47,7 +49,8 @@ namespace FontAwesome.Generator
             SvgOutputDirectory = Path.Combine(root, "generated", "Font-Awesome");
             SvgOutputFileNamePrefix = "FontAwesomeSvg";
 
-            GenerateCommand = new RelayCommand(obj => GenerateExecuted(), obj => CanExecutGenerate());
+            GenerateSourceFilesCommand = new RelayCommand(obj => GenerateSourceFilesExecuted(), obj => CanExecuteGenerateSourceFiles());
+            GenerateSvgFilesCommand = new RelayCommand(obj => GenerateSvgFilesExecuted(), obj => CanExecuteGenerateSvgFiles());
             BrowseFontAwesomeSvgDirectoryCommand = new RelayCommand(obj => BrowseFontAwesomeSvgDirectoryExecuted());
             BrowseSvgOutputDirectoryCommand = new RelayCommand(obj => BrowseSvgOutputDirectoryExecuted());
             BrowseSourceDirectoryCommand = new RelayCommand(obj => BrowseSourceDirectoryExecuted());
@@ -55,23 +58,51 @@ namespace FontAwesome.Generator
 
         public event PropertyChangedEventHandler? PropertyChanged;
 
-        private bool CanExecutGenerate()
+        private bool CanExecuteGenerateSourceFiles()
         {
-            if (!Directory.Exists(SourceDirectory) || !Directory.Exists(FontAwesomeSvgDirectory) || !Directory.Exists(SvgOutputDirectory))
+            if (!Directory.Exists(SourceDirectory))
             {
                 return false;
             }
             return true;
         }
 
-        private async void GenerateExecuted()
+        private bool CanExecuteGenerateSvgFiles()
+        {
+            if (!Directory.Exists(FontAwesomeSvgDirectory) || !Directory.Exists(SvgOutputDirectory))
+            {
+                return false;
+            }
+            return true;
+        }
+
+        private async void GenerateSourceFilesExecuted()
         {
             try
             {
                 IsWindowsEnabled = false;
                 var generator = new FontAwesomeGenerator();
-                await generator.GenerateAllAsync(Version, !IsPro, SourceDirectory, FontAwesomeSvgDirectory, SvgOutputDirectory, SvgOutputFileNamePrefix ?? "FontAwesomeSvg").ConfigureAwait(false);
-                MessageBox.Show("Generation finished.", "Generation");                
+                await generator.GenerateSourceFiles(Version, SourceDirectory).ConfigureAwait(false);
+                MessageBox.Show("Source Files Generation finished.", "Generation");                
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.ToString(), "Generation: Error");
+            }
+            finally
+            {
+                IsWindowsEnabled = true;
+            }
+        }
+
+        private async void GenerateSvgFilesExecuted()
+        {
+            try
+            {
+                IsWindowsEnabled = false;
+                var generator = new FontAwesomeGenerator();
+                await generator.GenerateSvgFiles(Version, !IsPro, FontAwesomeSvgDirectory, SvgOutputDirectory, SvgOutputFileNamePrefix ?? "FontAwesomeSvg").ConfigureAwait(false);
+                MessageBox.Show("SVG Files Generation finished.", "Generation");
             }
             catch (Exception ex)
             {

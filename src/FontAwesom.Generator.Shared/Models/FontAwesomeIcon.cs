@@ -2,6 +2,7 @@
 {
     public class FontAwesomeIcon
     {
+        public string id { get; set; }
         public string label { get; set; }
         public string unicode { get; set; }
         public string unicodeString => FixUnicode(unicode);
@@ -9,18 +10,6 @@
         public List<string> styles { get; set; }
         public Dictionary<string, FontAwesomeSvgIcon> svg { get; set; }
         public List<string> free { get; set; }
-
-        public string duotoneOpacity
-        {
-            get
-            {
-                if (svg.TryGetValue("duotone", out var info))
-                {
-                    return info.opacity;
-                }
-                return "1.0";
-            }
-        }
 
         private string FixUnicode(string str)
         {

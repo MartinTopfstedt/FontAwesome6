@@ -1,5 +1,6 @@
 ﻿using FontAwesome.Generator.Shared.GraphQl;
 using FontAwesome.Generator.Shared.Models;
+using FontAwesome.Generator.Shared.Models.GraphQL;
 using FontAwesome.Generator.Shared.Models.Svgs;
 
 using Newtonsoft.Json;
@@ -17,14 +18,19 @@ namespace FontAwesome.Generator.Shared
     {
         private static Regex _reOpacity = new Regex(@"\.fa-secondary\{opacity:(.*?)\}");
 
-        public async Task GenerateAllAsync(string version, bool isFree, string sourceDirectory, string svgDirectory, string outputDirectory, string outputFileNamePrefix)
+        public async Task GenerateSourceFiles(string version, string sourceDirectory)
         {
-            var icons = await GetIconsAsync(version, isFree, svgDirectory);
-            GenerateFiles(sourceDirectory, icons);
+            var icons = await GetIconsAsync(version, false);
+            GenerateFiles(sourceDirectory, icons, version);
+        }
+
+        public async Task GenerateSvgFiles(string version, bool isFree, string svgDirectory, string outputDirectory, string outputFileNamePrefix)
+        {
+            var icons = await GetIconsAsync(version, isFree, svgDirectory);            
             GenerateSvg(outputDirectory, isFree, icons, outputFileNamePrefix);
         }
 
-        public async Task<Dictionary<string, FontAwesomeIcon>> GetIconsAsync(string version, bool isFree,  string svgDirectory)
+        private async Task<Dictionary<string, FontAwesomeIcon>> GetIconsAsync(string version, bool isFree, string svgDirectory = null)
         {
             var api = new FontAwesomeApi();
 
@@ -33,13 +39,22 @@ namespace FontAwesome.Generator.Shared
                 throw new Exception($"Version {version} does not exist.");
             }
 
-            var icons = await api.GetIconsAsync(version, isFree);
+            IEnumerable<Icon> icons;
+            if (isFree)
+            {
+                icons = await api.GetFreeIconsAsync(version);
+            }
+            else
+            {
+                icons = await api.GetAllIconsAsync(version);
+            }
 
             var result = new Dictionary<string, FontAwesomeIcon>();
             foreach (var icon in icons)
             {
                 var faIcon = new FontAwesomeIcon
                 {
+                    id = icon.Id,
                     unicode = icon.Unicode,
                     label = icon.Label,
                     styles = icon.Styles,
@@ -81,7 +96,7 @@ namespace FontAwesome.Generator.Shared
         }
 
 
-        private static void GenerateFiles(string srcDirectory, Dictionary<string, FontAwesomeIcon> icons)
+        private static void GenerateFiles(string srcDirectory, Dictionary<string, FontAwesomeIcon> icons, string version)
         {
             if (!Directory.Exists(srcDirectory))
             {
@@ -123,14 +138,14 @@ namespace FontAwesome.Generator.Shared
             var freeStyles = icons.Values.SelectMany(i => i.free).Distinct();
             var allStyles = icons.Values.SelectMany(i => i.styles).Distinct();
 
-            GenerateFile("EFontAwesomeStyle.scriban", Path.Combine(dirFontAwesome6, "EFontAwesomeStyle.cs"), new { FreeStyles = freeStyles, ProStyles = allStyles.Except(freeStyles) });
+            GenerateFile("EFontAwesomeStyle.scriban", Path.Combine(dirFontAwesome6, "EFontAwesomeStyle.cs"), new { FreeStyles = freeStyles, ProStyles = allStyles.Except(freeStyles), version });
 
             var freeIcons = icons.Where(i => i.Value.free.Count > 0);
             var proIcons = icons.Where(i => i.Value.free.Count < i.Value.styles.Count);
 
-            GenerateFile("EFontAwesomeIcon.scriban", Path.Combine(dirFontAwesome6, $"EFontAwesomeIcon.cs"), new { freeIcons, proIcons });
+            GenerateFile("EFontAwesomeIcon.scriban", Path.Combine(dirFontAwesome6, $"EFontAwesomeIcon.cs"), new { freeIcons, proIcons, version });
 
-            GenerateFile("FontAwesomeUnicodes.scriban", Path.Combine(dirFontAwesome6Fonts, $"FontAwesomeUnicodes.cs"), new { freeIcons, proIcons });
+            GenerateFile("FontAwesomeUnicodes.scriban", Path.Combine(dirFontAwesome6Fonts, $"FontAwesomeUnicodes.cs"), new { freeIcons, proIcons, version });
         }
 
         private static void GenerateSvg(string outputDirectory, bool isFree, Dictionary<string, FontAwesomeIcon> icons, string outputFileNamePrefix)

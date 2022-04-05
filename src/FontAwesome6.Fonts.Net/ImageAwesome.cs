@@ -284,7 +284,7 @@ namespace FontAwesome6.Fonts
             else
             {
 #if FontAwesomePro
-        control.Source = control.Icon.CreateImageSource(control.PrimaryColor, control.SecondaryColor, control.SwapOpacity, control.PrimaryOpacity, control.SecondaryOpacity);
+                control.Source = control.Icon.CreateImageSource(control.PrimaryColor, control.SecondaryColor, control.SwapOpacity, control.PrimaryOpacity, control.SecondaryOpacity);
 #else
                 control.Source = control.Icon.CreateImageSource(control.PrimaryColor);
 #endif

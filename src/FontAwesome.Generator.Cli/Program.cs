@@ -37,8 +37,8 @@ namespace FontAwesome.Generator.Cli
 
         private async Task OnExecute()
         {
-            var generator = new FontAwesomeGenerator();
-            await generator.GenerateAllAsync(Version, !IsProVersion, SourceDirectory, FontAwesomeSvgDirectory, SvgOutputDirectory, SvgOutputFileNamePrefix ?? "FontAwesomeSvg");
+            //var generator = new FontAwesomeGenerator();
+            //await generator.GenerateAllAsync(Version, !IsProVersion, SourceDirectory, FontAwesomeSvgDirectory, SvgOutputDirectory, SvgOutputFileNamePrefix ?? "FontAwesomeSvg");
         }
     }
 }
