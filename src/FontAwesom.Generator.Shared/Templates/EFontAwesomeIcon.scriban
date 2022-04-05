@@ -12,6 +12,7 @@ namespace FontAwesome6
 	/// FontAwesome by Dave Gandy (@davegandy)
 	///	The iconic SVG, font, and CSS toolkit
 	///	License https://fontawesome.com/license (C#: MIT License)
+	/// Version: {{ version }} 
 	/// </summary>
 	public enum EFontAwesomeIcon
 	{
@@ -22,7 +23,7 @@ namespace FontAwesome6
 		{{~ for kvp in freeIcons ~}}		
 			{{~ for style in kvp.Value.free ~}}
 		/// <summary>{{ kvp.Value.label | string.replace "&" "&amp;"}}</summary> 
-		/// <remarks><see href="https://fontawesome.com/v6.0/icons/{{ kvp.Key }}?s={{ style }}" /></remarks>		
+		/// <remarks><see href="https://fontawesome.com/icons/{{ kvp.Key }}?s={{ style }}" /></remarks>		
 		{{ style | string.capitalize }}_{{ kvp.Key | regex.replace "[\\-&\\.']" " " | string.capitalizewords | string.replace " " "" }},		
 			{{~ end ~}}
 		{{~ end ~}}
@@ -32,7 +33,7 @@ namespace FontAwesome6
 			{{~ for style in kvp.Value.styles ~}}
 				{{~ if !(kvp.Value.free | array.contains style) ~}}
 		/// <summary>{{ kvp.Value.label | string.replace "&" "&amp;"}}</summary> 
-		/// <remarks><see href="https://fontawesome.com/v6.0/icons/{{ kvp.Key }}?s={{ style }}" /></remarks>		
+		/// <remarks><see href="https://fontawesome.com/icons/{{ kvp.Key }}?s={{ style }}" /></remarks>		
 		{{ style | string.capitalize }}_{{ kvp.Key | regex.replace "[\\-&\\.']" " " | string.capitalizewords | string.replace " " "" }},		
 				{{~ end ~}}			
 			{{~ end ~}}		

@@ -48,16 +48,16 @@ namespace FontAwesome.Generator.Shared.GraphQl
         //    return response.Data.Release;
         //}
 
-        public async Task<Icon[]> GetIconsAsync(string version, bool isFree)
+        public async Task<Icon[]> GetFreeIconsAsync(string version)
         {
             var graphQLClient = new GraphQLHttpClient("https://api.fontawesome.com", new NewtonsoftJsonSerializer());
             var request = new GraphQLRequest
             {
-                Query = @"query ReleaseQuery($version: String!, $license: String!) { 
+                Query = @"query ReleaseQuery($version: String!) { 
                   release (version: $version)
                   {
                             version,
-                            icons(license: $license) {
+                            icons(license: ""free"") {
                             id,
                             label,
                             styles,
@@ -71,8 +71,38 @@ namespace FontAwesome.Generator.Shared.GraphQl
                 }",
                 Variables = new
                 {
-                    version,
-                    license = isFree ? "free" : "pro"
+                    version
+                }
+            };
+
+            var response = await graphQLClient.SendQueryAsync<ResponseType>(request);
+            return response.Data.Release.Icons;
+        }
+
+        public async Task<Icon[]> GetAllIconsAsync(string version)
+        {
+            var graphQLClient = new GraphQLHttpClient("https://api.fontawesome.com", new NewtonsoftJsonSerializer());
+            var request = new GraphQLRequest
+            {
+                Query = @"query ReleaseQuery($version: String!) { 
+                  release (version: $version)
+                  {
+                            version,
+                            icons {
+                            id,
+                            label,
+                            styles,
+                            unicode,
+                            membership {
+                            free,
+                            pro
+                        }
+                    }
+                  }
+                }",
+                Variables = new
+                {
+                    version
                 }
             };
 

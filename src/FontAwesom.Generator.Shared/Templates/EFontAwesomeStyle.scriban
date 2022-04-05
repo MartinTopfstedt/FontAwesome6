@@ -12,6 +12,7 @@ namespace FontAwesome6
 	/// FontAwesome by Dave Gandy (@davegandy)
 	///	The iconic SVG, font, and CSS toolkit
 	///	License https://fontawesome.com/license (C#: MIT License)
+	/// Version: {{ version }} 
 	/// </summary>
 	public enum EFontAwesomeStyle
 	{

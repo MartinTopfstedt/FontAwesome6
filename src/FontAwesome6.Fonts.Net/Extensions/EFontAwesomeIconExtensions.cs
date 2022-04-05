@@ -1,7 +1,10 @@
 ﻿using FontAwesome6.Extensions;
 
+using System.Collections.Generic;
 using System.Globalization;
 using System.Windows;
+using System.Windows.Controls;
+using System.Windows.Documents;
 using System.Windows.Media;
 
 namespace FontAwesome6.Fonts.Extensions
@@ -84,31 +87,31 @@ namespace FontAwesome6.Fonts.Extensions
 #if FontAwesomePro
                 if (icon.IsDuotone())
                 {
-                  var primaryClone = primary.Clone();
-                  primaryClone.Opacity = primaryOpacity ?? 1;
+                    var primaryClone = primary.Clone();
+                    primaryClone.Opacity = primaryOpacity ?? 1;
 
-                  var secondaryClone = (secondary ?? primary).Clone();
-                  secondaryClone.Opacity = secondaryOpacity ?? info.Item2;
+                    var secondaryClone = (secondary ?? primary).Clone();
+                    secondaryClone.Opacity = secondaryOpacity ?? 0.4;
 
-                  if (swapOpacity.HasValue && swapOpacity.Value)
-                  {
-                    var temp = primaryClone.Opacity;
-                    primaryClone.Opacity = secondaryClone.Opacity;
-                    secondaryClone.Opacity = temp;
-                  }
-                  primaryClone.Freeze();
-                  secondaryClone.Freeze();
+                    if (swapOpacity.HasValue && swapOpacity.Value)
+                    {
+                        var temp = primaryClone.Opacity;
+                        primaryClone.Opacity = secondaryClone.Opacity;
+                        secondaryClone.Opacity = temp;
+                    }
+                    primaryClone.Freeze();
+                    secondaryClone.Freeze();
 
-                  var primaryGlyph = CreateFormattedText(info.Item1 + "\ufe01", typeface, primaryClone, emSize);
-                  var secondaryGlyph = CreateFormattedText(info.Item1 + "\ufe02", typeface, secondaryClone, emSize);
+                    var primaryFormattedText = CreateFormattedText($"\uf030", typeface, primaryClone, emSize);
+                    var secondaryFormattedText = CreateFormattedText($"\u0010\uf030", typeface, secondaryClone, emSize);
 
-                  drawingContext.DrawGeometry(primaryClone, null, primaryGlyph.BuildGeometry(new Point(0, 0)));
-                  drawingContext.DrawGeometry(secondaryClone, null, secondaryGlyph.BuildGeometry(new Point(0, 0)));
+                    drawingContext.DrawText(primaryFormattedText, new Point(0, 0));
+                    drawingContext.DrawText(secondaryFormattedText, new Point(0, 150));
                 }
                 else
                 {
-                  var primaryGlyph = CreateFormattedText(info.Item1, typeface, primary, emSize);
-                  drawingContext.DrawGeometry(primary, null, primaryGlyph.BuildGeometry(new Point(0, 0)));
+                    var primaryGlyph = CreateFormattedText(info.Item1, typeface, primary, emSize);
+                    drawingContext.DrawGeometry(primary, null, primaryGlyph.BuildGeometry(new Point(0, 0)));
                 }
 #else
                 var primaryGlyph = CreateFormattedText(info.Item1, typeface, primary, emSize);
@@ -136,6 +139,8 @@ namespace FontAwesome6.Fonts.Extensions
                         typeface, emSize, foregroundBrush)
             {
                 TextAlignment = TextAlignment.Center,
+                MaxLineCount = 1,
+                Trimming = TextTrimming.None
             };
         }
 

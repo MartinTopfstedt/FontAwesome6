@@ -43,7 +43,7 @@ namespace FontAwesome6.Example.WPF
             // load SVG Data
 
             // loading FontAwesome6 SVG Data from Resource for all EFontAwesomeStyles
-            Svg.FontAwesomeSvg.LoadFromResource("FontAwesome6.Svg.Net.Svg.FontAwesomeSvg.all.json", Assembly.GetExecutingAssembly());
+            Svg.FontAwesomeSvg.LoadFromResource("FontAwesome6.Example.WPF.Svg.FontAwesomeSvg.all.json", Assembly.GetExecutingAssembly());
 
             // loading FontAwesome6 SVG Data from Resource for the EFontAwesomeStyle.Thin
             // Svg.FontAwesomeSvg.LoadFromResource("FontAwesome6.Example.WPF.Svg.FontAwesomeSvg.thin.json", Assembly.GetExecutingAssembly());
