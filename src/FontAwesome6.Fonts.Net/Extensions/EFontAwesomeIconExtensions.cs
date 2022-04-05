@@ -85,34 +85,34 @@ namespace FontAwesome6.Fonts.Extensions
             {
                 var typeface = icon.GetTypeFace();
 #if FontAwesomePro
-                if (icon.IsDuotone())
-                {
-                    var primaryClone = primary.Clone();
-                    primaryClone.Opacity = primaryOpacity ?? 1;
+        if (icon.IsDuotone())
+        {
+          var primaryClone = primary.Clone();
+          primaryClone.Opacity = primaryOpacity ?? 1;
 
-                    var secondaryClone = (secondary ?? primary).Clone();
+          var secondaryClone = (secondary ?? primary).Clone();
                     secondaryClone.Opacity = secondaryOpacity ?? 0.4;
 
-                    if (swapOpacity.HasValue && swapOpacity.Value)
-                    {
-                        var temp = primaryClone.Opacity;
-                        primaryClone.Opacity = secondaryClone.Opacity;
-                        secondaryClone.Opacity = temp;
-                    }
-                    primaryClone.Freeze();
-                    secondaryClone.Freeze();
+          if (swapOpacity.HasValue && swapOpacity.Value)
+          {
+            var temp = primaryClone.Opacity;
+            primaryClone.Opacity = secondaryClone.Opacity;
+            secondaryClone.Opacity = temp;
+          }
+          primaryClone.Freeze();
+          secondaryClone.Freeze();
 
                     var primaryFormattedText = CreateFormattedText($"\uf030", typeface, primaryClone, emSize);
                     var secondaryFormattedText = CreateFormattedText($"\u0010\uf030", typeface, secondaryClone, emSize);
 
                     drawingContext.DrawText(primaryFormattedText, new Point(0, 0));
                     drawingContext.DrawText(secondaryFormattedText, new Point(0, 150));
-                }
-                else
-                {
-                    var primaryGlyph = CreateFormattedText(info.Item1, typeface, primary, emSize);
-                    drawingContext.DrawGeometry(primary, null, primaryGlyph.BuildGeometry(new Point(0, 0)));
-                }
+        }
+        else
+        {
+          var primaryGlyph = CreateFormattedText(info.Item1, typeface, primary, emSize);
+          drawingContext.DrawGeometry(primary, null, primaryGlyph.BuildGeometry(new Point(0, 0)));
+        }
 #else
                 var primaryGlyph = CreateFormattedText(info.Item1, typeface, primary, emSize);
                 drawingContext.DrawGeometry(primary, null, primaryGlyph.BuildGeometry(new Point(0, 0)));

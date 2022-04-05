@@ -1,3 +1,5 @@
+[![Build Status](https://dev.azure.com/codinion/FontAwesome/_apis/build/status/MartinTopfstedt.FontAwesome6?branchName=master)](https://dev.azure.com/codinion/FontAwesome/_build/latest?definitionId=20&branchName=master)
+
 # FontAwesome 6
 
 WPF (.Net and .Net Core), UWP and WinUI controls for the web's most popular icon set and toolkit.
