@@ -16,13 +16,13 @@ namespace FontAwesome6.Svg
         /// Identifies the FontAwesome6.Svg.SvgAwesome.PrimaryOpacity dependency property.
         /// </summary>
         public static readonly DependencyProperty PrimaryOpacityProperty =
-            DependencyProperty.Register("PrimaryOpacity", typeof(double), typeof(SvgAwesome), new PropertyMetadata(-1.0, OnIconPropertyChanged));
+            DependencyProperty.Register("PrimaryOpacity", typeof(double), typeof(SvgAwesome), new PropertyMetadata(1.0, OnIconPropertyChanged));
 
         /// <summary>
         /// Identifies the FontAwesome6.Svg.SvgAwesome.SecondaryOpacity daryColor dependency property.
         /// </summary>
         public static readonly DependencyProperty SecondaryOpacityProperty =
-            DependencyProperty.Register("SecondaryOpacity", typeof(double), typeof(SvgAwesome), new PropertyMetadata(-1.0, OnIconPropertyChanged));
+            DependencyProperty.Register("SecondaryOpacity", typeof(double), typeof(SvgAwesome), new PropertyMetadata(0.4, OnIconPropertyChanged));
 
         /// <summary>
         /// Identifies the FontAwesome6.Svg.SvgAwesome.SwapOpacity daryColor dependency property.

@@ -125,7 +125,7 @@ namespace FontAwesome6.Example.WinUI
             }
         }
 
-        private double _primaryOpacity;
+        private double _primaryOpacity = 1;
         public double PrimaryOpacity
         {
             get => _primaryOpacity;
@@ -136,7 +136,7 @@ namespace FontAwesome6.Example.WinUI
             }
         }
 
-        private double _secondaryOpacity;
+        private double _secondaryOpacity = .4;
         public double SecondaryOpacity
         {
             get => _secondaryOpacity;
@@ -213,8 +213,8 @@ namespace FontAwesome6.Example.WinUI
             PrimaryColor = Application.Current.Resources.ThemeDictionaries["ApplicationForegroundThemeBrush"] as SolidColorBrush;
             SecondaryColor = Application.Current.Resources.ThemeDictionaries["ApplicationForegroundThemeBrush"] as SolidColorBrush;
 
-            PrimaryOpacity = -0.1; // negative means use default
-            SecondaryOpacity = -0.1; // negative means use default
+            PrimaryOpacity = 1;
+            SecondaryOpacity = 0.4;
 
             SwapOpacity = false;
         }

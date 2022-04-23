@@ -169,7 +169,7 @@
 	  <Content Include="..\..\Font-Awesome-Pro\webfonts\fa-regular-400.ttf" Link="Fonts/fa-regular-400.ttf">
 		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
-	  <Content Include="..\..\Font-Awesome-Pro\webfonts\fa-solid-900.ttf" Link="Fonts/fa-regular-900.ttf">
+	  <Content Include="..\..\Font-Awesome-Pro\webfonts\fa-solid-900.ttf" Link="Fonts/fa-solid-900.ttf">
 		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	  </Content>
 	  <Content Include="..\..\Font-Awesome-Pro\webfonts\fa-light-300.ttf" Link="Fonts/fa-light-300.ttf">

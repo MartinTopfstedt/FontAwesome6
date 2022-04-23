@@ -48,7 +48,7 @@ namespace FontAwesome6.Example.WinUI
             Fonts.FontAwesomeFonts.LoadAllStyles("ms-appx:///Fonts/");
 
             // or load specific styles from resources
-            // Fonts.FontAwesomeFonts.LoadStyles(new Uri("ms-appx:///FontAwesome6.Example.UWP/Fonts/"), EFontAwesomeStyle.Solid, EFontAwesomeStyle.Light);
+            // Fonts.FontAwesomeFonts.LoadStyles(new Uri("ms-appx:///Fonts/"), EFontAwesomeStyle.Solid, EFontAwesomeStyle.Light);
         }
 
         public void LoadFontAwesomeSvg()

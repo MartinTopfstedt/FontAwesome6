@@ -11,6 +11,7 @@
 		<UseWinUI>true</UseWinUI>
 		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
 		<Configurations>Debug;Release;DebugPro;ReleasePro</Configurations>
+		<WindowsPackageType>None</WindowsPackageType>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)'=='DebugPro'">
@@ -50,11 +51,11 @@
 	</ItemGroup>
 
 	<ItemGroup Condition="'$(Configuration)'=='DebugPro' Or '$(Configuration)'=='ReleasePro'">
-		<EmbeddedResource Include="..\..\Font-Awesome-Pro\generated\FontAwesomeSvg.all.json" Link="Svg\FontAwesomeSvg.all.json" />
+		<EmbeddedResource Include="..\..\generated\Font-Awesome-Pro\FontAwesomeSvg.all.json" Link="Svg\FontAwesomeSvg.all.json" />
 		<Content Include="..\..\Font-Awesome-Pro\webfonts\fa-regular-400.ttf" Link="Fonts/fa-regular-400.ttf">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
-		<Content Include="..\..\Font-Awesome-Pro\webfonts\fa-solid-900.ttf" Link="Fonts/fa-regular-900.ttf">
+		<Content Include="..\..\Font-Awesome-Pro\webfonts\fa-solid-900.ttf" Link="Fonts/fa-solid-900.ttf">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
 		<Content Include="..\..\Font-Awesome-Pro\webfonts\fa-light-300.ttf" Link="Fonts/fa-light-300.ttf">
