@@ -18,13 +18,13 @@
 	</PropertyGroup>
 
 	<ItemGroup Condition="'$(Configuration)'=='Debug' Or '$(Configuration)'=='Release'">
-		<Content Include="..\..\Font-Awesome\otfs\Font Awesome 6 Brands-Regular-400.otf" Link="Fonts/Font Awesome 6 Brands-Regular-400.otf">
+		<Content Include="..\..\Font-Awesome\webfonts\fa-brands-400.ttf" Link="Fonts/fa-brands-400.ttf">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
-		<Content Include="..\..\Font-Awesome\otfs\Font Awesome 6 Free-Regular-400.otf" Link="Fonts/Font Awesome 6 Free-Regular-400.otf">
+		<Content Include="..\..\Font-Awesome\webfonts\fa-regular-400.ttf" Link="Fonts/fa-regular-400.ttf">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
-		<Content Include="..\..\Font-Awesome\otfs\Font Awesome 6 Free-Solid-900.otf" Link="Fonts/Font Awesome 6 Free-Solid-900.otf">
+		<Content Include="..\..\Font-Awesome\webfonts\fa-solid-900.ttf" Link="Fonts/fa-solid-900.ttf">
 			<CopyToOutputDirectory>Always</CopyToOutputDirectory>
 		</Content>
 	</ItemGroup>

@@ -107,9 +107,9 @@ namespace FontAwesome6.Fonts
         private static void SaveFontFilesToDirectory(string path)
         {
             var resManager = new ResourceManager("FontAwesome6.Fonts.Net.g", typeof(FontAwesomeFonts).Assembly);
-            WriteResourceToFile(resManager, $"Fonts/Font Awesome 6 Free-Solid-900.otf", Path.Combine(path, "Font Awesome 6 Free-Solid-900.otf"));
-            WriteResourceToFile(resManager, $"Fonts/Font Awesome 6 Free-Regular-400.otf", Path.Combine(path, "Font Awesome 6 Free-Regular-400.otf"));
-            WriteResourceToFile(resManager, $"Fonts/Font Awesome 6 Brands-Regular-400.otf", Path.Combine(path, "Font Awesome 6 Brands-Regular-400.otf"));
+            WriteResourceToFile(resManager, $"Fonts/fa-solid-900.ttf", Path.Combine(path, "fa-solid-900.ttf"));
+            WriteResourceToFile(resManager, $"Fonts/fa-regular-400.ttf", Path.Combine(path, "fa-regular-400.ttf"));
+            WriteResourceToFile(resManager, $"Fonts/fa-brands-400.ttf", Path.Combine(path, "fa-brands-400.ttf"));
         }
 
         private static void WriteResourceToFile(ResourceManager resManager, string resourceName, string fileName)
