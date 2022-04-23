@@ -71,8 +71,8 @@ namespace FontAwesome6.Example.UWP
             PrimaryColor = Application.Current.Resources.ThemeDictionaries["ApplicationForegroundThemeBrush"] as SolidColorBrush;
             SecondaryColor = Application.Current.Resources.ThemeDictionaries["ApplicationForegroundThemeBrush"] as SolidColorBrush;
 
-            PrimaryOpacity = -0.1; // negative means use default
-            SecondaryOpacity = -0.1; // negative means use default
+            PrimaryOpacity = 1;
+            SecondaryOpacity = 0.4;
 
             SwapOpacity = false;
         }

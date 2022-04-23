@@ -159,7 +159,7 @@ See example projects for advanced usage.
 
    2. Activate the Pro Version check box
 
-   3. Source Dictionary: 
+   3. Source Dictionary: not needed
 
    4. FontAwesome Svg Directory: the directory of all FontAwesome Svg files. e.x. Font-Awesome-Pro/svgs
 
@@ -173,15 +173,15 @@ See example projects for advanced usage.
 
 ### FontAwesome6.Pro.Fonts
 
->The FontAwesome6.Pro.Fonts NuGet package does not include any font files. You need to provide the FontAwesome6 Pro otf files by yourself. (see Installation)
+>The FontAwesome6.Pro.Fonts NuGet package does not include any font files. You need to provide the FontAwesome6 Pro ttf files by yourself. (see Installation)
 
 #### Installation
 
 1. Install the FontAwesome6.Pro.Fonts package: `Install-Package FontAwesome6.Pro.Fonts`
 
-2. Download the Desktop Version of FontAwesome6 from the website: https://fontawesome.com/download
+2. Download the Web Version of FontAwesome6 from the website: https://fontawesome.com/download
 
-3. Include all needed FontAwesome6 Style otf files(ex: *Font Awesome 6 Pro-Solid-900.otf*) inside you project as "Content" and "Copy always".
+3. Include all needed FontAwesome6 Style ttf files(ex: *fa-regular-400*) inside you project as "Content" and "Copy always".
 
 4. Proceed with the setup
 

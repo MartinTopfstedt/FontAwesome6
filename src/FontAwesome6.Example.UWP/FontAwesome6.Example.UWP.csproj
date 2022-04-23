@@ -166,24 +166,24 @@
   </ItemGroup>
   <ItemGroup Condition="'$(Configuration)'=='DebugPro' Or '$(Configuration)'=='ReleasePro'">
     <EmbeddedResource Include="..\..\generated\Font-Awesome-Pro\FontAwesomeSvg.all.json" Link="Svg\FontAwesomeSvg.all.json" />
-    <Content Include="..\..\Font-Awesome-Pro\otfs\Font Awesome 6 Pro-Solid-900.otf" Link="Fonts/Font Awesome 6 Pro-Solid-900.otf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\..\Font-Awesome-Pro\otfs\Font Awesome 6 Pro-Regular-400.otf" Link="Fonts/Font Awesome 6 Pro-Regular-400.otf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\..\Font-Awesome-Pro\otfs\Font Awesome 6 Pro-Light-300.otf" Link="Fonts/Font Awesome 6 Pro-Light-300.otf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\..\Font-Awesome-Pro\otfs\Font Awesome 6 Brands-Regular-400.otf" Link="Fonts/Font Awesome 6 Brands-Regular-400.otf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\..\Font-Awesome-Pro\otfs\Font Awesome 6 Duotone-Solid-900.otf" Link="Fonts/Font Awesome 6 Duotone-Solid-900.otf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
-    <Content Include="..\..\Font-Awesome-Pro\otfs\Font Awesome 6 Pro-Thin-100.otf" Link="Fonts/Font Awesome 6 Pro-Thin-100.otf">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Content>
+	  <Content Include="..\..\Font-Awesome-Pro\webfonts\fa-regular-400.ttf" Link="Fonts/fa-regular-400.ttf">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="..\..\Font-Awesome-Pro\webfonts\fa-solid-900.ttf" Link="Fonts/fa-solid-900.ttf">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="..\..\Font-Awesome-Pro\webfonts\fa-light-300.ttf" Link="Fonts/fa-light-300.ttf">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="..\..\Font-Awesome-Pro\webfonts\fa-thin-100.ttf" Link="Fonts/fa-thin-100.ttf">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="..\..\Font-Awesome-Pro\webfonts\fa-brands-400.ttf" Link="Fonts/fa-brands-400.ttf">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
+	  <Content Include="..\..\Font-Awesome-Pro\webfonts\fa-duotone-900.ttf" Link="Fonts/fa-duotone-900.ttf">
+		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+	  </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FontAwesome6.Core\FontAwesome6.Core.csproj">

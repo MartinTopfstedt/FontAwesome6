@@ -1,4 +1,5 @@
-﻿using FontAwesome6.Fonts.Extensions;
+﻿using FontAwesome6.Extensions;
+using FontAwesome6.Fonts.Extensions;
 using FontAwesome6.Shared.Extensions;
 
 using Windows.UI.Xaml;
@@ -63,8 +64,15 @@ namespace FontAwesome6.Fonts
         {
             var fontAwesome = (FontAwesome)dependencyObject;
             var newValue = (EFontAwesomeIcon)e.NewValue;
+
             if (newValue != EFontAwesomeIcon.None)
             {
+#if FontAwesomePro
+                if (newValue.IsDuotone())
+                {
+                    return;
+                }
+#endif
                 var fontFamily = newValue.GetFontFamily();
                 var glyph = newValue.GetUnicode();
 
