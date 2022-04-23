@@ -16,16 +16,16 @@ namespace FontAwesome6.Fonts
 
         static FontAwesomeFonts()
         {
-            _fonts.Add(EFontAwesomeStyle.Brands, Tuple.Create("Font Awesome 6 Brands-Regular-400.otf", "Font Awesome 6 Brands"));
+            _fonts.Add(EFontAwesomeStyle.Brands, Tuple.Create("fa-regular-400.ttf", "Font Awesome 6 Brands"));
 #if FontAwesomePro
-      _fonts.Add(EFontAwesomeStyle.Solid, Tuple.Create("Font Awesome 6 Pro-Solid-900.otf", "Font Awesome 6 Pro"));
-      _fonts.Add(EFontAwesomeStyle.Regular, Tuple.Create("Font Awesome 6 Pro-Regular-400.otf", "Font Awesome 6 Pro"));
-      _fonts.Add(EFontAwesomeStyle.Light, Tuple.Create("Font Awesome 6 Pro-Light-300.otf", "Font Awesome 6 Pro"));
-      _fonts.Add(EFontAwesomeStyle.Thin, Tuple.Create("Font Awesome 6 Pro-Light-300.otf", "Font Awesome 6 Pro"));
-      _fonts.Add(EFontAwesomeStyle.Duotone, Tuple.Create("Font Awesome 6 Duotone-Solid-900.otf", "Font Awesome 6 Duotone"));
+            _fonts.Add(EFontAwesomeStyle.Solid, Tuple.Create("fa-solid-900.ttf", "Font Awesome 6 Pro"));
+            _fonts.Add(EFontAwesomeStyle.Regular, Tuple.Create("fa-regular-400.ttf", "Font Awesome 6 Pro"));
+            _fonts.Add(EFontAwesomeStyle.Light, Tuple.Create("fa-light-300.ttf", "Font Awesome 6 Pro"));
+            _fonts.Add(EFontAwesomeStyle.Thin, Tuple.Create("fa-thin-100.ttf", "Font Awesome 6 Pro"));
+            _fonts.Add(EFontAwesomeStyle.Duotone, Tuple.Create("fa-duotone-900.ttf", "Font Awesome 6 Duotone"));
 #else
-            _fonts.Add(EFontAwesomeStyle.Solid, Tuple.Create("Font Awesome 6 Free-Solid-900.otf", "Font Awesome 6 Free"));
-            _fonts.Add(EFontAwesomeStyle.Regular, Tuple.Create("Font Awesome 6 Free-Regular-400.otf", "Font Awesome 6 Free"));
+            _fonts.Add(EFontAwesomeStyle.Solid, Tuple.Create("fa-solid-900.ttf", "Font Awesome 6 Free"));
+            _fonts.Add(EFontAwesomeStyle.Regular, Tuple.Create("fa-regular-400.ttf", "Font Awesome 6 Free"));
 
             LoadAllStyles("ms-appx:///FontAwesome6.Fonts.UWP/Fonts/");
 #endif
