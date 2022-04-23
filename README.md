@@ -197,7 +197,7 @@ public partial class App : Application
   public App()
   {
     var directory = Path.GetDirectoryName(Assembly.GetExecutingAssembly().Location);
-    Fonts.FontAwesomeFonts.LoadFontsFromDirectory(Path.Combine(directory, "Fonts") + "/");      
+    FontAwesome6.Fonts.FontAwesomeFonts.LoadAllStyles(Path.Combine(directory, "Fonts") + "/");      
   }
 }
 ```
@@ -215,7 +215,7 @@ public partial class App : Application
 {
   public App()
   {
-    Fonts.FontAwesomeFonts.LoadFonts(new Uri("pack://application:,,,/Fonts/"));      
+    FontAwesome6.Fonts.FontAwesomeFonts.LoadAllStyles(new Uri("pack://application:,,,/Fonts/"));      
   }
 }
 ```
