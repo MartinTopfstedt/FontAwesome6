@@ -21,11 +21,11 @@ namespace FontAwesome6.Fonts
         {
             _fontFamilyNames.Add(EFontAwesomeStyle.Brands, "Font Awesome 6 Brands Regular");
 #if FontAwesomePro
-      _fontFamilyNames.Add(EFontAwesomeStyle.Solid, "Font Awesome 6 Pro Solid");
-      _fontFamilyNames.Add(EFontAwesomeStyle.Regular, "Font Awesome 6 Pro Regular");
-      _fontFamilyNames.Add(EFontAwesomeStyle.Light, "Font Awesome 6 Pro Light");
-      _fontFamilyNames.Add(EFontAwesomeStyle.Duotone, "Font Awesome 6 Duotone Solid");
-      _fontFamilyNames.Add(EFontAwesomeStyle.Thin, "Font Awesome 6 Pro Thin");
+            _fontFamilyNames.Add(EFontAwesomeStyle.Solid, "Font Awesome 6 Pro Solid");
+            _fontFamilyNames.Add(EFontAwesomeStyle.Regular, "Font Awesome 6 Pro Regular");
+            _fontFamilyNames.Add(EFontAwesomeStyle.Light, "Font Awesome 6 Pro Light");
+            _fontFamilyNames.Add(EFontAwesomeStyle.Duotone, "Font Awesome 6 Duotone Solid");
+            _fontFamilyNames.Add(EFontAwesomeStyle.Thin, "Font Awesome 6 Pro Thin");
 #else
             _fontFamilyNames.Add(EFontAwesomeStyle.Solid, "Font Awesome 6 Free Solid");
             _fontFamilyNames.Add(EFontAwesomeStyle.Regular, "Font Awesome 6 Free Regular");
