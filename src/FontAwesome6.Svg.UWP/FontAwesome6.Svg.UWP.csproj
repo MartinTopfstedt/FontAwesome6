@@ -7,7 +7,7 @@
     <ProjectGuid>{86CC346F-C01F-4052-B35F-5FE8FBF86B82}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>FontAwesome6.Svg.UWP</RootNamespace>
+    <RootNamespace>FontAwesome6.Svg</RootNamespace>
     <AssemblyName>FontAwesome6.Svg.UWP</AssemblyName>
     <DefaultLanguage>en-US</DefaultLanguage>
     <TargetPlatformIdentifier>UAP</TargetPlatformIdentifier>

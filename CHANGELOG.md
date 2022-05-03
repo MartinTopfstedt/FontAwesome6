@@ -1,3 +1,5 @@
+# 2.0.1
+- FontAwesome6.Svg: fixed icons not working
 # 2.0.0
 - BREAKING CHANGE: FontAweseom6.Fonts.Pro: You need to switch from otf fonts to ttf fonts files.
 - fixed duotone icons, not working with otf files anymore.
