@@ -16,7 +16,7 @@ namespace FontAwesome6.Svg
         static FontAwesomeSvg()
         {
 #if !FontAwesomePro
-            LoadFromResource("FontAwesome6.Svg.UWP.Data.FontAwesomeSvg.all.json", typeof(FontAwesomeSvg).GetTypeInfo().Assembly);
+            LoadFromResource("FontAwesome6.Svg.Data.FontAwesomeSvg.all.json", typeof(FontAwesomeSvg).GetTypeInfo().Assembly);
 #endif
         }
 
