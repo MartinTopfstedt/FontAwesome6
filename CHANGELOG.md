@@ -1,3 +1,10 @@
+# 2.0.4
+- fixed wrong dlls inside svg package for win ui
+- set win ui target os to 10.0.17763.0
+# 2.0.3
+- fixed uwp svg resource loading
+# 2.0.2
+- fixed svg resource paths
 # 2.0.1
 - FontAwesome6.Svg: fixed icons not working
 # 2.0.0
