@@ -69,7 +69,7 @@
 		<file src="..\FontAwesome6.Fonts.UWP\bin\Release\Fonts\*.ttf" target="lib\uap10.0\FontAwesome6.UWP\Fonts" />
 
 		<!-- WinUI -->
-		<file src="..\FontAwesome6.Fonts.WinUI\bin\Release\net6.0-windows10.0.19041.0\FontAwesome6.*" target="lib\net6.0-windows10.0.19041.0" />
-		<file src="..\FontAwesome6.Fonts.WinUI\bin\Release\net6.0-windows10.0.19041.0\Fonts\*.ttf" target="lib\net6.0-windows10.0.19041.0\FontAwesome6.WinUI\Fonts" />
+		<file src="..\FontAwesome6.Fonts.WinUI\bin\Release\net6.0-windows10.0.17763.0\FontAwesome6.*" target="lib\net6.0-windows10.0.17763.0" />
+		<file src="..\FontAwesome6.Fonts.WinUI\bin\Release\net6.0-windows10.0.17763.0\Fonts\*.ttf" target="lib\net6.0-windows10.0.17763.0\FontAwesome6.WinUI\Fonts" />
 	</files>
 </package>
