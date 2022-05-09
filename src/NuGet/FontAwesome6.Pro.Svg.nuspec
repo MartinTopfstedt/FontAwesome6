@@ -90,9 +90,9 @@
 
 		<!-- UWP -->
 		<file src="..\FontAwesome6.Svg.UWP\bin\ReleasePro\FontAwesome6.*" target="lib\uap10.0" />
+		
 		<!-- WinUI -->
-		<file src="..\FontAwesome6.Fonts.WinUI\bin\ReleasePro\net6.0-windows10.0.19041.0\FontAwesome6.*" target="lib\net6.0-windows10.0.19041.0" />
-
+		<file src="..\FontAwesome6.Svg.WinUI\bin\ReleasePro\net6.0-windows10.0.19041.0\FontAwesome6.*" target="lib\net6.0-windows10.0.19041.0" />
 
 	</files>
 </package>
