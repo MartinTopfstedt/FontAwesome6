@@ -23,7 +23,7 @@ namespace FontAwesome6.Fonts.AttachedProperties
         /// Identifies the FontAwesome.Fonts.PrimaryColor dependency property.
         /// </summary>
         public static readonly DependencyProperty PrimaryColorProperty =
-            DependencyProperty.RegisterAttached("PrimaryColor", typeof(Brush), typeof(FontAwesome), new PropertyMetadata(Brushes.Black, OnRenderingTriggered));
+            DependencyProperty.RegisterAttached("PrimaryColor", typeof(Brush), typeof(FontAwesome), new PropertyMetadata(FontAwesomeDefaults.PrimaryColor, OnRenderingTriggered));
 
         /// <summary>
         /// Identifies the FontAwesome.Fonts.Spin dependency property.
