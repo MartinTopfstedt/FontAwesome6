@@ -26,6 +26,7 @@ Control | .Net Framework & .Net | WinUI | UWP
 ------- | ---- | ----- | ----
 SvgAwesome | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 ImageAwesome | :white_check_mark: | :x: | :x: |
+Attached Properties | :white_check_mark: | :x: | :x: |
 
 ```xaml
 <Window x:Class="FontAwesome6.Example.WPF.MainWindow" 
@@ -91,6 +92,7 @@ Control | .Net Framework & .Net | WinUI | UWP
 ------- | ---- | ----- | ----
 FontAwesome | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 ImageAwesome | :white_check_mark: | :x: | :x: |
+Attached Properties | :white_check_mark: | :x: | :x: |
 
 ```xaml
 <Window x:Class="FontAwesome6.Example.WPF.MainWindow" 
@@ -260,4 +262,39 @@ public sealed partial class MainPage : Page
                      SecondaryOpacity="0.4"
                      SwapOpacity="false"/>
 </Window>        
+```
+### Load Icons inside Designer
+
+Add a `DesignTimeResource.xaml` inside the `Properties` directory and a new UserControl (e.x. `DesignTimeFontAwesome.xaml`) anywhere.
+Then add the UserControl to the ResourceDirectory.
+```xaml
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"     
+    xmlns:local="clr-namespace:FontAwesome6.Example.WPF">
+    <local:DesignTimeFontAwesome x:Key="NotNeeded"></local:DesignTimeFontAwesome>
+</ResourceDictionary>
+```
+After that, you need to modify the `.csproj` file and change the entry of `DesignTimeResource.xaml` to the following:
+```
+<Page Include="Properties\DesignTimeResources.xaml" Condition="'$(DesignTime)'=='true' OR ('$(SolutionPath)'!='' AND Exists('$(SolutionPath)') AND '$(BuildingInsideVisualStudio)'!='true' AND '$(BuildingInsideExpressionBlend)'!='true')">
+  <Generator>MSBuild:Compile</Generator>
+  <SubType>Designer</SubType>
+  <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
+</Page>
+```
+Create a new UserControl called `DesignTimeFontAwesome.xaml` and add the icon / font loading inside the constructor.
+```csharp
+using System.Windows.Controls;
+namespace FontAwesome6.Example.WPF
+{
+    public partial class DesignTimeFontAwesome : UserControl
+    {
+        public DesignTimeFontAwesome()
+        {
+            InitializeComponent();
+            Svg.FontAwesomeSvg.LoadFromResource("FontAwesome6.Example.WPF.Svg.FontAwesomeSvg.all.json", typeof(App).Assembly);
+        }
+    }
+}
 ```

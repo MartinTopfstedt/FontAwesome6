@@ -1,41 +1,6 @@
 ﻿using FontAwesome6.Shared.Extensions;
 using FontAwesome6.Shared.Extensions;
 using FontAwesome6.Svg.Extensions;
-/* Unmerged change from project 'FontAwesome6.Svg.Net (net462)'
-Before:
-using FontAwesome6.Shared.Extensions;
-After:
-using FontAwesome6.Svg.Extensions;
-*/
-
-/* Unmerged change from project 'FontAwesome6.Svg.Net (netcoreapp3.1)'
-Before:
-using FontAwesome6.Shared.Extensions;
-After:
-using FontAwesome6.Svg.Extensions;
-*/
-
-/* Unmerged change from project 'FontAwesome6.Svg.Net (net472)'
-Before:
-using FontAwesome6.Shared.Extensions;
-After:
-using FontAwesome6.Svg.Extensions;
-*/
-
-/* Unmerged change from project 'FontAwesome6.Svg.Net (net5.0-windows)'
-Before:
-using FontAwesome6.Shared.Extensions;
-After:
-using FontAwesome6.Svg.Extensions;
-*/
-
-/* Unmerged change from project 'FontAwesome6.Svg.Net (net6.0-windows)'
-Before:
-using FontAwesome6.Shared.Extensions;
-After:
-using FontAwesome6.Svg.Extensions;
-*/
-
 
 using System;
 using System.Windows;

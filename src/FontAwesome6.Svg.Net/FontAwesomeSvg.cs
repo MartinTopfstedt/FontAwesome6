@@ -4,8 +4,11 @@ using Newtonsoft.Json;
 
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.IO;
+using System.Linq;
 using System.Reflection;
+using System.Windows;
 
 namespace FontAwesome6.Svg
 {
@@ -15,7 +18,7 @@ namespace FontAwesome6.Svg
 
         static FontAwesomeSvg()
         {
-#if !FontAwesomePro      
+#if !FontAwesomePro
             LoadFromResource("FontAwesome6.Svg.Data.FontAwesomeSvg.all.json", typeof(FontAwesomeSvg).Assembly);
 #endif
         }
@@ -32,7 +35,12 @@ namespace FontAwesome6.Svg
                 return information;
             }
 
-            throw new Exception($"Couldn't load icon \"{icon}\". Please load the svg data for that icon first.");
+            if (!(bool)(DesignerProperties.IsInDesignModeProperty.GetMetadata(typeof(DependencyObject)).DefaultValue))
+            {
+                throw new Exception($"Couldn't load icon \"{icon}\". Please load the svg data for that icon first.");
+            }
+
+            return null;
         }
 
         public static void Clear()

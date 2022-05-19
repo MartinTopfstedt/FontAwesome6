@@ -50,5 +50,4 @@
 		<ProjectReference Include="..\FontAwesome6.Fonts.Net\FontAwesome6.Fonts.Net.csproj" />
 		<ProjectReference Include="..\FontAwesome6.Svg.Net\FontAwesome6.Svg.Net.csproj" />
 	</ItemGroup>
-
 </Project>

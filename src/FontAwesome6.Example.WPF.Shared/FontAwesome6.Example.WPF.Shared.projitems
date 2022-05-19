@@ -9,6 +9,16 @@
     <Import_RootNamespace>FontAwesome6.Example.WPF</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Page Include="$(MSBuildThisFileDirectory)Properties\DesignTimeResources.xaml">
+      <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
+    </Page>
+    <Page Include="$(MSBuildThisFileDirectory)DesignTimeFontAwesome.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="$(MSBuildThisFileDirectory)MainWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -20,6 +30,9 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Converters\HexColorStringToSolidColorBrushConverter.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Converters\NullableDoubleToStringConverter.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)DesignTimeFontAwesome.xaml.cs">
+      <DependentUpon>DesignTimeFontAwesome.xaml</DependentUpon>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)MainWindow.xaml.cs">
       <SubType>Code</SubType>
       <DependentUpon>MainWindow.xaml</DependentUpon>
