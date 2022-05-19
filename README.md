@@ -265,7 +265,7 @@ public sealed partial class MainPage : Page
 ```
 ### Load Icons inside Designer
 
-Add a `DesignTimeResource.xaml` inside the `Properties` directory and a new UserControl (e.x. `DesignTimeFontAwesome.xaml`) anywhere.
+Add a `DesignTimeResource.xaml` inside the `Properties` directory and a new UserControl anywhere(e.x. `DesignTimeFontAwesome.xaml`).
 Then add the UserControl to the ResourceDirectory.
 ```xaml
 <ResourceDictionary
