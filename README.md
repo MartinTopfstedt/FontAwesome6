@@ -8,7 +8,7 @@ Font-Awesome Version: 6.1.1
 
 ## Breaking Changes
 
-The Package is now separated into two separate packages for SVG and Fonts. Therefore the namespace needed to be separate as well. Which means the old namespace `http://schemas.fontawesome.com/icons` has been split into `http://schemas.fontawesome.com/icons/svg` and `http://schemas.fontawesome.com/icons/fonts`.
+The Package is now separated into two packages for SVG and Fonts. Therefore the namespace needed to be separate as well. Which means the old namespace `http://schemas.fontawesome.com/icons` has been split into `http://schemas.fontawesome.com/icons/svg` and `http://schemas.fontawesome.com/icons/fonts`.
 
 ## FontAwesome6 (Free)
 
@@ -48,8 +48,8 @@ Available for following controls:
 ```xaml
 <Window x:Class="FontAwesome6.Example.WPF.MainWindow" 
         xmlns:fa="http://schemas.fontawesome.com/icons/svg/properties">        
-    <Button fa:FontAwesome.Icon="Soild_Flags"/>
-    <Image fa:FontAwesome.Icon="Soild_Flags"/>
+    <Button fa:FontAwesome.Icon="Solid_Flags"/>
+    <Image fa:FontAwesome.Icon="Solid_Flags"/>
 </Window>        
 ```
 
@@ -206,7 +206,7 @@ public partial class App : Application
 
 >:warning: *(.Net Framework & .Net only)* Using the fonts from resources will create a memory leak. To prevent it load the font from the file system instead.
 
-The example below shows how to load all font files(with their default names) as resource. The files are located inside the solution in the "Fonts" directory and have "Resource" as Content.
+The example below shows how to load all font files (with their default names) as resource. The files are located inside the solution in the "Fonts" directory and have "Resource" as Content.
 
 ###### .Net Framework & .Net
 
