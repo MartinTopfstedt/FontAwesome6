@@ -12,7 +12,7 @@
         xmlns:viewModels="clr-namespace:FontAwesome6.Example.WPF"        
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance viewModels:MainWindowViewModel}"
-        Title="FontAwesom6.Example.WPF" Height="675"  Width="900">
+        Title="FontAwesome6.Example.WPF" Height="675"  Width="900">
     <Window.DataContext>
         <local:MainWindowViewModel/>
     </Window.DataContext>
