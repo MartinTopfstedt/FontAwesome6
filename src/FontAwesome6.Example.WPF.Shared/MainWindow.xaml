@@ -117,14 +117,14 @@
                         <GridViewColumn Header="FontIcon">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <faf:ImageAwesome Icon="{Binding}" Width="32" Height="32" Foreground="Black" HorizontalAlignment="Center"/>
+                                    <faf:ImageAwesome Icon="{Binding}" Width="32" Height="32" PrimaryColor="Black" HorizontalAlignment="Center"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn Header="SvgIcon">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <fas:ImageAwesome Icon="{Binding}" Width="32" Height="32" Foreground="Black" HorizontalAlignment="Center"/>
+                                    <fas:ImageAwesome Icon="{Binding}" Width="32" Height="32" PrimaryColor="Black" HorizontalAlignment="Center"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
