@@ -1,5 +1,4 @@
 ﻿using FontAwesome6.Shared.Extensions;
-using FontAwesome6.Shared.Extensions;
 using FontAwesome6.Svg.Extensions;
 
 using System;
