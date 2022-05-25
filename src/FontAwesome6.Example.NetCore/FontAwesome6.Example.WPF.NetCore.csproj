@@ -8,7 +8,7 @@
 		<Configurations>Debug;Release;DebugPro;ReleasePro</Configurations>
 		<XamlDebuggingInformation>true</XamlDebuggingInformation>
 		<SignAssembly>True</SignAssembly>
-		<AssemblyOriginatorKeyFile>D:\codinion\repos\FontAwesome6\src\Key.snk</AssemblyOriginatorKeyFile>
+		<AssemblyOriginatorKeyFile>..\Key.snk</AssemblyOriginatorKeyFile>
 	</PropertyGroup>
 
 	<Import Project="..\FontAwesome6.Example.WPF.Shared\FontAwesome6.Example.WPF.Shared.projitems" Label="Shared" />

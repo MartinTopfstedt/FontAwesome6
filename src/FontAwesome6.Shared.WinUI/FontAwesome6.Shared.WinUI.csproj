@@ -7,7 +7,7 @@
     <UseWinUI>true</UseWinUI>
     <DefineConstants>WINUI</DefineConstants>
     <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>D:\codinion\repos\FontAwesome6\src\Key.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\Key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <ItemGroup>

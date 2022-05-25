@@ -8,7 +8,7 @@
 		<DefineConstants>WINUI</DefineConstants>
 		<Configurations>Debug;Release;DebugPro;ReleasePro</Configurations>
 		<SignAssembly>True</SignAssembly>
-		<AssemblyOriginatorKeyFile>D:\codinion\repos\FontAwesome6\src\Key.snk</AssemblyOriginatorKeyFile>
+		<AssemblyOriginatorKeyFile>..\Key.snk</AssemblyOriginatorKeyFile>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)'=='DebugPro'">
