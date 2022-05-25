@@ -1,9 +1,11 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFrameworks>netstandard1.4;netstandard2.1;net40;net5.0;net6.0</TargetFrameworks>
+    <TargetFrameworks>netstandard1.4;netstandard2.1;net462;net5.0;net6.0</TargetFrameworks>
     <Configurations>Debug;Release;DebugPro;ReleasePro</Configurations>
     <RootNamespace>FontAwesome6</RootNamespace>
+    <SignAssembly>True</SignAssembly>
+    <AssemblyOriginatorKeyFile>D:\codinion\repos\FontAwesome6\src\Key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)'=='DebugPro'">

@@ -237,6 +237,12 @@
     <LangVersion>7.3</LangVersion>
     <ErrorReport>prompt</ErrorReport>
   </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>Key.snk</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
   <ItemGroup>
     <Compile Include="Extensions\EFontAwesomeIconExtensions.cs" />
     <Compile Include="FontAwesomeSvg.cs" />
@@ -265,6 +271,9 @@
   </ItemGroup>
   <ItemGroup Condition="'$(Configuration)'=='Debug' Or '$(Configuration)'=='Release'">
     <EmbeddedResource Include="..\..\generated\Font-Awesome\FontAwesomeSvg.all.json" Link="Data\FontAwesomeSvg.all.json" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Key.snk" />
   </ItemGroup>
   <Import Project="..\FontAwesome6.Svg.Shared\FontAwesome6.Svg.Shared.projitems" Label="Shared" />
   <PropertyGroup Condition=" '$(VisualStudioVersion)' == '' or '$(VisualStudioVersion)' &lt; '14.0' ">
