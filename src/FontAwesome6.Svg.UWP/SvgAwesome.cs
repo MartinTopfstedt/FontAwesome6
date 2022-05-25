@@ -52,19 +52,6 @@ namespace FontAwesome6.Svg
         public static readonly DependencyProperty FlipOrientationProperty =
             DependencyProperty.Register("FlipOrientation", typeof(EFlipOrientation), typeof(SvgAwesome), new PropertyMetadata(EFlipOrientation.Normal, FlipOrientationChanged));
 
-        static SvgAwesome()
-        {
-
-        }
-
-        public SvgAwesome()
-        {
-        }
-
-        private static void OpacityChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
-        }
-
         /// <summary>
         /// Gets or sets the FontAwesome icon. Changing this property will cause the icon to be redrawn.
         /// </summary>
@@ -234,8 +221,7 @@ namespace FontAwesome6.Svg
                 viewBox.Height = svgAwesome.Height;
                 svgAwesome.Content = viewBox;
 #if FontAwesomePro
-
-        viewBox.Child = svgAwesome.Icon.CreateCanvas(svgAwesome.PrimaryColor, svgAwesome.SecondaryColor, svgAwesome.SwapOpacity, svgAwesome.PrimaryOpacity, svgAwesome.SecondaryOpacity);
+                viewBox.Child = svgAwesome.Icon.CreateCanvas(svgAwesome.PrimaryColor, svgAwesome.SecondaryColor, svgAwesome.SwapOpacity, svgAwesome.PrimaryOpacity, svgAwesome.SecondaryOpacity);
 #else
                 viewBox.Child = svgAwesome.Icon.CreateCanvas(svgAwesome.PrimaryColor);
 #endif

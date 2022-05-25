@@ -15,7 +15,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\FontAwesom.Generator.Shared\FontAwesome.Generator.Shared.csproj" />
+    <ProjectReference Include="..\FontAwesome.Generator.Shared\FontAwesome.Generator.Shared.csproj" />
   </ItemGroup>
 
 </Project>

@@ -16,7 +16,7 @@ namespace FontAwesome6.Fonts
         /// Identifies the FontAwesome6.Svg.ImageAwesome.SecondaryColor dependency property.
         /// </summary>
         public static readonly DependencyProperty SecondaryColorProperty =
-            DependencyProperty.Register("SecondaryColor", typeof(Brush), typeof(ImageAwesome), new PropertyMetadata(Brushes.Black, OnIconPropertyChanged));
+            DependencyProperty.Register("SecondaryColor", typeof(Brush), typeof(ImageAwesome), new PropertyMetadata(FontAwesomeDefaults.SecondaryColor, OnIconPropertyChanged));
 
         /// <summary>
         /// Identifies the FontAwesome6.Svg.ImageAwesome.PrimaryOpacity dependency property.

@@ -71,7 +71,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FontAwesome.Generator", "Fo
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FontAwesome.Generator.Cli", "FontAwesome.Generator.Cli\FontAwesome.Generator.Cli.csproj", "{8130A732-6ECE-4112-80BF-FC7CA6D7FC1C}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FontAwesome.Generator.Shared", "FontAwesom.Generator.Shared\FontAwesome.Generator.Shared.csproj", "{C2C14D32-CC57-46FC-BE9B-418B92F30881}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FontAwesome.Generator.Shared", "FontAwesome.Generator.Shared\FontAwesome.Generator.Shared.csproj", "{C2C14D32-CC57-46FC-BE9B-418B92F30881}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "FontAwesome6.Fonts.WinUI", "FontAwesome6.Fonts.WinUI\FontAwesome6.Fonts.WinUI.csproj", "{C0E60B32-BB48-46A2-A91F-D37A6B6F7664}"
 EndProject

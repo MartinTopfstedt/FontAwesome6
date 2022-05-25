@@ -32,7 +32,12 @@ namespace FontAwesome6.Svg
                 return information;
             }
 
-            throw new Exception($"Couldn't load icon \"{icon}\". Please load the svg data for that icon first.");
+            if (!Windows.ApplicationModel.DesignMode.DesignModeEnabled)
+            {
+                throw new Exception($"Couldn't load icon \"{icon}\". Please load the svg data for that icon first.");
+            }
+
+            return null;            
         }
 
         public static void Clear()

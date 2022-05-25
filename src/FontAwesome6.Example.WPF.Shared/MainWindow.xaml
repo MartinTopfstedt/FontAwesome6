@@ -12,7 +12,7 @@
         xmlns:viewModels="clr-namespace:FontAwesome6.Example.WPF"        
         mc:Ignorable="d"
         d:DataContext="{d:DesignInstance viewModels:MainWindowViewModel}"
-        Title="FontAwesom6.Example.WPF" Height="675"  Width="900">
+        Title="FontAwesome6.Example.WPF" Height="675"  Width="900">
     <Window.DataContext>
         <local:MainWindowViewModel/>
     </Window.DataContext>
@@ -40,10 +40,7 @@
 
         <WrapPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal" Margin="5" >
             <StackPanel Margin="0,0,5,0" Orientation="Horizontal">
-                <TextBlock FontFamily="Font Awesome 6 Duotone Solid"  Typography.StandardLigatures="True" Typography.ContextualLigatures="True" Typography.DiscretionaryLigatures="True">                                        
-                    <Run>message-arrow-down#</Run>
-                    <Run>message-arrow-down##</Run>
-                </TextBlock>
+                <fas:SvgAwesome Icon="Duotone_Alien" Height="16" Width="16"></fas:SvgAwesome>
                 <TextBlock Text="Icon count:"></TextBlock>
                 <TextBlock Text="{Binding AllIcons.Count}" Margin="5,0,0,0"></TextBlock>
                 <Separator Width="1" Style="{StaticResource {x:Static ToolBar.SeparatorStyleKey}}" Margin="5,0,5,0"/>
@@ -120,14 +117,14 @@
                         <GridViewColumn Header="FontIcon">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <faf:ImageAwesome Icon="{Binding}" Width="32" Height="32" Foreground="Black" HorizontalAlignment="Center"/>
+                                    <faf:ImageAwesome Icon="{Binding}" Width="32" Height="32" PrimaryColor="Black" HorizontalAlignment="Center"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>
                         <GridViewColumn Header="SvgIcon">
                             <GridViewColumn.CellTemplate>
                                 <DataTemplate>
-                                    <fas:ImageAwesome Icon="{Binding}" Width="32" Height="32" Foreground="Black" HorizontalAlignment="Center"/>
+                                    <fas:ImageAwesome Icon="{Binding}" Width="32" Height="32" PrimaryColor="Black" HorizontalAlignment="Center"/>
                                 </DataTemplate>
                             </GridViewColumn.CellTemplate>
                         </GridViewColumn>

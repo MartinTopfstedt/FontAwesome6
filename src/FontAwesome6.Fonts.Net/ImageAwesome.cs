@@ -17,7 +17,7 @@ namespace FontAwesome6.Fonts
         /// Identifies the FontAwesome6.Fonts.ImageAwesome.Foreground dependency property.
         /// </summary>
         public static readonly DependencyProperty ForegroundProperty =
-            DependencyProperty.Register("Foreground", typeof(Brush), typeof(ImageAwesome), new PropertyMetadata(Brushes.Black, OnIconPropertyChanged));
+            DependencyProperty.Register("Foreground", typeof(Brush), typeof(ImageAwesome), new PropertyMetadata(FontAwesomeDefaults.PrimaryColor, OnIconPropertyChanged));
         /// <summary>
         /// Identifies the FontAwesome6.Fonts.ImageAwesome.Icon dependency property.
         /// </summary>
@@ -28,7 +28,7 @@ namespace FontAwesome6.Fonts
         /// Identifies the FontAwesome6.Svg.ImageAwesome.PrimaryColor dependency property.
         /// </summary>
         public static readonly DependencyProperty PrimaryColorProperty =
-            DependencyProperty.Register("PrimaryColor", typeof(Brush), typeof(ImageAwesome), new PropertyMetadata(Brushes.Black, OnIconPropertyChanged));
+            DependencyProperty.Register("PrimaryColor", typeof(Brush), typeof(ImageAwesome), new PropertyMetadata(FontAwesomeDefaults.PrimaryColor, OnIconPropertyChanged));
 
         /// <summary>
         /// Identifies the FontAwesome6.Fonts.ImageAwesome.Spin dependency property.

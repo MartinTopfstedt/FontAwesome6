@@ -9,6 +9,7 @@
     <Import_RootNamespace>FontAwesome6.Svg.Shared</Import_RootNamespace>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="$(MSBuildThisFileDirectory)Extensions\EFontAwesomeIconExtensions.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)FontAwesomeSvgInformation.cs" />
   </ItemGroup>
 </Project>
