@@ -1,3 +1,5 @@
+# 2.0.5
+- added strong naming
 # 2.0.4
 - fixed wrong dlls inside svg package for win ui
 - set win ui target os to 10.0.17763.0
