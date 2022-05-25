@@ -19,7 +19,6 @@
 		<dependencies>
 			<group targetFramework=".NETStandard1.4" />
 			<group targetFramework=".NETStandard2.1" />
-			<group targetFramework=".NETFramework4.0" />
 			<group targetFramework=".NETFramework4.6.2" />
 			<group targetFramework=".NETFramework4.7.2" />
 			<group targetFramework=".NETCoreApp3.1" />
@@ -45,9 +44,6 @@
 		
 		<!-- .Net 6.0 -->
 		<file src="..\FontAwesome6.Core\bin\Release\net6.0\FontAwesome6.*" target="lib\net6.0\" />
-
-		<!-- .Net Framework 4.0 -->
-		<file src="..\FontAwesome6.Fonts.Net\bin\Release\net40\FontAwesome6.*" target="lib\net40\" />
 
 		<!-- .Net Framework 4.6.2 -->
 		<file src="..\FontAwesome6.Fonts.Net\bin\Release\net462\FontAwesome6.*" target="lib\net462\" />
