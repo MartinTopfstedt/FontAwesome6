@@ -23,9 +23,6 @@
 			<group targetFramework=".NETStandard2.1" >
 				<dependency id="Newtonsoft.Json" version="13.0.1" />
 			</group>
-			<group targetFramework=".NETFramework4.0" >
-				<dependency id="Newtonsoft.Json" version="13.0.1" />
-			</group>
 			<group targetFramework=".NETFramework4.6.2" >
 				<dependency id="Newtonsoft.Json" version="13.0.1" />
 			</group>
@@ -69,9 +66,6 @@
 
 		<!-- .Net 6.0 -->
 		<file src="..\FontAwesome6.Core\bin\Release\net6.0\FontAwesome6.*" target="lib\net6.0\" />
-
-		<!-- .Net Framework 4.0 -->
-		<file src="..\FontAwesome6.Svg.Net\bin\Release\net40\FontAwesome6.*" target="lib\net40\" />
 
 		<!-- .Net Framework 4.6.2 -->
 		<file src="..\FontAwesome6.Svg.Net\bin\Release\net462\FontAwesome6.*" target="lib\net462\" />
