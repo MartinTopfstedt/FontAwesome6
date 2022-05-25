@@ -17,7 +17,7 @@
     <Copyright>Copyright © Codinion 2021</Copyright>
     <Company>Codinion</Company>
     <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>D:\codinion\repos\FontAwesome6\src\Key.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\Key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)'=='DebugPro'">

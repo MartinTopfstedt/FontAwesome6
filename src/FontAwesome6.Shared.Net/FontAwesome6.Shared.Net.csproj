@@ -9,7 +9,7 @@
     <LangVersion>latest</LangVersion>
     <Configurations>Debug;Release</Configurations>
     <SignAssembly>True</SignAssembly>
-    <AssemblyOriginatorKeyFile>D:\codinion\repos\FontAwesome6\src\Key.snk</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>..\Key.snk</AssemblyOriginatorKeyFile>
   </PropertyGroup>
 
   <Import Project="..\FontAwesome6.Shared\FontAwesome6.Shared.projitems" Label="Shared" />
