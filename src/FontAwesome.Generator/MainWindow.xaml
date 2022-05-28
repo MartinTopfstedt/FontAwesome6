@@ -5,11 +5,11 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FontAwesome.Generator"
         mc:Ignorable="d"
-        SizeToContent="Height"        
+        SizeToContent="Height"
         Title="FontAwesome Generator" Width="800" IsEnabled="{Binding IsWindowsEnabled}"
         d:DataContext="{d:DesignInstance local:MainWindowViewModel}">
     <Window.DataContext>
-        <local:MainWindowViewModel/>
+        <local:MainWindowViewModel />
     </Window.DataContext>
     <StackPanel>
         <GroupBox Header="FontAwesome Version">
@@ -22,7 +22,7 @@
                 <DockPanel LastChildFill="True">
                     <Button Margin="2" DockPanel.Dock="Right" Command="{Binding GenerateSourceFilesCommand}">Generate</Button>
                     <Button Margin="2" DockPanel.Dock="Right" Command="{Binding BrowseSourceDirectoryCommand}">Browse</Button>
-                    <TextBox  Margin="2" Text="{Binding SourceDirectory}"/>
+                    <TextBox Margin="2" Text="{Binding SourceDirectory}" />
                 </DockPanel>
             </StackPanel>
         </GroupBox>
@@ -30,15 +30,15 @@
             <StackPanel>
                 <CheckBox DockPanel.Dock="Right" VerticalAlignment="Center" Margin="2" IsChecked="{Binding IsPro}">Pro Version</CheckBox>
                 <DockPanel LastChildFill="True">
-                    <TextBlock Margin="2" DockPanel.Dock="Left" >FontAwesome Svg Directory:</TextBlock>
+                    <TextBlock Margin="2" DockPanel.Dock="Left">FontAwesome Svg Directory:</TextBlock>
                     <Button Margin="2" DockPanel.Dock="Right" Command="{Binding BrowseFontAwesomeSvgDirectoryCommand}">Browse</Button>
-                    <TextBox  Margin="2" Text="{Binding FontAwesomeSvgDirectory}"/>
+                    <TextBox Margin="2" Text="{Binding FontAwesomeSvgDirectory}" />
                 </DockPanel>
                 <DockPanel LastChildFill="True">
-                    <TextBlock Margin="2" DockPanel.Dock="Left" >Output Directory:</TextBlock>
+                    <TextBlock Margin="2" DockPanel.Dock="Left">Output Directory:</TextBlock>
                     <Button Margin="2" DockPanel.Dock="Right" Command="{Binding GenerateSvgFilesCommand}">Generate</Button>
                     <Button Margin="2" DockPanel.Dock="Right" Command="{Binding BrowseSvgOutputDirectoryCommand}">Browse</Button>
-                    <TextBox Margin="2" Text="{Binding SvgOutputDirectory}"/>
+                    <TextBox Margin="2" Text="{Binding SvgOutputDirectory}" />
                 </DockPanel>
             </StackPanel>
         </GroupBox>
