@@ -91,7 +91,7 @@ namespace FontAwesome6.Fonts
                 return;
             }
 
-            var icon = (EFontAwesomeIcon)d.GetValue(IconProperty);            
+            var icon = (EFontAwesomeIcon)d.GetValue(IconProperty);
 
 #if FontAwesomePro
             if (icon.IsDuotone())
@@ -99,10 +99,6 @@ namespace FontAwesome6.Fonts
                 return;
             }
 #endif
-
-#if NET40
-            d.SetValue(TextOptions.TextRenderingModeProperty, TextRenderingMode.ClearType);
-#endif            
             d.SetValue(FontFamilyProperty, icon.GetFontFamily() ?? fontAwesome._initialFontFamily);
             d.SetValue(TextProperty, icon.GetUnicode());
             d.SetValue(TextAlignmentProperty, TextAlignment.Center);

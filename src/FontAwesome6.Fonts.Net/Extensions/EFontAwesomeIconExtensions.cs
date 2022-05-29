@@ -1,10 +1,7 @@
 ﻿using FontAwesome6.Extensions;
 
-using System.Collections.Generic;
 using System.Globalization;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Documents;
 using System.Windows.Media;
 
 namespace FontAwesome6.Fonts.Extensions
@@ -110,12 +107,12 @@ namespace FontAwesome6.Fonts.Extensions
                 }
                 else
                 {
-                    var primaryGlyph = CreateFormattedText(info.Item1, typeface, primary, emSize);
-                    drawingContext.DrawGeometry(primary, null, primaryGlyph.BuildGeometry(new Point(0, 0)));
+                    var primaryFormattedText = CreateFormattedText(info.Item1, typeface, primary, emSize);
+                    drawingContext.DrawText(primaryFormattedText, new Point(0, 0));
                 }
 #else
-                var primaryGlyph = CreateFormattedText(info.Item1, typeface, primary, emSize);
-                drawingContext.DrawGeometry(primary, null, primaryGlyph.BuildGeometry(new Point(0, 0)));
+                var primaryFormattedText = CreateFormattedText(info.Item1, typeface, primary, emSize);
+                drawingContext.DrawText(primaryFormattedText, new Point(0, 0));
 #endif
             }
             return visual.Drawing;
