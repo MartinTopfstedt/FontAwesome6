@@ -4,7 +4,7 @@
 		<id>FontAwesome6.Pro.Fonts</id>
 		<version>$version$</version>
 		<description>
-			WPF (.Net and .Net Core), UWP and WinUI controls for the web's most popular icon set and toolkit.
+			WPF (.Net and .Net Core) and UWP controls for the web's most popular icon set and toolkit.
 			For examples https://github.com/MartinTopfstedt/FontAwesome6
 
 			Font-Awesome Version: 6.1.1
@@ -28,7 +28,6 @@
 			<group targetFramework="net6.0" />
 			<group targetFramework="net6.0-windows7.0" />
 			<group targetFramework="UAP10.0" />
-			<group targetFramework="net6.0-windows10.0.19041.0" />
 		</dependencies>
 	</metadata>
 	<files>
@@ -66,8 +65,5 @@
 
 		<!-- UWP -->
 		<file src="..\FontAwesome6.Fonts.UWP\bin\ReleasePro\FontAwesome6.*" target="lib\uap10.0" />
-
-		<!-- WinUI -->
-		<file src="..\FontAwesome6.Fonts.WinUI\bin\ReleasePro\net6.0-windows10.0.17763.0\FontAwesome6.*" target="lib\net6.0-windows10.0.17763.0" />
 	</files>
 </package>
