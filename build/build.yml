@@ -87,10 +87,22 @@ steps:
       arguments: 'pack src/NuGet/${{setting.key}}.Fonts.nuspec -Symbols -SymbolPackageFormat snupkg -Version $(GitVersion.NuGetVersionV2) -OutputDirectory $(Build.ArtifactStagingDirectory)'
 
   - task: NuGetCommand@2
+    displayName: '${{setting.key}}: Pack Fonts.WinUI'
+    inputs:
+      command: 'custom'
+      arguments: 'pack src/NuGet/${{setting.key}}.Fonts.WinUI.nuspec -Symbols -SymbolPackageFormat snupkg -Version $(GitVersion.NuGetVersionV2) -OutputDirectory $(Build.ArtifactStagingDirectory)'
+
+  - task: NuGetCommand@2
     displayName: '${{setting.key}}: Pack Svg'
     inputs:
       command: 'custom'
       arguments: 'pack src/NuGet/${{setting.key}}.Svg.nuspec -Symbols -SymbolPackageFormat snupkg -Version $(GitVersion.NuGetVersionV2) -OutputDirectory $(Build.ArtifactStagingDirectory)'
+
+  - task: NuGetCommand@2
+    displayName: '${{setting.key}}: Pack Svg.WinUI'
+    inputs:
+      command: 'custom'
+      arguments: 'pack src/NuGet/${{setting.key}}.Svg.WinUI.nuspec -Symbols -SymbolPackageFormat snupkg -Version $(GitVersion.NuGetVersionV2) -OutputDirectory $(Build.ArtifactStagingDirectory)'
 
 - task: PublishBuildArtifacts@1
   displayName: 'Publish Artifact'

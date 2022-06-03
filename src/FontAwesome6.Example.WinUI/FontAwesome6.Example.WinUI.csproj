@@ -12,6 +12,7 @@
 		<EnablePreviewMsixTooling>true</EnablePreviewMsixTooling>
 		<Configurations>Debug;Release;DebugPro;ReleasePro</Configurations>
 		<WindowsPackageType>None</WindowsPackageType>
+		<UseWPF>True</UseWPF>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)'=='DebugPro'">

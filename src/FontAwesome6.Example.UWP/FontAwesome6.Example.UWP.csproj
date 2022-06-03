@@ -121,6 +121,9 @@
     </Compile>
     <Compile Include="Converters\HexColorStringToSolidColorBrushConverter.cs" />
     <Compile Include="Converters\NullableDoubleToStringConverter.cs" />
+    <Compile Include="DesignTimeFontAwesome.xaml.cs">
+      <DependentUpon>DesignTimeFontAwesome.xaml</DependentUpon>
+    </Compile>
     <Compile Include="MainPage.xaml.cs">
       <DependentUpon>MainPage.xaml</DependentUpon>
     </Compile>
@@ -148,9 +151,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="DesignTimeFontAwesome.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="MainPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Properties\DesignTimeResources.xaml" Condition="'$(DesignTime)'=='true' OR ('$(SolutionPath)'!='' AND Exists('$(SolutionPath)') AND '$(BuildingInsideVisualStudio)'!='true' AND '$(BuildingInsideExpressionBlend)'!='true')">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+      <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
     </Page>
   </ItemGroup>
   <ItemGroup>
@@ -166,24 +178,24 @@
   </ItemGroup>
   <ItemGroup Condition="'$(Configuration)'=='DebugPro' Or '$(Configuration)'=='ReleasePro'">
     <EmbeddedResource Include="..\..\generated\Font-Awesome-Pro\FontAwesomeSvg.all.json" Link="Svg\FontAwesomeSvg.all.json" />
-	  <Content Include="..\..\Font-Awesome-Pro\webfonts\fa-regular-400.ttf" Link="Fonts/fa-regular-400.ttf">
-		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Content>
-	  <Content Include="..\..\Font-Awesome-Pro\webfonts\fa-solid-900.ttf" Link="Fonts/fa-solid-900.ttf">
-		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Content>
-	  <Content Include="..\..\Font-Awesome-Pro\webfonts\fa-light-300.ttf" Link="Fonts/fa-light-300.ttf">
-		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Content>
-	  <Content Include="..\..\Font-Awesome-Pro\webfonts\fa-thin-100.ttf" Link="Fonts/fa-thin-100.ttf">
-		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Content>
-	  <Content Include="..\..\Font-Awesome-Pro\webfonts\fa-brands-400.ttf" Link="Fonts/fa-brands-400.ttf">
-		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Content>
-	  <Content Include="..\..\Font-Awesome-Pro\webfonts\fa-duotone-900.ttf" Link="Fonts/fa-duotone-900.ttf">
-		  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-	  </Content>
+    <Content Include="..\..\Font-Awesome-Pro\webfonts\fa-regular-400.ttf" Link="Fonts/fa-regular-400.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\Font-Awesome-Pro\webfonts\fa-solid-900.ttf" Link="Fonts/fa-solid-900.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\Font-Awesome-Pro\webfonts\fa-light-300.ttf" Link="Fonts/fa-light-300.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\Font-Awesome-Pro\webfonts\fa-thin-100.ttf" Link="Fonts/fa-thin-100.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\Font-Awesome-Pro\webfonts\fa-brands-400.ttf" Link="Fonts/fa-brands-400.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="..\..\Font-Awesome-Pro\webfonts\fa-duotone-900.ttf" Link="Fonts/fa-duotone-900.ttf">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\FontAwesome6.Core\FontAwesome6.Core.csproj">

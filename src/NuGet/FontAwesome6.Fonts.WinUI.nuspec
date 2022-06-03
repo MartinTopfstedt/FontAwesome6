@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+	<metadata>
+		<id>FontAwesome6.Fonts.WinUI</id>
+		<version>$version$</version>
+		<description>
+			WinUI controls for the web's most popular icon set and toolkit.
+			This package supports only fonts, if you need svg use FontAwesome6.Svg.
+			For examples https://github.com/MartinTopfstedt/FontAwesome6
+			Font-Awesome Version: 6.1.1
+		</description>
+		<authors>Codinion</authors>
+		<license type="expression">MIT</license>
+		<projectUrl>https://github.com/MartinTopfstedt/FontAwesome6</projectUrl>
+		<icon>icon.png</icon>
+		<requireLicenseAcceptance>false</requireLicenseAcceptance>
+		<tags>fontawesome fontawesome6 fonts</tags>
+		<copyright>Copyright © 2021 Codinion</copyright>
+		<dependencies>
+			<group targetFramework=".NETStandard1.4" />
+			<group targetFramework=".NETStandard2.1" />
+			<group targetFramework="net5.0" />
+			<group targetFramework="net6.0" />
+			<group targetFramework="net6.0-windows10.0.19041.0" />
+		</dependencies>
+	</metadata>
+	<files>
+		<file src="..\icon.png" target="" />
+
+		<!-- .Net Standard 1.4 -->
+		<file src="..\FontAwesome6.Core\bin\Release\netstandard1.4\FontAwesome6.*" target="lib\netstandard1.4\" />
+
+		<!-- .Net Standard 2.1 -->
+		<file src="..\FontAwesome6.Core\bin\Release\netstandard2.1\FontAwesome6.*" target="lib\netstandard2.1\" />
+
+		<!-- .Net 5.0 -->
+		<file src="..\FontAwesome6.Core\bin\Release\net5.0\FontAwesome6.*" target="lib\net5.0\" />
+		
+		<!-- .Net 6.0 -->
+		<file src="..\FontAwesome6.Core\bin\Release\net6.0\FontAwesome6.*" target="lib\net6.0\" />
+
+		<!-- WinUI -->
+		<file src="..\FontAwesome6.Fonts.WinUI\bin\Release\net6.0-windows10.0.17763.0\FontAwesome6.*" target="lib\net6.0-windows10.0.17763.0" />
+		<file src="..\FontAwesome6.Fonts.WinUI\bin\Release\net6.0-windows10.0.17763.0\Fonts\*.ttf" target="lib\net6.0-windows10.0.17763.0\FontAwesome6.WinUI\Fonts" />
+	</files>
+</package>
