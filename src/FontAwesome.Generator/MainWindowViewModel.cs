@@ -6,9 +6,11 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
-using System.Windows;
+using System.Windows.Forms;
 using System.Windows.Input;
 using System.Windows.Threading;
+
+using MessageBox = System.Windows.MessageBox;
 
 namespace FontAwesome.Generator
 {
@@ -27,14 +29,11 @@ namespace FontAwesome.Generator
         public string SvgOutputFileNamePrefix { get; set; }
 
         public ICommand GenerateSourceFilesCommand { get; set; }
-
         public ICommand GenerateSvgFilesCommand { get; set; }
 
-        public ICommand BrowseFontAwesomeSvgDirectoryCommand { get; set; }
-
-        public ICommand BrowseSvgOutputDirectoryCommand { get; set; }
-
         public ICommand BrowseSourceDirectoryCommand { get; set; }
+        public ICommand BrowseFontAwesomeSvgDirectoryCommand { get; set; }
+        public ICommand BrowseSvgOutputDirectoryCommand { get; set; }
 
         public bool IsWindowsEnabled { get; set; } = true;
 
@@ -51,9 +50,9 @@ namespace FontAwesome.Generator
 
             GenerateSourceFilesCommand = new RelayCommand(obj => GenerateSourceFilesExecuted(), obj => CanExecuteGenerateSourceFiles());
             GenerateSvgFilesCommand = new RelayCommand(obj => GenerateSvgFilesExecuted(), obj => CanExecuteGenerateSvgFiles());
+            BrowseSourceDirectoryCommand = new RelayCommand(obj => BrowseSourceDirectoryExecuted());
             BrowseFontAwesomeSvgDirectoryCommand = new RelayCommand(obj => BrowseFontAwesomeSvgDirectoryExecuted());
             BrowseSvgOutputDirectoryCommand = new RelayCommand(obj => BrowseSvgOutputDirectoryExecuted());
-            BrowseSourceDirectoryCommand = new RelayCommand(obj => BrowseSourceDirectoryExecuted());
         }
 
         public event PropertyChangedEventHandler? PropertyChanged;
@@ -114,18 +113,22 @@ namespace FontAwesome.Generator
             }
         }
 
-        private void BrowseFontAwesomeSvgDirectoryExecuted()
+        private void BrowseSourceDirectoryExecuted() =>
+            SourceDirectory = BrowseDirectory(SourceDirectory);
+
+        private void BrowseFontAwesomeSvgDirectoryExecuted() =>
+            FontAwesomeSvgDirectory = BrowseDirectory(FontAwesomeSvgDirectory);
+
+        private void BrowseSvgOutputDirectoryExecuted() =>
+            SvgOutputDirectory = BrowseDirectory(SvgOutputDirectory);
+
+        private string BrowseDirectory(string initialDirectory)
         {
-
-        }
-
-        private void BrowseSvgOutputDirectoryExecuted()
-        {
-
-        }
-        private void BrowseSourceDirectoryExecuted()
-        {
-
+            var folderBrowserDialog = new FolderBrowserDialog
+            {
+                InitialDirectory = initialDirectory
+            };
+            return folderBrowserDialog.ShowDialog() == DialogResult.OK ? folderBrowserDialog.SelectedPath : initialDirectory;
         }
     }
 }

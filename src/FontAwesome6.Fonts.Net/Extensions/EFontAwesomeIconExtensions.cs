@@ -124,7 +124,8 @@ namespace FontAwesome6.Fonts.Extensions
         /// <summary>
         /// Creates a new System.Windows.Media.FormattedText of a specified FontAwesomeIcon and foreground System.Windows.Media.Brush.
         /// </summary>
-        /// <param name="icon">The FontAwesome icon to be drawn.</param>
+        /// <param name="text"></param>
+        /// <param name="typeface"></param>
         /// <param name="foregroundBrush">The System.Windows.Media.Brush to be used as the foreground.</param>
         /// <param name="emSize">The font size in em.</param>
         /// <returns>A new System.Windows.Media.FormattedText</returns>
