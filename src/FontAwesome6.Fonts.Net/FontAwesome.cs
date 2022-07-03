@@ -57,7 +57,7 @@ namespace FontAwesome6.Fonts
         public static readonly DependencyProperty FlipOrientationProperty =
             DependencyProperty.Register("FlipOrientation", typeof(EFlipOrientation), typeof(FontAwesome), new PropertyMetadata(EFlipOrientation.Normal, FlipOrientationChanged));
 
-        private FontFamily _initialFontFamily;
+        private readonly FontFamily _initialFontFamily;
 
         static FontAwesome()
         {

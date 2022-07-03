@@ -10,7 +10,7 @@ namespace FontAwesome6.Svg.AttachedProperties
         /// Identifies the FontAwesome.Svg.SecondaryColor dependency property.
         /// </summary>
         public static readonly DependencyProperty SecondaryColorProperty =
-            DependencyProperty.RegisterAttached("SecondaryColor", typeof(Brush), typeof(FontAwesome), new PropertyMetadata(Brushes.Black, OnRenderingTriggered));
+            DependencyProperty.RegisterAttached("SecondaryColor", typeof(Brush), typeof(FontAwesome), new PropertyMetadata(FontAwesomeDefaults.SecondaryColor, OnRenderingTriggered));
 
         /// <summary>
         /// Identifies the FontAwesome.Svg.PrimaryOpacity dependency property.

@@ -10,6 +10,9 @@
     xmlns:fas="using:FontAwesome6.Svg" 
     mc:Ignorable="d">
     <Grid>
+        <Grid.DataContext>
+            <local:MainWindowViewModel/>
+        </Grid.DataContext>
         <Grid.Resources>
             <converters:NullableDoubleToStringConverter x:Key="NullableDoubleToStringConverter"/>
             <converters:HexColorStringToSolidColorBrushConverter x:Key="HexColorStringToSolidColorBrushConverter"/>
@@ -103,8 +106,9 @@
                 <ListView.ItemTemplate>
                     <DataTemplate>
                         <StackPanel Orientation="Horizontal">
-                            <fas:SvgAwesome Icon="{Binding}" Width="32" Height="32" HorizontalAlignment="Center"/>
-                            <TextBlock Text="{Binding}" VerticalAlignment="Center"></TextBlock>
+                            <faf:FontAwesome Icon="{Binding}" FontSize="32" HorizontalAlignment="Center"/>
+                            <fas:SvgAwesome Icon="{Binding}" Height="32" HorizontalAlignment="Center" Margin="10,0,0,0"/>
+                            <TextBlock Text="{Binding}" VerticalAlignment="Center" Margin="10,0,0,0"></TextBlock>
                         </StackPanel>
                     </DataTemplate>
                 </ListView.ItemTemplate>

@@ -13,10 +13,6 @@ namespace FontAwesome6.Svg.Extensions
     /// </summary>
     public static partial class EFontAwesomeIconExtensions
     {
-        public static FontAwesomeSvgInformation GetSvgInformation(this EFontAwesomeIcon icon)
-        {
-            return FontAwesomeSvg.GetInformation(icon);
-        }
 
         ///// <summary>
         ///// Creates a new System.Windows.Media.ImageSource of a specified FontAwesomeIcon and foreground System.Windows.Media.Brush.
@@ -90,7 +86,11 @@ namespace FontAwesome6.Svg.Extensions
         /// <returns>A new System.Windows.UIElement</returns>
         public static UIElement CreateCanvas(this EFontAwesomeIcon icon, Brush primary, Brush secondary = null, bool? swapOpacity = null, double? primaryOpacity = null, double? secondaryOpacity = null)
         {
-            var information = icon.GetSvgInformation();
+            if (icon == EFontAwesomeIcon.None || !icon.TryGetSvgInformation(out var information))
+            {
+                return new Canvas();
+            }
+
             if (information.Paths.Length > 1)
             {
                 var primaryClone = CloneBrush(primary);

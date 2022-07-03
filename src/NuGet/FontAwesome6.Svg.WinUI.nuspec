@@ -1,10 +1,10 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
 	<metadata>
-		<id>FontAwesome6.Svg</id>
+		<id>FontAwesome6.Svg.WinUI</id>
 		<version>$version$</version>
 		<description>
-			WPF (.Net and .Net Core) and UWP controls for the web's most popular icon set and toolkit.
+			WinUI controls for the web's most popular icon set and toolkit.
 			This package contains only svg informations, if you need fonts use FontAwesome6.Fonts.
 			For examples https://github.com/MartinTopfstedt/FontAwesome6
 			Font-Awesome Version: 6.1.1
@@ -23,28 +23,15 @@
 			<group targetFramework=".NETStandard2.1" >
 				<dependency id="Newtonsoft.Json" version="13.0.1" />
 			</group>
-			<group targetFramework=".NETFramework4.6.2" >
-				<dependency id="Newtonsoft.Json" version="13.0.1" />
-			</group>
-			<group targetFramework=".NETFramework4.7.2" >
-				<dependency id="Newtonsoft.Json" version="13.0.1" />
-			</group>
-			<group targetFramework=".NETCoreApp3.1" >
-				<dependency id="Newtonsoft.Json" version="13.0.1" />
-			</group>
 			<group targetFramework="net5.0" >
-				<dependency id="Newtonsoft.Json" version="13.0.1" />
-			</group>
-			<group targetFramework="net5.0-windows7.0" >
 				<dependency id="Newtonsoft.Json" version="13.0.1" />
 			</group>
 			<group targetFramework="net6.0" >
 				<dependency id="Newtonsoft.Json" version="13.0.1" />
 			</group>
-			<group targetFramework="net6.0-windows7.0" >
-				<dependency id="Newtonsoft.Json" version="13.0.1" />
-			</group>
-			<group targetFramework="UAP10.0" >
+			<group targetFramework="net6.0-windows10.0.17763.0" >
+				<dependency id="Microsoft.Windows.SDK.BuildTools" version="10.0.22000.194" exclude="Build,Analyzers" />
+				<dependency id="Microsoft.WindowsAppSDK" version="1.0.0" exclude="Build,Analyzers" />
 				<dependency id="Newtonsoft.Json" version="13.0.1" />
 			</group>
 		</dependencies>
@@ -64,22 +51,8 @@
 		<!-- .Net 6.0 -->
 		<file src="..\FontAwesome6.Core\bin\Release\net6.0\FontAwesome6.*" target="lib\net6.0\" />
 
-		<!-- .Net Framework 4.6.2 -->
-		<file src="..\FontAwesome6.Svg.Net\bin\Release\net462\FontAwesome6.*" target="lib\net462\" />
+		<!-- WinUI -->
+		<file src="..\FontAwesome6.Svg.WinUI\bin\Release\net6.0-windows10.0.17763.0\FontAwesome6.*" target="lib\net6.0-windows10.0.17763.0\" />
 
-		<!-- .Net Framework 4.7.2 -->
-		<file src="..\FontAwesome6.Svg.Net\bin\Release\net472\FontAwesome6.*" target="lib\net472\" />
-
-		<!-- .Net Core Framework 3.1 -->
-		<file src="..\FontAwesome6.Svg.Net\bin\Release\netcoreapp3.1\FontAwesome6.*" target="lib\netcoreapp3.1\" />
-
-		<!-- .Net 5.0 -->
-		<file src="..\FontAwesome6.Svg.Net\bin\Release\net5.0-windows\FontAwesome6.*" target="lib\net5.0-windows7.0\" />
-
-		<!-- .Net 6.0 -->
-		<file src="..\FontAwesome6.Svg.Net\bin\Release\net6.0-windows\FontAwesome6.*" target="lib\net6.0-windows7.0\" />
-
-		<!-- UWP -->
-		<file src="..\FontAwesome6.Svg.UWP\bin\Release\FontAwesome6.*" target="lib\uap10.0" />
 	</files>
 </package>

@@ -1,8 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
+using System.Reflection;
 
 using Microsoft.UI.Xaml.Media;
+using Microsoft.Windows.ApplicationModel.Resources;
 
 namespace FontAwesome6.Fonts
 {
@@ -27,7 +30,9 @@ namespace FontAwesome6.Fonts
             _fonts.Add(EFontAwesomeStyle.Solid, Tuple.Create("fa-solid-900.ttf", "Font Awesome 6 Free Solid"));
             _fonts.Add(EFontAwesomeStyle.Regular, Tuple.Create("fa-regular-400.ttf", "Font Awesome 6 Free"));
 
-            LoadAllStyles("ms-appx:///FontAwesome6.Fonts.WinUI/Fonts/");
+            var path = Directory.GetCurrentDirectory();
+            SaveFontFilesToDirectory(Path.Combine(path, "Fonts"));
+            LoadAllStyles("ms-appx:///Fonts/");
 #endif
         }
 
@@ -75,7 +80,7 @@ namespace FontAwesome6.Fonts
         /// Loads all FontFamilies and Typefaces for all EFontAwesomeStyles.    
         /// </summary>
         /// <param name="uri">Uri to the location of all font files.
-        /// Load from resources: new Uri("pack://application:,,,/FontAwesome6.Net;component/Fonts/")
+        /// Load from resources: new Uri("ms-appx:///FontAwesome6.UWP/Fonts/")
         /// Load from a directory: new Uri("file:///C:/Temp/", UriKind.Absolute)
         /// </param>
         public static void LoadAllStyles(Uri uri)
@@ -91,5 +96,37 @@ namespace FontAwesome6.Fonts
         {
             LoadAllStyles(new Uri(uri));
         }
+
+#if !FontAwesomePro
+        private static void SaveFontFilesToDirectory(string path)
+        {
+            if (!Directory.Exists(path))
+            {
+                Directory.CreateDirectory(path);
+            }
+
+            var assembly = typeof(FontAwesomeFonts).Assembly;
+            WriteResourceToFile(assembly, $"FontAwesome6.Fonts.WinUI.Fonts.fa-solid-900.ttf", Path.Combine(path, "fa-solid-900.ttf"));
+            WriteResourceToFile(assembly, $"FontAwesome6.Fonts.WinUI.Fonts.fa-regular-400.ttf", Path.Combine(path, "fa-regular-400.ttf"));
+            WriteResourceToFile(assembly, $"FontAwesome6.Fonts.WinUI.Fonts.fa-brands-400.ttf", Path.Combine(path, "fa-brands-400.ttf"));
+        }
+
+        private static void WriteResourceToFile(Assembly assembly, string resourceName, string fileName)
+        {
+            if (File.Exists(fileName))
+            {
+                File.Delete(fileName);
+            }
+
+            using (var res = assembly.GetManifestResourceStream(resourceName))
+            {
+                using (var file = new FileStream(fileName, FileMode.Create, FileAccess.Write))
+                {
+                    res.CopyTo(file);
+                }
+            }
+
+        }
+#endif
     }
 }

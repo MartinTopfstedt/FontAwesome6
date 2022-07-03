@@ -8,7 +8,7 @@ Font-Awesome Version: 6.1.1
 
 ## Breaking Changes
 
-The Package is now separated into two separate packages for SVG and Fonts. Therefore the namespace needed to be separate as well. Which means the old namespace `http://schemas.fontawesome.com/icons` has been split into `http://schemas.fontawesome.com/icons/svg` and `http://schemas.fontawesome.com/icons/fonts`.
+The Package is now separated into two packages for SVG and Fonts. Therefore the namespace needed to be separate as well. Which means the old namespace `http://schemas.fontawesome.com/icons` has been split into `http://schemas.fontawesome.com/icons/svg` and `http://schemas.fontawesome.com/icons/fonts`.
 
 ## FontAwesome6 (Free)
 
@@ -17,6 +17,8 @@ The Package is now separated into two separate packages for SVG and Fonts. There
 #### Installation
 
 Install the FontAwesome6.Svg package: `Install-Package FontAwesome6.Svg`
+Or
+Install the FontAwesome6.Svg.WinUI package: `Install-Package FontAwesome6.Svg.WinUI`
 
 #### Usage
 
@@ -26,6 +28,7 @@ Control | .Net Framework & .Net | WinUI | UWP
 ------- | ---- | ----- | ----
 SvgAwesome | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 ImageAwesome | :white_check_mark: | :x: | :x: |
+Attached Properties | :white_check_mark: | :x: | :x: |
 
 ```xaml
 <Window x:Class="FontAwesome6.Example.WPF.MainWindow" 
@@ -48,8 +51,8 @@ Available for following controls:
 ```xaml
 <Window x:Class="FontAwesome6.Example.WPF.MainWindow" 
         xmlns:fa="http://schemas.fontawesome.com/icons/svg/properties">        
-    <Button fa:FontAwesome.Icon="Soild_Flags"/>
-    <Image fa:FontAwesome.Icon="Soild_Flags"/>
+    <Button fa:FontAwesome.Icon="Solid_Flags"/>
+    <Image fa:FontAwesome.Icon="Solid_Flags"/>
 </Window>        
 ```
 
@@ -82,6 +85,8 @@ See example projects for advanced usage.
 #### Installation
 
 Install the FontAwesome6.Fonts package: `Install-Package FontAwesome6.Fonts`
+Or
+Install the FontAwesome6.Fonts.WinUI package: `Install-Package FontAwesome6.Fonts.WinUI`
 
 #### Usage
 
@@ -91,6 +96,7 @@ Control | .Net Framework & .Net | WinUI | UWP
 ------- | ---- | ----- | ----
 FontAwesome | :white_check_mark: | :white_check_mark: | :white_check_mark: |
 ImageAwesome | :white_check_mark: | :x: | :x: |
+Attached Properties | :white_check_mark: | :x: | :x: |
 
 ```xaml
 <Window x:Class="FontAwesome6.Example.WPF.MainWindow" 
@@ -150,6 +156,8 @@ See example projects for advanced usage.
 #### Installation
 
 1. Install the FontAwesome6.Pro.Svg package: `Install-Package FontAwesome6.Pro.Svg`
+   Or
+   Install the FontAwesome6.Pro.Svg.WinUI package: `Install-Package FontAwesome6.Pro.Svg.WinUI`
 
 2. Download the Desktop Version of FontAwesome6 from the website: https://fontawesome.com/download
 
@@ -178,6 +186,8 @@ See example projects for advanced usage.
 #### Installation
 
 1. Install the FontAwesome6.Pro.Fonts package: `Install-Package FontAwesome6.Pro.Fonts`
+   Or
+   Install the FontAwesome6.Pro.Fonts.WInUI package: `Install-Package FontAwesome6.Pro.Fonts.WinUI`
 
 2. Download the Web Version of FontAwesome6 from the website: https://fontawesome.com/download
 
@@ -206,7 +216,7 @@ public partial class App : Application
 
 >:warning: *(.Net Framework & .Net only)* Using the fonts from resources will create a memory leak. To prevent it load the font from the file system instead.
 
-The example below shows how to load all font files(with their default names) as resource. The files are located inside the solution in the "Fonts" directory and have "Resource" as Content.
+The example below shows how to load all font files (with their default names) as resource. The files are located inside the solution in the "Fonts" directory and have "Resource" as Content.
 
 ###### .Net Framework & .Net
 
@@ -260,4 +270,39 @@ public sealed partial class MainPage : Page
                      SecondaryOpacity="0.4"
                      SwapOpacity="false"/>
 </Window>        
+```
+### Load Icons inside Designer
+
+Add a `DesignTimeResource.xaml` inside the `Properties` directory and a new UserControl anywhere(e.x. `DesignTimeFontAwesome.xaml`).
+Then add the UserControl to the ResourceDirectory.
+```xaml
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"     
+    xmlns:local="clr-namespace:FontAwesome6.Example.WPF">
+    <local:DesignTimeFontAwesome x:Key="NotNeeded"></local:DesignTimeFontAwesome>
+</ResourceDictionary>
+```
+After that, you need to modify the `.csproj` file and change the entry of `DesignTimeResource.xaml` to the following:
+```
+<Page Include="Properties\DesignTimeResources.xaml" Condition="'$(DesignTime)'=='true' OR ('$(SolutionPath)'!='' AND Exists('$(SolutionPath)') AND '$(BuildingInsideVisualStudio)'!='true' AND '$(BuildingInsideExpressionBlend)'!='true')">
+  <Generator>MSBuild:Compile</Generator>
+  <SubType>Designer</SubType>
+  <ContainsDesignTimeResources>true</ContainsDesignTimeResources>
+</Page>
+```
+Create a new UserControl called `DesignTimeFontAwesome.xaml` and add the icon / font loading inside the constructor.
+```csharp
+using System.Windows.Controls;
+namespace FontAwesome6.Example.WPF
+{
+    public partial class DesignTimeFontAwesome : UserControl
+    {
+        public DesignTimeFontAwesome()
+        {
+            InitializeComponent();
+            Svg.FontAwesomeSvg.LoadFromResource("FontAwesome6.Example.WPF.Svg.FontAwesomeSvg.all.json", typeof(App).Assembly);
+        }
+    }
+}
 ```
