@@ -13,6 +13,8 @@
 		<Configurations>Debug;Release;DebugPro;ReleasePro</Configurations>
 		<WindowsPackageType>None</WindowsPackageType>
 		<UseWPF>True</UseWPF>
+		<SignAssembly>True</SignAssembly>
+		<AssemblyOriginatorKeyFile>..\Key.snk</AssemblyOriginatorKeyFile>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)'=='DebugPro'">

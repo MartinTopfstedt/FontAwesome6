@@ -3,12 +3,13 @@
 		<TargetFramework>net6.0-windows10.0.17763.0</TargetFramework>
 		<TargetPlatformMinVersion>10.0.17763.0</TargetPlatformMinVersion>
 		<RootNamespace>FontAwesome6.Fonts.WinUI</RootNamespace>
-		<RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>		
+		<RuntimeIdentifiers>win10-x86;win10-x64;win10-arm64</RuntimeIdentifiers>
 		<UseWinUI>true</UseWinUI>
 		<DefineConstants>WINUI</DefineConstants>
 		<Configurations>Debug;Release;DebugPro;ReleasePro</Configurations>
-		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
 		<PlatformTarget>AnyCPU</PlatformTarget>
+		<SignAssembly>True</SignAssembly>
+		<AssemblyOriginatorKeyFile>..\Key.snk</AssemblyOriginatorKeyFile>
 	</PropertyGroup>
 
 	<PropertyGroup Condition="'$(Configuration)'=='DebugPro'">
