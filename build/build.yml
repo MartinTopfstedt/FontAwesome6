@@ -15,7 +15,7 @@ parameters:
   type: object
   default:
     - Any CPU
-    - x68
+    - x86
     - x64
     - arm64
 
