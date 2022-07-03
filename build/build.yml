@@ -11,6 +11,13 @@ parameters:
   default:
     FontAwesome6: Release
     FontAwesome6.Pro: ReleasePro
+- name: buildPlatform
+  type: object
+  default:
+    - Any CPU
+    - x68
+    - x64
+    - arm64
 
 variables:
   buildPlatform: 'Any CPU'
@@ -71,14 +78,15 @@ steps:
       msbuildArgs: '/p:Version=$(GitVersion.AssemblySemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);FileVersion=$(GitVersion.AssemblySemFileVer)'
       platform: '$(buildPlatform)'
       configuration: '${{setting.value}}'    
-        
-  - task: VSBuild@1
-    displayName: '${{setting.key}}: Build: WinUI'
-    inputs:
-      solution: 'src/FontAwesome6.WinUI.sln'
-      msbuildArgs: '/p:Version=$(GitVersion.AssemblySemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);FileVersion=$(GitVersion.AssemblySemFileVer)'
-      platform: '$(buildPlatform)'
-      configuration: '${{setting.value}}'
+  
+  - ${{each platform in parameters.buildPlatform}}:    
+    - task: VSBuild@1
+      displayName: '${{setting.key}}: Build: WinUI'
+      inputs:
+        solution: 'src/FontAwesome6.WinUI.sln'
+        msbuildArgs: '/p:Version=$(GitVersion.AssemblySemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);FileVersion=$(GitVersion.AssemblySemFileVer)'
+        platform: '${{platform}}'
+        configuration: '${{setting.value}}'
 
   - task: NuGetCommand@2
     displayName: '${{setting.key}}: Pack Fonts'
