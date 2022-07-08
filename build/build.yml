@@ -17,6 +17,7 @@ parameters:
     - Any CPU
     - x86
     - x64
+    - arm
     - arm64
 
 steps:

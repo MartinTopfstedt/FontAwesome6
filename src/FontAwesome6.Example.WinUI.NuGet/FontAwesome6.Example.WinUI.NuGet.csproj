@@ -11,8 +11,7 @@
     <UseWinUI>true</UseWinUI>
     <EnableMsixTooling>true</EnableMsixTooling>
     <WindowsAppSDKSelfContained>true</WindowsAppSDKSelfContained>
-    <WindowsPackageType>None</WindowsPackageType>
-    <PlatformTarget>x86</PlatformTarget>
+    <WindowsPackageType>None</WindowsPackageType>    
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,14 +24,11 @@
 
   <ItemGroup>
     <PackageReference Include="CommunityToolkit.Mvvm" Version="7.1.2" />
+    <PackageReference Include="FontAwesome6.Fonts.WinUI" Version="2.2.0-unstable0007" />
+    <PackageReference Include="FontAwesome6.Svg.WinUI" Version="2.2.0-unstable0007" />
     <PackageReference Include="Microsoft.Extensions.Hosting" Version="6.0.1" />
     <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.1.2" />
     <PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" Version="2.0.8" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <ProjectReference Include="..\FontAwesome6.Fonts.WinUI\FontAwesome6.Fonts.WinUI.csproj" />
-    <ProjectReference Include="..\FontAwesome6.Svg.WinUI\FontAwesome6.Svg.WinUI.csproj" />
   </ItemGroup>
   
   <PropertyGroup Condition="'$(DisableHasPackageAndPublishMenuAddedByProject)'!='true' and '$(EnableMsixTooling)'=='true'">
