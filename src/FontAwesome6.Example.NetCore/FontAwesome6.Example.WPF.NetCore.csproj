@@ -14,7 +14,7 @@
 	<Import Project="..\FontAwesome6.Example.WPF.Shared\FontAwesome6.Example.WPF.Shared.projitems" Label="Shared" />
 
 	<ItemGroup>
-		<PackageReference Include="PropertyChanged.Fody" Version="3.4.0" />
+		<PackageReference Include="PropertyChanged.Fody" Version="3.4.1" />
 	</ItemGroup>
 
 	<PropertyGroup Condition="'$(Configuration)'=='DebugPro'">

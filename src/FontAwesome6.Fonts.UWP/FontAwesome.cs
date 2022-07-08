@@ -22,7 +22,7 @@ namespace FontAwesome6.Fonts
         /// Identifies the FontAwesome.Icon dependency property.
         /// </summary>
         public static readonly DependencyProperty IconProperty = DependencyProperty.Register(
-            nameof(Icon), typeof(EFontAwesomeIcon), typeof(FontAwesome), new PropertyMetadata(EFontAwesomeIcon.None, Icon_PropertyChangedCallback));
+            nameof(Icon), typeof(EFontAwesomeIcon), typeof(FontAwesome), new PropertyMetadata(EFontAwesomeIcon.None, OnIconChanged));
 
         /// <summary>
         /// Identifies the FontAwesome.Spin dependency property.
@@ -34,7 +34,7 @@ namespace FontAwesome6.Fonts
         /// Identifies the FontAwesome.SpinDuration dependency property.
         /// </summary>
         public static readonly DependencyProperty SpinDurationProperty = DependencyProperty.Register(
-            nameof(SpinDuration), typeof(double), typeof(FontAwesome), new PropertyMetadata(1d, SpinDurationChanged));
+            nameof(SpinDuration), typeof(double), typeof(FontAwesome), new PropertyMetadata(1d, OnSpinDurationChanged));
 
         /// <summary>
         /// Identifies the FontAwesome.Pulse dependency property
@@ -46,21 +46,21 @@ namespace FontAwesome6.Fonts
         /// Identifies the FontAwesome.PulseDuartion dependency property
         /// </summary>
         public static readonly DependencyProperty PulseDurationProperty = DependencyProperty.Register(
-            nameof(PulseDuration), typeof(double), typeof(FontAwesome), new PropertyMetadata(1d, PulseDurationChanged));
+            nameof(PulseDuration), typeof(double), typeof(FontAwesome), new PropertyMetadata(1d, OnPulseDurationChanged));
 
         /// <summary>
         /// Identifies the FontAwesome.Rotation dependency property.
         /// </summary>
         public static readonly DependencyProperty RotationProperty = DependencyProperty.Register(
-            nameof(Rotation), typeof(double), typeof(FontAwesome), new PropertyMetadata(0d, RotationChanged));
+            nameof(Rotation), typeof(double), typeof(FontAwesome), new PropertyMetadata(0d, OnRotationChanged));
 
         /// <summary>
         /// Identifies the FontAwesome.FlipOrientation dependency property.
         /// </summary>
         public static readonly DependencyProperty FlipOrientationProperty = DependencyProperty.Register(
-            nameof(FlipOrientation), typeof(EFlipOrientation), typeof(FontAwesome), new PropertyMetadata(EFlipOrientation.Normal, FlipOrientationChanged));
+            nameof(FlipOrientation), typeof(EFlipOrientation), typeof(FontAwesome), new PropertyMetadata(EFlipOrientation.Normal, OnFlipOrientationChanged));
 
-        private static void Icon_PropertyChangedCallback(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs e)
+        private static void OnIconChanged(DependencyObject dependencyObject, DependencyPropertyChangedEventArgs e)
         {
             var fontAwesome = (FontAwesome)dependencyObject;
             var newValue = (EFontAwesomeIcon)e.NewValue;
@@ -126,7 +126,7 @@ namespace FontAwesome6.Fonts
             set => SetValue(SpinDurationProperty, value);
         }
 
-        private static void SpinDurationChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        private static void OnSpinDurationChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             if (!(d is FontAwesome fontAwesome) || !fontAwesome.Spin || !(e.NewValue is double) || e.NewValue.Equals(e.OldValue))
             {
@@ -173,7 +173,7 @@ namespace FontAwesome6.Fonts
             set => SetValue(PulseDurationProperty, value);
         }
 
-        private static void PulseDurationChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        private static void OnPulseDurationChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             if (!(d is FontAwesome fontAwesome) || !fontAwesome.Pulse || !(e.NewValue is double) || e.NewValue.Equals(e.OldValue))
             {
@@ -189,11 +189,11 @@ namespace FontAwesome6.Fonts
         /// </summary>
         public new double Rotation
         {
-            get { return (double)GetValue(RotationProperty); }
-            set { SetValue(RotationProperty, value); }
+            get => (double)GetValue(RotationProperty);
+            set => SetValue(RotationProperty, value);
         }
 
-        private static void RotationChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        private static void OnRotationChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             if (!(d is FontAwesome fontAwesome) || fontAwesome.Spin || !(e.NewValue is double) || e.NewValue.Equals(e.OldValue))
             {
@@ -208,11 +208,11 @@ namespace FontAwesome6.Fonts
         /// </summary>
         public EFlipOrientation FlipOrientation
         {
-            get { return (EFlipOrientation)GetValue(FlipOrientationProperty); }
-            set { SetValue(FlipOrientationProperty, value); }
+            get => (EFlipOrientation)GetValue(FlipOrientationProperty);
+            set => SetValue(FlipOrientationProperty, value);
         }
 
-        private static void FlipOrientationChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        private static void OnFlipOrientationChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             if (!(d is FontAwesome fontAwesome) || !(e.NewValue is EFlipOrientation) || e.NewValue.Equals(e.OldValue))
             {
