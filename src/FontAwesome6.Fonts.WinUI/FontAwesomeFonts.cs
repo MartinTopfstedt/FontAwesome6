@@ -30,9 +30,18 @@ namespace FontAwesome6.Fonts
             _fonts.Add(EFontAwesomeStyle.Solid, Tuple.Create("fa-solid-900.ttf", "Font Awesome 6 Free Solid"));
             _fonts.Add(EFontAwesomeStyle.Regular, Tuple.Create("fa-regular-400.ttf", "Font Awesome 6 Free"));
 
-            var path = Directory.GetCurrentDirectory();
-            SaveFontFilesToDirectory(Path.Combine(path, "Fonts"));
-            LoadAllStyles("ms-appx:///Fonts/");
+            try
+            {
+                var path = Windows.Storage.ApplicationData.Current.LocalFolder.Path;
+                SaveFontFilesToDirectory(Path.Combine(path, "Fonts"));
+                LoadAllStyles("ms-appdata:///local/Fonts/");
+            }
+            catch
+            {
+                var path = Directory.GetCurrentDirectory();
+                SaveFontFilesToDirectory(Path.Combine(path, "Fonts"));
+                LoadAllStyles("ms-appx:///Fonts/");
+            }
 #endif
         }
 
@@ -118,14 +127,10 @@ namespace FontAwesome6.Fonts
                 File.Delete(fileName);
             }
 
-            using (var res = assembly.GetManifestResourceStream(resourceName))
-            {
-                using (var file = new FileStream(fileName, FileMode.Create, FileAccess.Write))
-                {
-                    res.CopyTo(file);
-                }
-            }
+            using var res = assembly.GetManifestResourceStream(resourceName);
+            using var file = new FileStream(fileName, FileMode.Create, FileAccess.Write);
 
+            res.CopyTo(file);
         }
 #endif
     }

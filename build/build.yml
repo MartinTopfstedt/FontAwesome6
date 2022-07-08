@@ -19,9 +19,6 @@ parameters:
     - x64
     - arm64
 
-variables:
-  buildPlatform: 'Any CPU'
-
 steps:
 - task: GitVersion@5
   inputs:
