@@ -12,7 +12,7 @@ namespace FontAwesome6
 	/// FontAwesome by Dave Gandy (@davegandy)
 	///	The iconic SVG, font, and CSS toolkit
 	///	License https://fontawesome.com/license (C#: MIT License)
-	/// Version: 6.1.1 
+	/// Version: 6.1.2 
 	/// </summary>
 	public enum EFontAwesomeIcon
 	{
@@ -68,12 +68,12 @@ namespace FontAwesome6
 		/// <summary>Masks theater</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/masks-theater?s=solid" /></remarks>		
 		Solid_MasksTheater,		
+		/// <summary>Stapler</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/stapler?s=solid" /></remarks>		
+		Solid_Stapler,		
 		/// <summary>KORVUE</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/korvue?s=brands" /></remarks>		
 		Brands_Korvue,		
-		/// <summary>Odnoklassniki Square</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/odnoklassniki-square?s=brands" /></remarks>		
-		Brands_OdnoklassnikiSquare,		
 		/// <summary>Zhihu</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/zhihu?s=brands" /></remarks>		
 		Brands_Zhihu,		
@@ -164,9 +164,6 @@ namespace FontAwesome6
 		/// <summary>Wodu</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/wodu?s=brands" /></remarks>		
 		Brands_Wodu,		
-		/// <summary>Git Square</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/git-square?s=brands" /></remarks>		
-		Brands_GitSquare,		
 		/// <summary>Square Full</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/square-full?s=solid" /></remarks>		
 		Solid_SquareFull,		
@@ -362,9 +359,6 @@ namespace FontAwesome6
 		/// <summary>Viacoin</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/viacoin?s=brands" /></remarks>		
 		Brands_Viacoin,		
-		/// <summary>Pinterest Square</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/pinterest-square?s=brands" /></remarks>		
-		Brands_PinterestSquare,		
 		/// <summary>align-right</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/align-right?s=solid" /></remarks>		
 		Solid_AlignRight,		
@@ -518,6 +512,9 @@ namespace FontAwesome6
 		/// <summary>Table list</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/table-list?s=solid" /></remarks>		
 		Solid_TableList,		
+		/// <summary>What's App Square</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/square-whatsapp?s=brands" /></remarks>		
+		Brands_SquareWhatsapp,		
 		/// <summary>4</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/4?s=solid" /></remarks>		
 		Solid_4,		
@@ -800,9 +797,6 @@ namespace FontAwesome6
 		/// <summary>replyd</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/replyd?s=brands" /></remarks>		
 		Brands_Replyd,		
-		/// <summary>Behance Square</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/behance-square?s=brands" /></remarks>		
-		Brands_BehanceSquare,		
 		/// <summary>qrcode</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/qrcode?s=solid" /></remarks>		
 		Solid_Qrcode,		
@@ -1103,9 +1097,6 @@ namespace FontAwesome6
 		/// <summary>Trash arrow up</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/trash-arrow-up?s=solid" /></remarks>		
 		Solid_TrashArrowUp,		
-		/// <summary>GitHub Square</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/github-square?s=brands" /></remarks>		
-		Brands_GithubSquare,		
 		/// <summary>Tractor</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/tractor?s=solid" /></remarks>		
 		Solid_Tractor,		
@@ -1208,12 +1199,18 @@ namespace FontAwesome6
 		/// <summary>Jet Fighter Up</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/jet-fighter-up?s=solid" /></remarks>		
 		Solid_JetFighterUp,		
+		/// <summary>Tumblr Square</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/square-tumblr?s=brands" /></remarks>		
+		Brands_SquareTumblr,		
 		/// <summary>Baseball Ball</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/baseball?s=solid" /></remarks>		
 		Solid_Baseball,		
 		/// <summary>Circle radiation</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/circle-radiation?s=solid" /></remarks>		
 		Solid_CircleRadiation,		
+		/// <summary>Git Square</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/square-git?s=brands" /></remarks>		
+		Brands_SquareGit,		
 		/// <summary>Clapperboard</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/clapperboard?s=solid" /></remarks>		
 		Solid_Clapperboard,		
@@ -1238,6 +1235,9 @@ namespace FontAwesome6
 		/// <summary>deviantART</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/deviantart?s=brands" /></remarks>		
 		Brands_Deviantart,		
+		/// <summary>Space Awesome</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/space-awesome?s=brands" /></remarks>		
+		Brands_SpaceAwesome,		
 		/// <summary>Person snowboarding</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/person-snowboarding?s=solid" /></remarks>		
 		Solid_PersonSnowboarding,		
@@ -1316,9 +1316,6 @@ namespace FontAwesome6
 		/// <summary>Supple</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/supple?s=brands" /></remarks>		
 		Brands_Supple,		
-		/// <summary>Pied Piper Square Logo (Old)</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/pied-piper-square?s=brands" /></remarks>		
-		Brands_PiedPiperSquare,		
 		/// <summary>list-ul</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/list-ul?s=solid" /></remarks>		
 		Solid_ListUl,		
@@ -1328,6 +1325,9 @@ namespace FontAwesome6
 		/// <summary>Skull &amp; Crossbones</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/skull-crossbones?s=solid" /></remarks>		
 		Solid_SkullCrossbones,		
+		/// <summary>Behance Square</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/square-behance?s=brands" /></remarks>		
+		Brands_SquareBehance,		
 		/// <summary>Wix</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/wix?s=brands" /></remarks>		
 		Brands_Wix,		
@@ -1958,9 +1958,6 @@ namespace FontAwesome6
 		/// <summary>Cmplid</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/cmplid?s=brands" /></remarks>		
 		Brands_Cmplid,		
-		/// <summary>Hourglass empty</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/hourglass-empty?s=solid" /></remarks>		
-		Solid_HourglassEmpty,		
 		/// <summary>File Circle-Check</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/file-circle-check?s=solid" /></remarks>		
 		Solid_FileCircleCheck,		
@@ -2003,6 +2000,9 @@ namespace FontAwesome6
 		/// <summary>Cloud with Rain</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/cloud-rain?s=solid" /></remarks>		
 		Solid_CloudRain,		
+		/// <summary>Cable Car</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/cable-car?s=solid" /></remarks>		
+		Solid_CableCar,		
 		/// <summary>N</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/n?s=solid" /></remarks>		
 		Solid_N,		
@@ -2012,9 +2012,6 @@ namespace FontAwesome6
 		/// <summary>People Pulling</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/people-pulling?s=solid" /></remarks>		
 		Solid_PeoplePulling,		
-		/// <summary>JavaScript (JS) Square</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/js-square?s=brands" /></remarks>		
-		Brands_JsSquare,		
 		/// <summary>Calculator</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/calculator?s=solid" /></remarks>		
 		Solid_Calculator,		
@@ -2075,6 +2072,9 @@ namespace FontAwesome6
 		/// <summary>Ellipsis vertical</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/ellipsis-vertical?s=solid" /></remarks>		
 		Solid_EllipsisVertical,		
+		/// <summary>last.fm Square</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/square-lastfm?s=brands" /></remarks>		
+		Brands_SquareLastfm,		
 		/// <summary>Wand sparkles</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/wand-sparkles?s=solid" /></remarks>		
 		Solid_WandSparkles,		
@@ -2174,9 +2174,6 @@ namespace FontAwesome6
 		/// <summary>Baseball bat ball</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/baseball-bat-ball?s=solid" /></remarks>		
 		Solid_BaseballBatBall,		
-		/// <summary>Dribbble Square</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/dribbble-square?s=brands" /></remarks>		
-		Brands_DribbbleSquare,		
 		/// <summary>Faucet</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/faucet?s=solid" /></remarks>		
 		Solid_Faucet,		
@@ -2195,15 +2192,15 @@ namespace FontAwesome6
 		/// <summary>Square root variable</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/square-root-variable?s=solid" /></remarks>		
 		Solid_SquareRootVariable,		
+		/// <summary>Facebook Square</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/square-facebook?s=brands" /></remarks>		
+		Brands_SquareFacebook,		
 		/// <summary>TikTok</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/tiktok?s=brands" /></remarks>		
 		Brands_Tiktok,		
 		/// <summary>U</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/u?s=solid" /></remarks>		
 		Solid_U,		
-		/// <summary>Steam Square</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/steam-square?s=brands" /></remarks>		
-		Brands_SteamSquare,		
 		/// <summary>Arrow turn up</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/arrow-turn-up?s=solid" /></remarks>		
 		Solid_ArrowTurnUp,		
@@ -2234,6 +2231,9 @@ namespace FontAwesome6
 		/// <summary>Creative Commons No Derivative Works</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/creative-commons-nd?s=brands" /></remarks>		
 		Brands_CreativeCommonsNd,		
+		/// <summary>Pied Piper Square Logo (Old)</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/square-pied-piper?s=brands" /></remarks>		
+		Brands_SquarePiedPiper,		
 		/// <summary>Elementor</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/elementor?s=brands" /></remarks>		
 		Brands_Elementor,		
@@ -2588,6 +2588,9 @@ namespace FontAwesome6
 		/// <summary>Phone Volume</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/phone-volume?s=solid" /></remarks>		
 		Solid_PhoneVolume,		
+		/// <summary>Book tanakh</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/book-tanakh?s=solid" /></remarks>		
+		Solid_BookTanakh,		
 		/// <summary>Table cells large</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/table-cells-large?s=solid" /></remarks>		
 		Solid_TableCellsLarge,		
@@ -2693,6 +2696,9 @@ namespace FontAwesome6
 		/// <summary>headphones</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/headphones?s=solid" /></remarks>		
 		Solid_Headphones,		
+		/// <summary>Xing Square</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/square-xing?s=brands" /></remarks>		
+		Brands_SquareXing,		
 		/// <summary>Tenge sign</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/tenge-sign?s=solid" /></remarks>		
 		Solid_TengeSign,		
@@ -2834,6 +2840,9 @@ namespace FontAwesome6
 		/// <summary>Arrow Rotate Right</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/arrow-rotate-right?s=solid" /></remarks>		
 		Solid_ArrowRotateRight,		
+		/// <summary>Google Plus Square</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/square-google-plus?s=brands" /></remarks>		
+		Brands_SquareGooglePlus,		
 		/// <summary>Hands praying</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/hands-praying?s=solid" /></remarks>		
 		Solid_HandsPraying,		
@@ -3257,6 +3266,9 @@ namespace FontAwesome6
 		/// <summary>Temperature quarter</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/temperature-quarter?s=solid" /></remarks>		
 		Solid_TemperatureQuarter,		
+		/// <summary>Pinterest Square</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/square-pinterest?s=brands" /></remarks>		
+		Brands_SquarePinterest,		
 		/// <summary>R</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/r?s=solid" /></remarks>		
 		Solid_R,		
@@ -3359,9 +3371,6 @@ namespace FontAwesome6
 		/// <summary>Bitcoin</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/bitcoin?s=brands" /></remarks>		
 		Brands_Bitcoin,		
-		/// <summary>Xing Square</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/xing-square?s=brands" /></remarks>		
-		Brands_XingSquare,		
 		/// <summary>Creative Commons Share</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/creative-commons-share?s=brands" /></remarks>		
 		Brands_CreativeCommonsShare,		
@@ -3545,6 +3554,9 @@ namespace FontAwesome6
 		/// <summary>Up down left right</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/up-down-left-right?s=solid" /></remarks>		
 		Solid_UpDownLeftRight,		
+		/// <summary>Odnoklassniki Square</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/square-odnoklassniki?s=brands" /></remarks>		
+		Brands_SquareOdnoklassniki,		
 		/// <summary>Goodreads</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/goodreads?s=brands" /></remarks>		
 		Brands_Goodreads,		
@@ -3650,6 +3662,9 @@ namespace FontAwesome6
 		/// <summary>Democrat</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/democrat?s=solid" /></remarks>		
 		Solid_Democrat,		
+		/// <summary>Square Gitlab</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/square-gitlab?s=brands" /></remarks>		
+		Brands_SquareGitlab,		
 		/// <summary>Comments Dollar</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/comments-dollar?s=solid" /></remarks>		
 		Solid_CommentsDollar,		
@@ -3752,9 +3767,9 @@ namespace FontAwesome6
 		/// <summary>StumbleUpon Logo</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/stumbleupon?s=brands" /></remarks>		
 		Brands_Stumbleupon,		
-		/// <summary>Instagram Square</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/instagram-square?s=brands" /></remarks>		
-		Brands_InstagramSquare,		
+		/// <summary>GitHub Square</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/square-github?s=brands" /></remarks>		
+		Brands_SquareGithub,		
 		/// <summary>Amazon Pay</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/amazon-pay?s=brands" /></remarks>		
 		Brands_AmazonPay,		
@@ -3830,9 +3845,6 @@ namespace FontAwesome6
 		/// <summary>Apple</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/apple?s=brands" /></remarks>		
 		Brands_Apple,		
-		/// <summary>reddit Square</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/reddit-square?s=brands" /></remarks>		
-		Brands_RedditSquare,		
 		/// <summary>Gratipay (Gittip)</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/gratipay?s=brands" /></remarks>		
 		Brands_Gratipay,		
@@ -3902,6 +3914,9 @@ namespace FontAwesome6
 		/// <summary>Asymmetrik, Ltd.</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/asymmetrik?s=brands" /></remarks>		
 		Brands_Asymmetrik,		
+		/// <summary>Vimeo Square</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/square-vimeo?s=brands" /></remarks>		
+		Brands_SquareVimeo,		
 		/// <summary>Crutch</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/crutch?s=solid" /></remarks>		
 		Solid_Crutch,		
@@ -3926,6 +3941,9 @@ namespace FontAwesome6
 		/// <summary>500px</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/500px?s=brands" /></remarks>		
 		Brands_500Px,		
+		/// <summary>Steam Square</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/square-steam?s=brands" /></remarks>		
+		Brands_SquareSteam,		
 		/// <summary>Diamond turn right</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/diamond-turn-right?s=solid" /></remarks>		
 		Solid_DiamondTurnRight,		
@@ -4232,9 +4250,6 @@ namespace FontAwesome6
 		/// <summary>Image</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/image?s=regular" /></remarks>		
 		Regular_Image,		
-		/// <summary>Facebook Square</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/facebook-square?s=brands" /></remarks>		
-		Brands_FacebookSquare,		
 		/// <summary>Bucket</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/bucket?s=solid" /></remarks>		
 		Solid_Bucket,		
@@ -4313,6 +4328,9 @@ namespace FontAwesome6
 		/// <summary>Person Chalkboard</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/person-chalkboard?s=solid" /></remarks>		
 		Solid_PersonChalkboard,		
+		/// <summary>Meta</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/meta?s=brands" /></remarks>		
+		Brands_Meta,		
 		/// <summary>Stripe S</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/stripe-s?s=brands" /></remarks>		
 		Brands_StripeS,		
@@ -4340,9 +4358,6 @@ namespace FontAwesome6
 		/// <summary>Skype</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/skype?s=brands" /></remarks>		
 		Brands_Skype,		
-		/// <summary>What's App Square</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/whatsapp-square?s=brands" /></remarks>		
-		Brands_WhatsappSquare,		
 		/// <summary>Dice Two</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/dice-two?s=solid" /></remarks>		
 		Solid_DiceTwo,		
@@ -4418,9 +4433,6 @@ namespace FontAwesome6
 		/// <summary>House Circle-exclamation</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/house-circle-exclamation?s=solid" /></remarks>		
 		Solid_HouseCircleExclamation,		
-		/// <summary>People arrows left right</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/people-arrows-left-right?s=solid" /></remarks>		
-		Solid_PeopleArrowsLeftRight,		
 		/// <summary>Clipboard</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/clipboard?s=solid" /></remarks>		
 		Solid_Clipboard,		
@@ -4460,6 +4472,9 @@ namespace FontAwesome6
 		/// <summary>Microphone lines</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/microphone-lines?s=solid" /></remarks>		
 		Solid_MicrophoneLines,		
+		/// <summary>YouTube Square</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/square-youtube?s=brands" /></remarks>		
+		Brands_SquareYoutube,		
 		/// <summary>firstdraft</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/firstdraft?s=brands" /></remarks>		
 		Brands_Firstdraft,		
@@ -4628,12 +4643,12 @@ namespace FontAwesome6
 		/// <summary>Server</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/server?s=solid" /></remarks>		
 		Solid_Server,		
+		/// <summary>Twitter Square</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/square-twitter?s=brands" /></remarks>		
+		Brands_SquareTwitter,		
 		/// <summary>Shop slash</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/shop-slash?s=solid" /></remarks>		
 		Solid_ShopSlash,		
-		/// <summary>YouTube Square</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/youtube-square?s=brands" /></remarks>		
-		Brands_YoutubeSquare,		
 		/// <summary>Arrow right to bracket</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/arrow-right-to-bracket?s=solid" /></remarks>		
 		Solid_ArrowRightToBracket,		
@@ -4745,9 +4760,6 @@ namespace FontAwesome6
 		/// <summary>House Flag</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/house-flag?s=solid" /></remarks>		
 		Solid_HouseFlag,		
-		/// <summary>Tumblr Square</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/tumblr-square?s=brands" /></remarks>		
-		Brands_TumblrSquare,		
 		/// <summary>Area Chart</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/chart-area?s=solid" /></remarks>		
 		Solid_ChartArea,		
@@ -4772,6 +4784,9 @@ namespace FontAwesome6
 		/// <summary>location-arrow</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/location-arrow?s=solid" /></remarks>		
 		Solid_LocationArrow,		
+		/// <summary>Dribbble Square</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/square-dribbble?s=brands" /></remarks>		
+		Brands_SquareDribbble,		
 		/// <summary>Road Bridge</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/road-bridge?s=solid" /></remarks>		
 		Solid_RoadBridge,		
@@ -4811,9 +4826,6 @@ namespace FontAwesome6
 		/// <summary>Dumpster</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/dumpster?s=solid" /></remarks>		
 		Solid_Dumpster,		
-		/// <summary>Staff Aesculapius</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/staff-aesculapius?s=solid" /></remarks>		
-		Solid_StaffAesculapius,		
 		/// <summary>School Circle-check</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/school-circle-check?s=solid" /></remarks>		
 		Solid_SchoolCircleCheck,		
@@ -4829,9 +4841,6 @@ namespace FontAwesome6
 		/// <summary>Pen clip</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/pen-clip?s=solid" /></remarks>		
 		Solid_PenClip,		
-		/// <summary>Vimeo Square</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/vimeo-square?s=brands" /></remarks>		
-		Brands_VimeoSquare,		
 		/// <summary>E</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/e?s=solid" /></remarks>		
 		Solid_E,		
@@ -4892,6 +4901,9 @@ namespace FontAwesome6
 		/// <summary>Helmet Un</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/helmet-un?s=solid" /></remarks>		
 		Solid_HelmetUn,		
+		/// <summary>Viadeo Square</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/square-viadeo?s=brands" /></remarks>		
+		Brands_SquareViadeo,		
 		/// <summary>Umbrella Beach</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/umbrella-beach?s=solid" /></remarks>		
 		Solid_UmbrellaBeach,		
@@ -4952,9 +4964,6 @@ namespace FontAwesome6
 		/// <summary>Temperature half</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/temperature-half?s=solid" /></remarks>		
 		Solid_TemperatureHalf,		
-		/// <summary>Twitter Square</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/twitter-square?s=brands" /></remarks>		
-		Brands_TwitterSquare,		
 		/// <summary>Medical Notes</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/notes-medical?s=solid" /></remarks>		
 		Solid_NotesMedical,		
@@ -5006,6 +5015,9 @@ namespace FontAwesome6
 		/// <summary>Fonticons</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/fonticons?s=brands" /></remarks>		
 		Brands_Fonticons,		
+		/// <summary>Staff Aesculapius</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/staff-snake?s=solid" /></remarks>		
+		Solid_StaffSnake,		
 		/// <summary>Bicycle</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/bicycle?s=solid" /></remarks>		
 		Solid_Bicycle,		
@@ -5036,9 +5048,6 @@ namespace FontAwesome6
 		/// <summary>I</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/i?s=solid" /></remarks>		
 		Solid_I,		
-		/// <summary>Viadeo Square</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/viadeo-square?s=brands" /></remarks>		
-		Brands_ViadeoSquare,		
 		/// <summary>Adversal</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/adversal?s=brands" /></remarks>		
 		Brands_Adversal,		
@@ -5099,9 +5108,6 @@ namespace FontAwesome6
 		/// <summary>Digital Ocean</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/digital-ocean?s=brands" /></remarks>		
 		Brands_DigitalOcean,		
-		/// <summary>Google Plus Square</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/google-plus-square?s=brands" /></remarks>		
-		Brands_GooglePlusSquare,		
 		/// <summary>Face grin tongue</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/face-grin-tongue?s=solid" /></remarks>		
 		Solid_FaceGrinTongue,		
@@ -5201,6 +5207,12 @@ namespace FontAwesome6
 		/// <summary>Microscope</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/microscope?s=solid" /></remarks>		
 		Solid_Microscope,		
+		/// <summary>Hourglass Half</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/hourglass-half?s=solid" /></remarks>		
+		Solid_HourglassHalf,		
+		/// <summary>Hourglass Half</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/hourglass-half?s=regular" /></remarks>		
+		Regular_HourglassHalf,		
 		/// <summary>Heart Circle-minus</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/heart-circle-minus?s=solid" /></remarks>		
 		Solid_HeartCircleMinus,		
@@ -5360,6 +5372,9 @@ namespace FontAwesome6
 		/// <summary>Feather</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/feather?s=solid" /></remarks>		
 		Solid_Feather,		
+		/// <summary>Snapchat Square</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/square-snapchat?s=brands" /></remarks>		
+		Brands_SquareSnapchat,		
 		/// <summary>Napster</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/napster?s=brands" /></remarks>		
 		Brands_Napster,		
@@ -5381,9 +5396,6 @@ namespace FontAwesome6
 		/// <summary>Road Spikes</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/road-spikes?s=solid" /></remarks>		
 		Solid_RoadSpikes,		
-		/// <summary>Hacker News Square</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/hacker-news-square?s=brands" /></remarks>		
-		Brands_HackerNewsSquare,		
 		/// <summary>Memory</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/memory?s=solid" /></remarks>		
 		Solid_Memory,		
@@ -5402,6 +5414,9 @@ namespace FontAwesome6
 		/// <summary>Unlock keyhole</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/unlock-keyhole?s=solid" /></remarks>		
 		Solid_UnlockKeyhole,		
+		/// <summary>Hacker News Square</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/square-hacker-news?s=brands" /></remarks>		
+		Brands_SquareHackerNews,		
 		/// <summary>The Red Yeti</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/the-red-yeti?s=brands" /></remarks>		
 		Brands_TheRedYeti,		
@@ -5423,6 +5438,9 @@ namespace FontAwesome6
 		/// <summary>Caret Left</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/caret-left?s=solid" /></remarks>		
 		Solid_CaretLeft,		
+		/// <summary>Instagram Square</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/square-instagram?s=brands" /></remarks>		
+		Brands_SquareInstagram,		
 		/// <summary>Lightbulb</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/lightbulb?s=solid" /></remarks>		
 		Solid_Lightbulb,		
@@ -5444,9 +5462,6 @@ namespace FontAwesome6
 		/// <summary>Film</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/film?s=solid" /></remarks>		
 		Solid_Film,		
-		/// <summary>last.fm Square</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/lastfm-square?s=brands" /></remarks>		
-		Brands_LastfmSquare,		
 		/// <summary>Face Kiss Beam</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/face-kiss-beam?s=solid" /></remarks>		
 		Solid_FaceKissBeam,		
@@ -5534,6 +5549,9 @@ namespace FontAwesome6
 		/// <summary>Vimeo</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/vimeo-v?s=brands" /></remarks>		
 		Brands_VimeoV,		
+		/// <summary>reddit Square</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/square-reddit?s=brands" /></remarks>		
+		Brands_SquareReddit,		
 		/// <summary>table</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/table?s=solid" /></remarks>		
 		Solid_Table,		
@@ -5561,9 +5579,9 @@ namespace FontAwesome6
 		/// <summary>Alternate CSS3 Logo</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/css3-alt?s=brands" /></remarks>		
 		Brands_Css3Alt,		
-		/// <summary>Snapchat Square</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/snapchat-square?s=brands" /></remarks>		
-		Brands_SnapchatSquare,		
+		/// <summary>People arrows left right</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/people-arrows?s=solid" /></remarks>		
+		Solid_PeopleArrows,		
 		/// <summary>Mailchimp</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/mailchimp?s=brands" /></remarks>		
 		Brands_Mailchimp,		
@@ -5759,6 +5777,9 @@ namespace FontAwesome6
 		/// <summary>K</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/k?s=solid" /></remarks>		
 		Solid_K,		
+		/// <summary>JavaScript (JS) Square</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/square-js?s=brands" /></remarks>		
+		Brands_SquareJs,		
 		/// <summary>Strikethrough</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/strikethrough?s=solid" /></remarks>		
 		Solid_Strikethrough,		
@@ -6397,6 +6418,18 @@ namespace FontAwesome6
 		/// <summary>Masks theater</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/masks-theater?s=duotone" /></remarks>		
 		Duotone_MasksTheater,		
+		/// <summary>Stapler</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/stapler?s=regular" /></remarks>		
+		Regular_Stapler,		
+		/// <summary>Stapler</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/stapler?s=light" /></remarks>		
+		Light_Stapler,		
+		/// <summary>Stapler</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/stapler?s=thin" /></remarks>		
+		Thin_Stapler,		
+		/// <summary>Stapler</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/stapler?s=duotone" /></remarks>		
+		Duotone_Stapler,		
 		/// <summary>D</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/d?s=regular" /></remarks>		
 		Regular_D,		
@@ -6982,6 +7015,21 @@ namespace FontAwesome6
 		/// <summary>Pen Fancy-slash</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/pen-fancy-slash?s=duotone" /></remarks>		
 		Duotone_PenFancySlash,		
+		/// <summary>Toggle Large Off</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/toggle-large-off?s=solid" /></remarks>		
+		Solid_ToggleLargeOff,		
+		/// <summary>Toggle Large Off</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/toggle-large-off?s=regular" /></remarks>		
+		Regular_ToggleLargeOff,		
+		/// <summary>Toggle Large Off</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/toggle-large-off?s=light" /></remarks>		
+		Light_ToggleLargeOff,		
+		/// <summary>Toggle Large Off</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/toggle-large-off?s=thin" /></remarks>		
+		Thin_ToggleLargeOff,		
+		/// <summary>Toggle Large Off</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/toggle-large-off?s=duotone" /></remarks>		
+		Duotone_ToggleLargeOff,		
 		/// <summary>Light Switch-off</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/light-switch-off?s=solid" /></remarks>		
 		Solid_LightSwitchOff,		
@@ -8203,19 +8251,19 @@ namespace FontAwesome6
 		/// <summary>Tire</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/tire?s=duotone" /></remarks>		
 		Duotone_Tire,		
-		/// <summary>Scanner gun</summary> 
+		/// <summary>Scanner Gun</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/scanner-gun?s=solid" /></remarks>		
 		Solid_ScannerGun,		
-		/// <summary>Scanner gun</summary> 
+		/// <summary>Scanner Gun</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/scanner-gun?s=regular" /></remarks>		
 		Regular_ScannerGun,		
-		/// <summary>Scanner gun</summary> 
+		/// <summary>Scanner Gun</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/scanner-gun?s=light" /></remarks>		
 		Light_ScannerGun,		
-		/// <summary>Scanner gun</summary> 
+		/// <summary>Scanner Gun</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/scanner-gun?s=thin" /></remarks>		
 		Thin_ScannerGun,		
-		/// <summary>Scanner gun</summary> 
+		/// <summary>Scanner Gun</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/scanner-gun?s=duotone" /></remarks>		
 		Duotone_ScannerGun,		
 		/// <summary>align-right</summary> 
@@ -10258,6 +10306,21 @@ namespace FontAwesome6
 		/// <summary>Melon</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/melon?s=duotone" /></remarks>		
 		Duotone_Melon,		
+		/// <summary>Lightbulb CFL On</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/lightbulb-cfl-on?s=solid" /></remarks>		
+		Solid_LightbulbCflOn,		
+		/// <summary>Lightbulb CFL On</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/lightbulb-cfl-on?s=regular" /></remarks>		
+		Regular_LightbulbCflOn,		
+		/// <summary>Lightbulb CFL On</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/lightbulb-cfl-on?s=light" /></remarks>		
+		Light_LightbulbCflOn,		
+		/// <summary>Lightbulb CFL On</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/lightbulb-cfl-on?s=thin" /></remarks>		
+		Thin_LightbulbCflOn,		
+		/// <summary>Lightbulb CFL On</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/lightbulb-cfl-on?s=duotone" /></remarks>		
+		Duotone_LightbulbCflOn,		
 		/// <summary>Card Heart</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/card-heart?s=solid" /></remarks>		
 		Solid_CardHeart,		
@@ -15739,21 +15802,21 @@ namespace FontAwesome6
 		/// <summary>Ballot Check</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/ballot-check?s=duotone" /></remarks>		
 		Duotone_BallotCheck,		
-		/// <summary>Scanner</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/scanner?s=solid" /></remarks>		
-		Solid_Scanner,		
-		/// <summary>Scanner</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/scanner?s=regular" /></remarks>		
-		Regular_Scanner,		
-		/// <summary>Scanner</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/scanner?s=light" /></remarks>		
-		Light_Scanner,		
-		/// <summary>Scanner</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/scanner?s=thin" /></remarks>		
-		Thin_Scanner,		
-		/// <summary>Scanner</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/scanner?s=duotone" /></remarks>		
-		Duotone_Scanner,		
+		/// <summary>Grill Hot</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/grill-hot?s=solid" /></remarks>		
+		Solid_GrillHot,		
+		/// <summary>Grill Hot</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/grill-hot?s=regular" /></remarks>		
+		Regular_GrillHot,		
+		/// <summary>Grill Hot</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/grill-hot?s=light" /></remarks>		
+		Light_GrillHot,		
+		/// <summary>Grill Hot</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/grill-hot?s=thin" /></remarks>		
+		Thin_GrillHot,		
+		/// <summary>Grill Hot</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/grill-hot?s=duotone" /></remarks>		
+		Duotone_GrillHot,		
 		/// <summary>Boxes stacked</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/boxes-stacked?s=regular" /></remarks>		
 		Regular_BoxesStacked,		
@@ -18019,6 +18082,21 @@ namespace FontAwesome6
 		/// <summary>Arrows Turn-to-dots</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/arrows-turn-to-dots?s=duotone" /></remarks>		
 		Duotone_ArrowsTurnToDots,		
+		/// <summary>Grill</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/grill?s=solid" /></remarks>		
+		Solid_Grill,		
+		/// <summary>Grill</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/grill?s=regular" /></remarks>		
+		Regular_Grill,		
+		/// <summary>Grill</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/grill?s=light" /></remarks>		
+		Light_Grill,		
+		/// <summary>Grill</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/grill?s=thin" /></remarks>		
+		Thin_Grill,		
+		/// <summary>Grill</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/grill?s=duotone" /></remarks>		
+		Duotone_Grill,		
 		/// <summary>Circle down</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/circle-down?s=light" /></remarks>		
 		Light_CircleDown,		
@@ -19561,18 +19639,6 @@ namespace FontAwesome6
 		/// <summary>Loader</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/loader?s=duotone" /></remarks>		
 		Duotone_Loader,		
-		/// <summary>Hourglass empty</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/hourglass-empty?s=regular" /></remarks>		
-		Regular_HourglassEmpty,		
-		/// <summary>Hourglass empty</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/hourglass-empty?s=light" /></remarks>		
-		Light_HourglassEmpty,		
-		/// <summary>Hourglass empty</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/hourglass-empty?s=thin" /></remarks>		
-		Thin_HourglassEmpty,		
-		/// <summary>Hourglass empty</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/hourglass-empty?s=duotone" /></remarks>		
-		Duotone_HourglassEmpty,		
 		/// <summary>Glass</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/glass?s=solid" /></remarks>		
 		Solid_Glass,		
@@ -19918,9 +19984,6 @@ namespace FontAwesome6
 		/// <summary>Shovel Snow</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/shovel-snow?s=duotone" /></remarks>		
 		Duotone_ShovelSnow,		
-		/// <summary>Cable Car</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/cable-car?s=solid" /></remarks>		
-		Solid_CableCar,		
 		/// <summary>Cable Car</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/cable-car?s=regular" /></remarks>		
 		Regular_CableCar,		
@@ -24632,9 +24695,6 @@ namespace FontAwesome6
 		/// <remarks><see href="https://fontawesome.com/icons/solar-system?s=duotone" /></remarks>		
 		Duotone_SolarSystem,		
 		/// <summary>Book tanakh</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/book-tanakh?s=solid" /></remarks>		
-		Solid_BookTanakh,		
-		/// <summary>Book tanakh</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/book-tanakh?s=regular" /></remarks>		
 		Regular_BookTanakh,		
 		/// <summary>Book tanakh</summary> 
@@ -25762,6 +25822,21 @@ namespace FontAwesome6
 		/// <summary>Person digging</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/person-digging?s=duotone" /></remarks>		
 		Duotone_PersonDigging,		
+		/// <summary>Mouse</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/mouse-field?s=solid" /></remarks>		
+		Solid_MouseField,		
+		/// <summary>Mouse</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/mouse-field?s=regular" /></remarks>		
+		Regular_MouseField,		
+		/// <summary>Mouse</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/mouse-field?s=light" /></remarks>		
+		Light_MouseField,		
+		/// <summary>Mouse</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/mouse-field?s=thin" /></remarks>		
+		Thin_MouseField,		
+		/// <summary>Mouse</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/mouse-field?s=duotone" /></remarks>		
+		Duotone_MouseField,		
 		/// <summary>Coffee Pot</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/coffee-pot?s=solid" /></remarks>		
 		Solid_CoffeePot,		
@@ -29089,6 +29164,21 @@ namespace FontAwesome6
 		/// <summary>Hands holding dollar</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/hands-holding-dollar?s=duotone" /></remarks>		
 		Duotone_HandsHoldingDollar,		
+		/// <summary>Toilet Paper Xmark</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/toilet-paper-xmark?s=solid" /></remarks>		
+		Solid_ToiletPaperXmark,		
+		/// <summary>Toilet Paper Xmark</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/toilet-paper-xmark?s=regular" /></remarks>		
+		Regular_ToiletPaperXmark,		
+		/// <summary>Toilet Paper Xmark</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/toilet-paper-xmark?s=light" /></remarks>		
+		Light_ToiletPaperXmark,		
+		/// <summary>Toilet Paper Xmark</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/toilet-paper-xmark?s=thin" /></remarks>		
+		Thin_ToiletPaperXmark,		
+		/// <summary>Toilet Paper Xmark</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/toilet-paper-xmark?s=duotone" /></remarks>		
+		Duotone_ToiletPaperXmark,		
 		/// <summary>Wifi Slash</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/wifi-slash?s=solid" /></remarks>		
 		Solid_WifiSlash,		
@@ -30862,6 +30952,21 @@ namespace FontAwesome6
 		/// <summary>Up down left right</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/up-down-left-right?s=duotone" /></remarks>		
 		Duotone_UpDownLeftRight,		
+		/// <summary>Toggle Large On</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/toggle-large-on?s=solid" /></remarks>		
+		Solid_ToggleLargeOn,		
+		/// <summary>Toggle Large On</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/toggle-large-on?s=regular" /></remarks>		
+		Regular_ToggleLargeOn,		
+		/// <summary>Toggle Large On</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/toggle-large-on?s=light" /></remarks>		
+		Light_ToggleLargeOn,		
+		/// <summary>Toggle Large On</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/toggle-large-on?s=thin" /></remarks>		
+		Thin_ToggleLargeOn,		
+		/// <summary>Toggle Large On</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/toggle-large-on?s=duotone" /></remarks>		
+		Duotone_ToggleLargeOn,		
 		/// <summary>File Signature</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/file-signature?s=regular" /></remarks>		
 		Regular_FileSignature,		
@@ -31255,6 +31360,21 @@ namespace FontAwesome6
 		/// <summary>Filter Circle X Mark</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/filter-circle-xmark?s=duotone" /></remarks>		
 		Duotone_FilterCircleXmark,		
+		/// <summary>Toilet Paper Check</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/toilet-paper-check?s=solid" /></remarks>		
+		Solid_ToiletPaperCheck,		
+		/// <summary>Toilet Paper Check</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/toilet-paper-check?s=regular" /></remarks>		
+		Regular_ToiletPaperCheck,		
+		/// <summary>Toilet Paper Check</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/toilet-paper-check?s=light" /></remarks>		
+		Light_ToiletPaperCheck,		
+		/// <summary>Toilet Paper Check</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/toilet-paper-check?s=thin" /></remarks>		
+		Thin_ToiletPaperCheck,		
+		/// <summary>Toilet Paper Check</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/toilet-paper-check?s=duotone" /></remarks>		
+		Duotone_ToiletPaperCheck,		
 		/// <summary>Circle I</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/circle-i?s=solid" /></remarks>		
 		Solid_CircleI,		
@@ -35497,9 +35617,6 @@ namespace FontAwesome6
 		/// <summary>Right Long-to-line</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/right-long-to-line?s=duotone" /></remarks>		
 		Duotone_RightLongToLine,		
-		/// <summary>Meta</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/meta?s=brands" /></remarks>		
-		Brands_Meta,		
 		/// <summary>Grid 5</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/grid-5?s=solid" /></remarks>		
 		Solid_Grid5,		
@@ -36262,18 +36379,6 @@ namespace FontAwesome6
 		/// <summary>House Circle-exclamation</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/house-circle-exclamation?s=duotone" /></remarks>		
 		Duotone_HouseCircleExclamation,		
-		/// <summary>People arrows left right</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/people-arrows-left-right?s=regular" /></remarks>		
-		Regular_PeopleArrowsLeftRight,		
-		/// <summary>People arrows left right</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/people-arrows-left-right?s=light" /></remarks>		
-		Light_PeopleArrowsLeftRight,		
-		/// <summary>People arrows left right</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/people-arrows-left-right?s=thin" /></remarks>		
-		Thin_PeopleArrowsLeftRight,		
-		/// <summary>People arrows left right</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/people-arrows-left-right?s=duotone" /></remarks>		
-		Duotone_PeopleArrowsLeftRight,		
 		/// <summary>Clipboard</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/clipboard?s=light" /></remarks>		
 		Light_Clipboard,		
@@ -37171,6 +37276,21 @@ namespace FontAwesome6
 		/// <summary>Retro Televison</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/tv-retro?s=duotone" /></remarks>		
 		Duotone_TvRetro,		
+		/// <summary>Image Scanner</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/scanner-image?s=solid" /></remarks>		
+		Solid_ScannerImage,		
+		/// <summary>Image Scanner</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/scanner-image?s=regular" /></remarks>		
+		Regular_ScannerImage,		
+		/// <summary>Image Scanner</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/scanner-image?s=light" /></remarks>		
+		Light_ScannerImage,		
+		/// <summary>Image Scanner</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/scanner-image?s=thin" /></remarks>		
+		Thin_ScannerImage,		
+		/// <summary>Image Scanner</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/scanner-image?s=duotone" /></remarks>		
+		Duotone_ScannerImage,		
 		/// <summary>Snooze</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/snooze?s=solid" /></remarks>		
 		Solid_Snooze,		
@@ -39439,18 +39559,6 @@ namespace FontAwesome6
 		/// <summary>Dumpster</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/dumpster?s=duotone" /></remarks>		
 		Duotone_Dumpster,		
-		/// <summary>Staff Aesculapius</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/staff-aesculapius?s=regular" /></remarks>		
-		Regular_StaffAesculapius,		
-		/// <summary>Staff Aesculapius</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/staff-aesculapius?s=light" /></remarks>		
-		Light_StaffAesculapius,		
-		/// <summary>Staff Aesculapius</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/staff-aesculapius?s=thin" /></remarks>		
-		Thin_StaffAesculapius,		
-		/// <summary>Staff Aesculapius</summary> 
-		/// <remarks><see href="https://fontawesome.com/icons/staff-aesculapius?s=duotone" /></remarks>		
-		Duotone_StaffAesculapius,		
 		/// <summary>Arrow Down to Arc</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/arrow-down-to-arc?s=solid" /></remarks>		
 		Solid_ArrowDownToArc,		
@@ -40984,6 +41092,18 @@ namespace FontAwesome6
 		/// <summary>Pear</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/pear?s=duotone" /></remarks>		
 		Duotone_Pear,		
+		/// <summary>Staff Aesculapius</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/staff-snake?s=regular" /></remarks>		
+		Regular_StaffSnake,		
+		/// <summary>Staff Aesculapius</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/staff-snake?s=light" /></remarks>		
+		Light_StaffSnake,		
+		/// <summary>Staff Aesculapius</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/staff-snake?s=thin" /></remarks>		
+		Thin_StaffSnake,		
+		/// <summary>Staff Aesculapius</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/staff-snake?s=duotone" /></remarks>		
+		Duotone_StaffSnake,		
 		/// <summary>Black Widow Spider</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/spider-black-widow?s=solid" /></remarks>		
 		Solid_SpiderBlackWidow,		
@@ -41821,6 +41941,21 @@ namespace FontAwesome6
 		/// <summary>House Window Open</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/window-frame-open?s=duotone" /></remarks>		
 		Duotone_WindowFrameOpen,		
+		/// <summary>Lightbulb CFL</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/lightbulb-cfl?s=solid" /></remarks>		
+		Solid_LightbulbCfl,		
+		/// <summary>Lightbulb CFL</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/lightbulb-cfl?s=regular" /></remarks>		
+		Regular_LightbulbCfl,		
+		/// <summary>Lightbulb CFL</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/lightbulb-cfl?s=light" /></remarks>		
+		Light_LightbulbCfl,		
+		/// <summary>Lightbulb CFL</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/lightbulb-cfl?s=thin" /></remarks>		
+		Thin_LightbulbCfl,		
+		/// <summary>Lightbulb CFL</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/lightbulb-cfl?s=duotone" /></remarks>		
+		Duotone_LightbulbCfl,		
 		/// <summary>Comment Arrow-down</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/comment-arrow-down?s=solid" /></remarks>		
 		Solid_CommentArrowDown,		
@@ -42586,6 +42721,15 @@ namespace FontAwesome6
 		/// <summary>Microscope</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/microscope?s=duotone" /></remarks>		
 		Duotone_Microscope,		
+		/// <summary>Hourglass Half</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/hourglass-half?s=light" /></remarks>		
+		Light_HourglassHalf,		
+		/// <summary>Hourglass Half</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/hourglass-half?s=thin" /></remarks>		
+		Thin_HourglassHalf,		
+		/// <summary>Hourglass Half</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/hourglass-half?s=duotone" /></remarks>		
+		Duotone_HourglassHalf,		
 		/// <summary>Circle calendar</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/circle-calendar?s=solid" /></remarks>		
 		Solid_CircleCalendar,		
@@ -42748,6 +42892,21 @@ namespace FontAwesome6
 		/// <summary>Sack of Money</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/sack-dollar?s=duotone" /></remarks>		
 		Duotone_SackDollar,		
+		/// <summary>Crosshairs Simple</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/crosshairs-simple?s=solid" /></remarks>		
+		Solid_CrosshairsSimple,		
+		/// <summary>Crosshairs Simple</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/crosshairs-simple?s=regular" /></remarks>		
+		Regular_CrosshairsSimple,		
+		/// <summary>Crosshairs Simple</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/crosshairs-simple?s=light" /></remarks>		
+		Light_CrosshairsSimple,		
+		/// <summary>Crosshairs Simple</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/crosshairs-simple?s=thin" /></remarks>		
+		Thin_CrosshairsSimple,		
+		/// <summary>Crosshairs Simple</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/crosshairs-simple?s=duotone" /></remarks>		
+		Duotone_CrosshairsSimple,		
 		/// <summary>Bridge Lock</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/bridge-lock?s=regular" /></remarks>		
 		Regular_BridgeLock,		
@@ -44392,6 +44551,21 @@ namespace FontAwesome6
 		/// <summary>Rectangle Vertical-history</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/rectangle-vertical-history?s=duotone" /></remarks>		
 		Duotone_RectangleVerticalHistory,		
+		/// <summary>Grill Fire</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/grill-fire?s=solid" /></remarks>		
+		Solid_GrillFire,		
+		/// <summary>Grill Fire</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/grill-fire?s=regular" /></remarks>		
+		Regular_GrillFire,		
+		/// <summary>Grill Fire</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/grill-fire?s=light" /></remarks>		
+		Light_GrillFire,		
+		/// <summary>Grill Fire</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/grill-fire?s=thin" /></remarks>		
+		Thin_GrillFire,		
+		/// <summary>Grill Fire</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/grill-fire?s=duotone" /></remarks>		
+		Duotone_GrillFire,		
 		/// <summary>Joystick</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/joystick?s=solid" /></remarks>		
 		Solid_Joystick,		
@@ -44860,6 +45034,18 @@ namespace FontAwesome6
 		/// <summary>Face Angry Horns</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/face-angry-horns?s=duotone" /></remarks>		
 		Duotone_FaceAngryHorns,		
+		/// <summary>People arrows left right</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/people-arrows?s=regular" /></remarks>		
+		Regular_PeopleArrows,		
+		/// <summary>People arrows left right</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/people-arrows?s=light" /></remarks>		
+		Light_PeopleArrows,		
+		/// <summary>People arrows left right</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/people-arrows?s=thin" /></remarks>		
+		Thin_PeopleArrows,		
+		/// <summary>People arrows left right</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/people-arrows?s=duotone" /></remarks>		
+		Duotone_PeopleArrows,		
 		/// <summary>Album Collection-circle-plus</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/album-collection-circle-plus?s=solid" /></remarks>		
 		Solid_AlbumCollectionCirclePlus,		
@@ -47962,6 +48148,21 @@ namespace FontAwesome6
 		/// <summary>Fondue Pot</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/fondue-pot?s=duotone" /></remarks>		
 		Duotone_FonduePot,		
+		/// <summary>Ring Diamond</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/ring-diamond?s=solid" /></remarks>		
+		Solid_RingDiamond,		
+		/// <summary>Ring Diamond</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/ring-diamond?s=regular" /></remarks>		
+		Regular_RingDiamond,		
+		/// <summary>Ring Diamond</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/ring-diamond?s=light" /></remarks>		
+		Light_RingDiamond,		
+		/// <summary>Ring Diamond</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/ring-diamond?s=thin" /></remarks>		
+		Thin_RingDiamond,		
+		/// <summary>Ring Diamond</summary> 
+		/// <remarks><see href="https://fontawesome.com/icons/ring-diamond?s=duotone" /></remarks>		
+		Duotone_RingDiamond,		
 		/// <summary>Robot Astromech</summary> 
 		/// <remarks><see href="https://fontawesome.com/icons/robot-astromech?s=solid" /></remarks>		
 		Solid_RobotAstromech,		

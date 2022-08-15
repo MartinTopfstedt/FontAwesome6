@@ -1,3 +1,6 @@
+# 2.3.0
+- #29: fixed bug with multiple instances of same app not working
+- updated to Font-Awesome 6.1.2
 # 2.0.5
 - added strong naming
 - removed .Net 4.0 support
