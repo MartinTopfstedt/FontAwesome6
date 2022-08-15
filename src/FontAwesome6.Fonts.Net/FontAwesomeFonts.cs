@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 using System.Resources;
 
 using System.Windows.Media;
@@ -107,16 +109,24 @@ namespace FontAwesome6.Fonts
         private static void SaveFontFilesToDirectory(string path)
         {
             var resManager = new ResourceManager("FontAwesome6.Fonts.Net.g", typeof(FontAwesomeFonts).Assembly);
-            WriteResourceToFile(resManager, $"Fonts/fa-solid-900.ttf", Path.Combine(path, "fa-solid-900.ttf"));
-            WriteResourceToFile(resManager, $"Fonts/fa-regular-400.ttf", Path.Combine(path, "fa-regular-400.ttf"));
-            WriteResourceToFile(resManager, $"Fonts/fa-brands-400.ttf", Path.Combine(path, "fa-brands-400.ttf"));
+            var targetPath = Path.Combine(path, FontAwesomeInfo.Version);
+
+            if (!Directory.Exists(targetPath))
+            {
+                Directory.CreateDirectory(targetPath);
+            }
+
+            WriteResourceToFile(resManager, $"Fonts/fa-solid-900.ttf", Path.Combine(targetPath, "fa-solid-900.ttf"));
+            WriteResourceToFile(resManager, $"Fonts/fa-regular-400.ttf", Path.Combine(targetPath, "fa-regular-400.ttf"));
+            WriteResourceToFile(resManager, $"Fonts/fa-brands-400.ttf", Path.Combine(targetPath, "fa-brands-400.ttf"));
         }
 
         private static void WriteResourceToFile(ResourceManager resManager, string resourceName, string fileName)
         {
+
             if (File.Exists(fileName))
             {
-                File.Delete(fileName);
+                return;
             }
 
             using (var res = resManager.GetStream(Uri.EscapeUriString(resourceName).ToLowerInvariant()))
