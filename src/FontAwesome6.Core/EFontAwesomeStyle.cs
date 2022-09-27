@@ -12,7 +12,7 @@ namespace FontAwesome6
 	/// FontAwesome by Dave Gandy (@davegandy)
 	///	The iconic SVG, font, and CSS toolkit
 	///	License https://fontawesome.com/license (C#: MIT License)
-	/// Version: 6.1.2 
+	/// Version: 6.2.0 
 	/// </summary>
 	public enum EFontAwesomeStyle
 	{
@@ -35,6 +35,10 @@ namespace FontAwesome6
 
 #if FontAwesomePro
 		/// <summary>
+		/// FontAwesome5 Duotone Style
+		/// </summary>
+		Duotone,
+		/// <summary>
 		/// FontAwesome5 Light Style
 		/// </summary>
 		Light,
@@ -42,10 +46,6 @@ namespace FontAwesome6
 		/// FontAwesome5 Thin Style
 		/// </summary>
 		Thin,
-		/// <summary>
-		/// FontAwesome5 Duotone Style
-		/// </summary>
-		Duotone,
 #endif
 	}
 }

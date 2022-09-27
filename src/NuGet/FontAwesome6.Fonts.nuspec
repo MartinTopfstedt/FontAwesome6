@@ -7,7 +7,7 @@
 			WPF (.Net and .Net Core) and UWP controls for the web's most popular icon set and toolkit.
 			This package supports only fonts, if you need svg use FontAwesome6.Svg.
 			For examples https://github.com/MartinTopfstedt/FontAwesome6
-			Font-Awesome Version: 6.1.2
+			Font-Awesome Version: 6.2.0
 		</description>
 		<authors>Codinion</authors>
 		<license type="expression">MIT</license>

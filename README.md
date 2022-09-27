@@ -4,7 +4,7 @@
 
 WPF (.Net and .Net Core), UWP and WinUI controls for the web's most popular icon set and toolkit.
 
-Font-Awesome Version: 6.1.2
+Font-Awesome Version: 6.2.0
 
 ## Breaking Changes
 
