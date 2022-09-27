@@ -69,13 +69,13 @@ steps:
     inputs:
       command: 'build'
       projects: 'src/FontAwesome6.Net.sln'
-      arguments: '--configuration ${{setting.value}} /p:Version=$(GitVersion.AssemblySemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);FileVersion=$(GitVersion.AssemblySemFileVer)'
+      arguments: '--configuration ${{setting.value}} /p:Version=$(GitVersion.AssemblySemVer) /p:AssemblyVersion=$(GitVersion.AssemblySemVer) /p:FileVersion=$(GitVersion.AssemblySemFileVer)'
 
   - task: VSBuild@1
     displayName: '${{setting.key}}: Build: UWP'
     inputs:
       solution: 'src/FontAwesome6.UWP.sln'
-      msbuildArgs: '/p:Version=$(GitVersion.AssemblySemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);FileVersion=$(GitVersion.AssemblySemFileVer)'
+      msbuildArgs: '/p:Version=$(GitVersion.AssemblySemVer) /p:AssemblyVersion=$(GitVersion.AssemblySemVer) /p:FileVersion=$(GitVersion.AssemblySemFileVer)'
       platform: '$(buildPlatform)'
       configuration: '${{setting.value}}'    
   
@@ -84,7 +84,7 @@ steps:
       displayName: '${{setting.key}}: Build: WinUI (${{platform}})'
       inputs:
         solution: 'src/FontAwesome6.WinUI.sln'
-        msbuildArgs: '/p:Version=$(GitVersion.AssemblySemVer);AssemblyVersion=$(GitVersion.AssemblySemVer);FileVersion=$(GitVersion.AssemblySemFileVer)'
+        msbuildArgs: '/p:Version=$(GitVersion.AssemblySemVer) /p:AssemblyVersion=$(GitVersion.AssemblySemVer) /p:FileVersion=$(GitVersion.AssemblySemFileVer)'
         platform: '${{platform}}'
         configuration: '${{setting.value}}'
 
