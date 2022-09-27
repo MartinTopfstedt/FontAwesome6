@@ -22,7 +22,7 @@ namespace FontAwesome6
 		None,		
 	{{~ for style in FreeStyles ~}}
 		/// <summary>
-		/// FontAwesome5 {{ style | string.capitalize }} Style
+		/// FontAwesome {{ style | string.capitalize }} Style
 		/// </summary>
 		{{ style | string.capitalize }},
 	{{~ end ~}}
@@ -31,7 +31,7 @@ namespace FontAwesome6
 #if FontAwesomePro
 	{{~ for style in ProStyles ~}}
 		/// <summary>
-		/// FontAwesome5 {{ style | string.capitalize }} Style
+		/// FontAwesome {{ style | string.capitalize }} Style
 		/// </summary>
 		{{ style | string.capitalize }},
 	{{~ end ~}}

@@ -14,7 +14,7 @@ namespace FontAwesome6.Svg
 {
     public static class FontAwesomeSvg
     {
-        private static Dictionary<string, FontAwesomeSvgInformation> _data = new Dictionary<string, FontAwesomeSvgInformation>();
+        private static readonly Dictionary<string, FontAwesomeSvgInformation> _data = new Dictionary<string, FontAwesomeSvgInformation>();
 
         static FontAwesomeSvg()
         {

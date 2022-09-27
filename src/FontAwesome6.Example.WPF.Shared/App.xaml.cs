@@ -20,7 +20,7 @@ namespace FontAwesome6.Example.WPF
         {
             var directory = Path.GetDirectoryName(typeof(App).Assembly.Location);
 #if FontAwesomePro
-            // loading FontAwesome 6 Font Files (otfs)
+            // loading FontAwesome 6 Font Files (ttfs)
             var fontDirectory = Path.Combine(directory, "Fonts") + "/";
 
             // load all styles from a directory
