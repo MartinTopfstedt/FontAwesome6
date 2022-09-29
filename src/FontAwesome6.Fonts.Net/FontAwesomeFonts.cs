@@ -32,7 +32,7 @@ namespace FontAwesome6.Fonts
             _fontFamilyNames.Add(EFontAwesomeStyle.Solid, "Font Awesome 6 Free Solid");
             _fontFamilyNames.Add(EFontAwesomeStyle.Regular, "Font Awesome 6 Free Regular");
 
-            var path = Path.GetTempPath();
+            var path = Path.Combine(Path.GetTempPath(), FontAwesomeInfo.Version);
             SaveFontFilesToDirectory(path);
             LoadAllStyles(path);
 #endif
@@ -109,16 +109,15 @@ namespace FontAwesome6.Fonts
         private static void SaveFontFilesToDirectory(string path)
         {
             var resManager = new ResourceManager("FontAwesome6.Fonts.Net.g", typeof(FontAwesomeFonts).Assembly);
-            var targetPath = Path.Combine(path, FontAwesomeInfo.Version);
 
-            if (!Directory.Exists(targetPath))
+            if (!Directory.Exists(path))
             {
-                Directory.CreateDirectory(targetPath);
+                Directory.CreateDirectory(path);
             }
 
-            WriteResourceToFile(resManager, $"Fonts/fa-solid-900.ttf", Path.Combine(targetPath, "fa-solid-900.ttf"));
-            WriteResourceToFile(resManager, $"Fonts/fa-regular-400.ttf", Path.Combine(targetPath, "fa-regular-400.ttf"));
-            WriteResourceToFile(resManager, $"Fonts/fa-brands-400.ttf", Path.Combine(targetPath, "fa-brands-400.ttf"));
+            WriteResourceToFile(resManager, $"Fonts/fa-solid-900.ttf", Path.Combine(path, "fa-solid-900.ttf"));
+            WriteResourceToFile(resManager, $"Fonts/fa-regular-400.ttf", Path.Combine(path, "fa-regular-400.ttf"));
+            WriteResourceToFile(resManager, $"Fonts/fa-brands-400.ttf", Path.Combine(path, "fa-brands-400.ttf"));
         }
 
         private static void WriteResourceToFile(ResourceManager resManager, string resourceName, string fileName)
