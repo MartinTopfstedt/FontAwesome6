@@ -32,7 +32,7 @@ namespace FontAwesome6.Fonts
             _fontFamilyNames.Add(EFontAwesomeStyle.Solid, "Font Awesome 6 Free Solid");
             _fontFamilyNames.Add(EFontAwesomeStyle.Regular, "Font Awesome 6 Free Regular");
 
-            var path = Path.Combine(Path.GetTempPath(), FontAwesomeInfo.Version);
+            var path = Path.Combine(Path.GetTempPath(), "FontAwesomeFonts", FontAwesomeInfo.Version) + Path.DirectorySeparatorChar;
             SaveFontFilesToDirectory(path);
             LoadAllStyles(path);
 #endif
