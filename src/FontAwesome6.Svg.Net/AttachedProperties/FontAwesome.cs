@@ -130,6 +130,30 @@ namespace FontAwesome6.Svg.AttachedProperties
         {
             switch (sender)
             {
+                case Window target:
+                    {
+                        var icon = GetIcon(sender);
+
+
+                        if (icon == EFontAwesomeIcon.None)
+                        {
+                            target.SetValue(Window.IconProperty, null);                            
+                        }
+                        else
+                        {
+                            var primaryColor = GetPrimaryColor(sender);
+#if FontAwesomePro
+                            var secondaryColor = GetSecondaryColor(sender);
+                            var swapOpacity = GetSwapOpacity(sender);
+                            var primaryOpacity = GetPrimaryOpacity(sender);
+                            var secondaryOpacity = GetSecondaryOpacity(sender);                            
+                            target.SetValue(Window.IconProperty, icon.CreateImageSource(primaryColor, secondaryColor, swapOpacity, primaryOpacity, secondaryOpacity));      
+#else
+                            target.SetValue(Window.IconProperty, icon.CreateImageSource(primaryColor));                            
+#endif
+                        }
+                    }
+                    break;
                 case Image target:
                     {
                         var icon = GetIcon(sender);

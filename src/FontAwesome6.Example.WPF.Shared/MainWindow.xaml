@@ -10,6 +10,7 @@
         xmlns:fas="http://schemas.fontawesome.com/icons/svg"        
         xmlns:fasap="http://schemas.fontawesome.com/icons/svg/properties"        
         xmlns:viewModels="clr-namespace:FontAwesome6.Example.WPF"        
+        fafap:FontAwesome.Icon="{Binding SelectedIcon}"
         mc:Ignorable="d"
         Title="FontAwesome6.Example.WPF" Height="675"  Width="900">
     <Window.DataContext>
@@ -24,9 +25,7 @@
         <converters:NullableDoubleToStringConverter x:Key="NullableDoubleToStringConverter"/>
         <converters:HexColorStringToSolidColorBrushConverter x:Key="HexColorStringToSolidColorBrushConverter"/>
     </Window.Resources>
-    <Window.Icon>
-        <DrawingImage Drawing="{Binding SelectedIcon, Converter={StaticResource DrawingConverter}}"/>
-    </Window.Icon>
+
     <Grid>
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="300"/>
