@@ -148,7 +148,7 @@ namespace FontAwesome6.Fonts.AttachedProperties
                             var swapOpacity = GetSwapOpacity(sender);
                             var primaryOpacity = GetPrimaryOpacity(sender);
                             var secondaryOpacity = GetSecondaryOpacity(sender);
-                            target.Source = icon.CreateImageSource(primaryColor, secondaryColor, swapOpacity, primaryOpacity, secondaryOpacity);
+                            target.SetValue(Window.IconProperty, icon.CreateImageSource(primaryColor, secondaryColor, swapOpacity, primaryOpacity, secondaryOpacity));
 #endif                            
                             target.SetValue(Window.IconProperty, icon.CreateImageSource(primaryColor));
                         }
