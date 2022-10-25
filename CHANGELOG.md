@@ -1,3 +1,5 @@
+# 2.5.0
+- added attached properties to work with the window icon
 # 2.4.0
 - updated to Font-Awesome 6.2.0
 # 2.3.0
